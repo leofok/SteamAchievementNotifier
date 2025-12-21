@@ -9,38 +9,65 @@ const LAUNCH_KEYS: &[&str] = &[
 ];
 
 const LAUNCH_CONFIG_KEYS: &[&str] = &[
-    "oslist",
-    "BetaKey"
+    "oslist"
 ];
 
 fn get_launch_keys(launch_keys: &Map<String,Value>) -> Option<Value> {
-    let launchmap: Map<_, _> = launch_keys.iter().filter_map(|(key, value)| {
-        if let Object(launch) = value {
-            let mut entrymap = Map::new();
+    let platform = if cfg!(target_os="windows") {
+        "windows"
+    } else if cfg!(target_os="linux") {
+        "linux"
+    } else {
+        return None
+    };
+    
+    let launchmap: Map<_, _> = launch_keys
+        .iter()
+        .filter_map(|(key,value)|
+    {
+        let launch = value.as_object()?;
 
-            for prop in LAUNCH_KEYS {
-                if let Some(value) = launch.get(*prop) {
-                    entrymap.insert(prop.to_string(), value.clone());
+        let os_match = match launch
+            .get("config")
+            .and_then(|value| value.as_object())
+            .and_then(|config| config.get("oslist"))
+            .and_then(|value| value.as_str())
+        {
+            Some(oslist) => oslist.trim() == platform,
+            None => true
+        };
+
+        if !os_match {
+            return None
+        }
+        
+        let mut entrymap = Map::new();
+
+        for prop in LAUNCH_KEYS {
+            if let Some(value) = launch.get(*prop) {
+                entrymap.insert(prop.to_string(), value.clone());
+            }
+        }
+
+        if let Some(launchconfig) = launch
+            .get("config")
+            .and_then(|value| value.as_object())
+        {
+            let mut launchconfigmap = Map::new();
+
+            for prop in LAUNCH_CONFIG_KEYS {
+                if let Some(value) = launchconfig.get(*prop) {
+                    launchconfigmap.insert(prop.to_string(),value.clone());
                 }
             }
 
-            if let Some(launchconfig) = launch.get("config").and_then(|value| value.as_object()) {
-                let mut launchconfigmap = Map::new();
-
-                for prop in LAUNCH_CONFIG_KEYS {
-                    if let Some(value) = launchconfig.get(*prop) {
-                        launchconfigmap.insert(prop.to_string(),value.clone());
-                    }
-                }
-
-                if !launchconfigmap.is_empty() {
-                    entrymap.insert("config".to_string(), Object(launchconfigmap));
-                }
+            if !launchconfigmap.is_empty() {
+                entrymap.insert("config".to_string(), Object(launchconfigmap));
             }
+        }
 
-            if !entrymap.is_empty() {
-                return Some((key.clone(),Object(entrymap)));
-            }
+        if !entrymap.is_empty() {
+            return Some((key.clone(),Object(entrymap)));
         }
         
         None

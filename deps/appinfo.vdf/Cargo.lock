@@ -4,7 +4,7 @@ version = 4
 
 [[package]]
 name = "appinfovdf"
-version = "0.1.0"
+version = "0.0.1"
 dependencies = [
  "new-vdf-parser",
  "serde_json",
