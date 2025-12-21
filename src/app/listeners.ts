@@ -344,12 +344,20 @@ export const listeners = {
             if (value && debugwin) return log.write("WARN",`"debugwin" already active`)
             if (!value && debugwin) return debugwin.close()
 
+            const { width: screenwidth } = screen.getPrimaryDisplay().bounds
+            const ratio = 5 / 3 // Base aspect ratio
+            const minwidth = 500
+            const maxwidth = Math.min(screenwidth * 0.5,1000)
+            const width = Math.max(Math.min(screenwidth * 0.3,minwidth),maxwidth)
+
             debugwin = new BrowserWindow({
                 title: `Steam Achievement Notifier (V${sanhelper.version}): Debug Panel`,
-                width: 500,
-                height: 300,
+                width: Math.round(width),
+                height: Math.round(width / ratio),
+                minWidth: 500,
+                minHeight: 300,
                 autoHideMenuBar: true,
-                resizable: false,
+                resizable: true,
                 maximizable: false,
                 fullscreenable: false,
                 webPreferences: {
@@ -357,6 +365,13 @@ export const listeners = {
                     contextIsolation: false,
                     backgroundThrottling: false
                 }
+            })
+
+            debugwin.on("will-resize",(event,bounds) => {
+                event.preventDefault()
+
+                const { width } = bounds
+                debugwin && debugwin.setBounds({ width, height: Math.round(width / ratio) })
             })
 
             debugwin.loadFile(path.join(__root,"dist","app","debugwin.html"))

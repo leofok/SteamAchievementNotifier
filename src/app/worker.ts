@@ -230,7 +230,7 @@ const startsan = async (appinfo: AppInfo) => {
     
                 const { debug } = sanconfig.get().store
     
-                debug && ipcRenderer.send("debuginfoupdated", {
+                debug && ipcRenderer.send("debuginfoupdated",{
                     username: username,
                     steam3id: steam3id,
                     steam64id: steam64id,
@@ -243,7 +243,8 @@ const startsan = async (appinfo: AppInfo) => {
                             pid: pid,
                             active: isprocessrunning(pid)
                         } as DebugProcessInfo
-                    })
+                    }),
+                    vdfentry: client.processes.getAppinfoForAppid(appid,sanhelper.steampath)
                 })
     
                 if (!num) return

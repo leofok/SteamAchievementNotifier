@@ -448,7 +448,8 @@ declare interface DebugInfo extends AppInfo {
     steam3id?: number,
     steam64id?: string,
     releasedelay?: number,
-    processes: ProcessInfo[] | DebugProcessInfo[]
+    processes: ProcessInfo[] | DebugProcessInfo[],
+    vdfentry?: any | null
 }
 
 declare interface DebugProcessInfo extends ProcessInfo {
