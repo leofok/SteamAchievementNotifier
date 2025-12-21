@@ -1,4 +1,5 @@
 import { app, BrowserWindow, ipcMain, nativeTheme } from "electron"
+import fs from "fs"
 import path from "path"
 import { sanhelper, __root } from "./sanhelper"
 import { log } from "./log"
@@ -22,11 +23,18 @@ export const main = async (starttime: string) => {
     
     const createwin = async () => {
         try {
+            // Check Steam is installed
             const steampath = await sanhelper.steampath
-            if (!steampath) throw new Error()
+            if (!steampath) throw new Error(`Steam installation path not found. Please install Steam before running Steam Achievement Notifier`)
             log.write("INFO",`Steam installation path: ${steampath}`)
+        
+            // Check "appinfo.vdf" is present in Steam's installation directory
+            const appinfovdf = path.join(sanhelper.steampath,"appcache","appinfo.vdf").replace(/\\/g,"/")
+            if (!fs.existsSync(appinfovdf)) throw new Error(`"${appinfovdf}" not found in Steam installation directory. Please ensure the latest version of Steam is installed before running Steam Achievement Notifier`)
+            log.write("INFO",`"${appinfovdf}" present in Steam installation directory`)
         } catch (err) {
-            throw new Error(`Steam installation path not found. Please install Steam before running Steam Achievement Notifier`)
+            if (err instanceof Error && err.message) throw err
+            throw new Error(`Unable to start Steam Achievement Notifier: ${err}`)
         }
 
         if (config === undefined) throw new Error(`"${path.join(sanhelper.appdata,"config.json")}" does not exist`)

@@ -74,11 +74,13 @@ export namespace utils {
   export function uiLanguage(): string
 }
 export namespace processes {
+  export function getAppinfo(steampath: string): any
+  export function getAppinfoForAppid(appid: number, steampath: string): any
   export interface ProcessInfo {
     pid: number
     exe: string
   }
-  export function getGameProcesses(appid: number, linkedgame?: string | undefined | null): Array<ProcessInfo>
+  export function getGameProcesses(appid: number, steampath: string, linkedgame?: string | undefined | null): Array<ProcessInfo>
   export function isProcessRunning(pid: number): boolean
   export function getWindowTitle(pid: number): string
 }
