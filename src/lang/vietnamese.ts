@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Không tìm thấy file EXE của trò chơi!",
         noexesub: "Nhấp vào đây để biết thêm thông tin",
         noexedialogsub: [
-            `Steam Achievement Notifier không thể tự động tìm thấy file thực thi của trò chơi này. Vị trí của file thực thi trò chơi là cần thiết để "phát hành" trò chơi`,
-            `Để phát hành trò chơi thủ công, <i>nhấp chuột phải</i> vào <span class="hl">biểu tượng khay hệ thống</span> > <span class="hl">Tùy chọn</span> > <span class="hl">Phát hành trò chơi</span>, hoặc sử dụng <span class="hl">Phím tắt phát hành trò chơi</span>`,
-            `Ngoài ra, nhấp vào nút <span class="hl">Link</span> bên dưới để thêm file thực thi liên kết với cửa sổ đang tập trung vào menu <span class="hl">Trò chơi liên kết</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>Chuyện gì xảy ra khi tôi nhấp vào nút Link?</u></span>`
+            `Steam Achievement Notifier không thể tự động tìm thấy tệp thực thi của trò chơi này. Vị trí của tệp thực thi của trò chơi là bắt buộc để có thể "giải phóng" trò chơi sau khi đóng`,
+            `Để giải phóng trò chơi thủ công sau khi đóng, hãy <i>nhấp chuột phải</i> vào <span class="hl">biểu tượng Khay Hệ thống</span> > <span class="hl">Tùy chọn</span> > <span class="hl">Giải phóng Trò chơi</span>, hoặc sử dụng <span class="hl">Phím tắt Giải phóng Trò chơi</span>`,
+            `Ngoài ra, hãy nhấp vào nút <span class="hl">Thêm</span> bên dưới để thêm tệp thực thi được liên kết với bất kỳ cửa sổ nào đang được lấy nét vào <span class="hl">Cài đặt</span> > <span class="hl">Trò chơi</span> > <span class="hl">Trò chơi Giải phóng Tự động</span>`,
         ],
-        linkgamehelp: "Liên kết trò chơi qua cửa sổ",
+        autorelease: "Giải phóng Trò chơi Tự động",
+        autoreleasesub: [
+            `Nếu Steam vẫn hiển thị một trò chơi là <i>Đang chơi</i> sau khi cửa sổ trò chơi đã đóng, hãy thử thêm một mục mới vào <span class="hl">Trò chơi Giải phóng Tự động</span>`,
+            `Để thực hiện việc này cho trò chơi hiện tại, hãy nhấp vào nút <span class="hl">Thêm</span> bên dưới để thêm tệp thực thi được liên kết với bất kỳ cửa sổ nào đang được lấy nét vào <span class="hl">Cài đặt</span> > <span class="hl">Trò chơi</span> > <span class="hl">Trò chơi Giải phóng Tự động</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Điều gì xảy ra khi tôi nhấp vào nút Thêm?</u></span>`,
+        linkgamehelp: "Thêm Mục qua Lấy nét",
         linkgamehelpsub: [
-            `Nhấp vào nút <span class="hl">Link</span> sẽ tự động thêm một mục mới vào menu <span class="hl">Cài đặt</span> > <span class="hl">Trò chơi liên kết</span>, sử dụng thông tin từ cửa sổ đang tập trung.`,
-            `Sau khi nhấp vào nút <span class="hl">Link</span>, một bộ đếm thời gian 5 giây sẽ bắt đầu`,
-            `Trước khi bộ đếm thời gian kết thúc, hãy tập trung vào cửa sổ trò chơi`,
-            `Khi bộ đếm thời gian kết thúc, một mục mới cho <span class="hl">AppID</span> hiện tại sẽ được thêm vào menu <span class="hl">Cài đặt</span> > <span class="hl">Trò chơi liên kết</span>, sử dụng file thực thi của cửa sổ đang tập trung`,
-            `Nếu bạn cần thử lại, hãy xóa mục qua <span class="hl">Cài đặt</span> > <span class="hl">Trò chơi liên kết</span> bằng cách nhấp vào nút <span id="linkhelpunlink"></span>`
+            `Nhấp vào nút <span class="hl">Thêm</span> sẽ tự động thêm một mục mới vào <span class="hl">Cài đặt</span> > <span class="hl">Trò chơi</span> > <span class="hl">Trò chơi Giải phóng Tự động</span>, sử dụng thông tin từ cửa sổ hiện đang được lấy nét.`,
+            `Sau khi nhấp vào nút <span class="hl">Thêm</span>, bộ đếm thời gian 5 giây sẽ bắt đầu`,
+            `Trước khi bộ đếm kết thúc, hãy chuyển tiêu điểm sang cửa sổ trò chơi`,
+            `Khi bộ đếm kết thúc, một mục mới cho <span class="hl">AppID</span> hiện tại sẽ được thêm vào <span class="hl">Cài đặt</span> > <span class="hl">Trò chơi</span> > <span class="hl">Trò chơi Giải phóng Tự động</span>, sử dụng tệp thực thi được liên kết với cửa sổ đang được lấy nét`,
+            `Các lần thử mới sẽ ghi đè lên các mục hiện có, hoặc mục đó có thể được xóa thông qua <span class="hl">Cài đặt</span> > <span class="hl">Trò chơi</span> > <span class="hl">Trò chơi Giải phóng Tự động</span> bằng cách nhấp vào nút <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Không thể liên kết cửa sổ",
-        addlinkfailedsub: `Nhấp vào nút <span class="hl">Link</span> để thử lại`,
+        addlinkfailed: "Không thể thêm cửa sổ",
+        addlinkfailedsub: `Nhấp vào nút <span class="hl">Thêm</span> để thử lại`,
         webhookunlockmsg: "$user đã mở khóa một thành tựu",
         webhookunlockmsgplat: "$user đã mở khóa tất cả thành tích",
         webhookingame: "trong $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Trò chơi",
             content: {
-                linkedgames: "Trò chơi Liên kết",
+                linkedgames: "Trò chơi Giải phóng Tự động",
                 themeswitch: "Tự động chuyển đổi chủ đề",
                 exclusionlist: "Danh sách Loại trừ",
                 inclusionlist: "Danh sách bao gồm",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Vị trí trên màn hình",
                 usecustompos: "Sử dụng vị trí tùy chỉnh",
                 setcustompos: "Đặt",
+                copycustompos: "Áp dụng cho tất cả",
                 resetcustompos: "Đặt lại"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Buộc tất cả cửa sổ ứng dụng hiển thị theo hồ sơ màu đã chọn<br><br><span class="ttdesc">Cần khởi động lại ứng dụng</span>`,
         pollrate: `Đặt khoảng thời gian cập nhật cho dữ liệu thành tựu trong khi chơi game<br><br><span class="ttdesc">Hiệu suất có thể tăng/giảm tùy thuộc vào giá trị hoặc phần cứng của hệ thống. Các giá trị cao thường dẫn đến tải hệ thống thấp hơn, nhưng có thể gây trễ trong thông báo</span>`,
         initdelay: `Đặt thời gian chờ giữa khi phát hiện <span class="hl">AppID</span> hiện tại và khi bắt đầu theo dõi quy trình/thành tựu<br><br><span class="ttdesc">Tăng giá trị này có thể ngăn ngừa những tình huống khi Steam không thể khởi động trò chơi hiện tại (do việc khởi tạo ứng dụng trong Steamworks trước khi trò chơi được khởi động)</span><br><br><span class="ttdesc">Hoặc có thể sử dụng giá trị này để tránh phát hiện không chính xác các quy trình khởi động trước trò chơi</span>`,
-        releasedelay: `Thiết lập thời gian chờ cho quá trình nền để khởi động lại sau khi trò chơi hiện tại đã được phát hành. Ảnh hưởng đến cả việc theo dõi quá trình tự động và các trò chơi được liên kết thủ công.<br><br><span class="ttdesc">Cung cấp một khoảng thời gian lâu hơn để hoàn toàn giải phóng Steamworks khỏi ứng dụng. Tăng giá trị này có thể ngăn ngừa hành vi bất thường, chẳng hạn như theo dõi một trò chơi trước đó đã đóng</span>`,
-        maxretries: `Thiết lập số lần thử tối đa để liên kết một quá trình đang chạy với một AppID đã phát hiện. Ảnh hưởng đến cả việc theo dõi quá trình tự động và các trò chơi được liên kết thủ công.<br><br><span class="ttdesc">Các thử nghiệm liên kết được thực hiện mỗi giây một lần. Nếu một quá trình đang chạy không được liên kết với AppID hiện tại sau số lần thử này, một quá trình không hợp lệ sẽ được trả về. Trong trường hợp như vậy, trò chơi sẽ cần được phát hành thủ công thông qua Khay Hệ thống > Tùy chọn > Phát hành Trò chơi</span>`,
+        releasedelay: `Thiết lập thời gian mà tiến trình Worker chạy nền sẽ chờ trước khi khởi động lại sau khi trò chơi hiện tại đã được giải phóng. Ảnh hưởng đến cả việc theo dõi tiến trình tự động và Trò chơi Giải phóng Tự động<br><br><span class="ttdesc">Cho phép khoảng thời gian dài hơn để Steamworks được giải phóng hoàn toàn khỏi ứng dụng. Việc tăng giá trị này có thể ngăn chặn các hành vi bất thường, chẳng hạn như tiếp tục theo dõi một trò chơi đã đóng trước đó</span>`,
+        maxretries: `Thiết lập số lần thử lại tối đa để liên kết một tiến trình đang chạy với AppID được phát hiện. Ảnh hưởng đến cả việc theo dõi tiến trình tự động và Trò chơi Giải phóng Tự động<br><br><span class="ttdesc">Các lần thử lại được thực hiện mỗi giây một lần. Nếu một tiến trình đang chạy không được liên kết với AppID hiện tại sau số lần thử này, một tiến trình không hợp lệ sẽ được trả về. Trong những trường hợp như vậy, trò chơi sẽ cần được giải phóng thủ công thông qua Khay Hệ thống > Tùy chọn > Giải phóng Trò chơi</span>`,
         debug: "Mở Bảng Gỡ lỗi, hiển thị thông tin theo dõi quy trình chi tiết",
         userust: "Sử dụng chức năng thay thế dựa trên Rust để kiểm tra xem các quy trình trò chơi đã được theo dõi có đang chạy trên hệ thống không. Khi không được đánh dấu, kiểm tra quy trình mặc định dựa trên NodeJS sẽ được sử dụng thay vào đó.",
         notifydebug: "Tạo một cửa sổ DevTools cho tất cả các thông báo. Hữu ích để gỡ lỗi/viết mã sửa lỗi vấn đề thông báo",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Đặt vị trí trên màn hình của thông báo",
         usecustompos: "Bật tùy chỉnh vị trí cho thông báo",
         setcustompos: "Đặt vị trí tùy chỉnh cho thông báo",
+        copycustompos: "Áp dụng vị trí tùy chỉnh cho tất cả các loại thông báo khác",
         resetcustompos: "Đặt lại vị trí của thông báo về vị trí tùy chỉnh mặc định",
         updatetheme: "Cập nhật Chủ đề hiện tại với các tùy chọn tùy chỉnh đã chọn",
         savetheme: "Lưu tất cả các tùy chọn tùy chỉnh cấu hình như một Chủ đề mới",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Chọn màu cho phần văn bản thứ ba",
         exportachdata: `Xuất dữ liệu thành tích vào tệp JSON khi một thành tích được mở khóa<br><br><span class="ttdesc">Khi bật, <span class="ttcode">achdata.json</span> sẽ được xuất ra tại:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Điều chỉnh khoảng cách dọc giữa các phần tử văn bản trong thông báo",
-        ssmode: `Cài đặt xem có chụp toàn bộ màn hình hay chỉ cửa sổ trò chơi hiện tại<span style="color: red;">*</span> trong các ảnh chụp màn hình<br><br><span class="ttdesc">Nếu không thể tìm thấy <span class="hl">tệp thực thi</span> của trò chơi hiện tại (<i>dù qua <span class="hl">theo dõi tiến trình tự động</span> hay thêm nó như một <span class="hl">Trò chơi Liên kết</span></i>), tùy chọn này sẽ mặc định về chế độ "Màn hình"</span>` ,
+        ssmode: `Thiết lập việc chụp toàn bộ màn hình hay cửa sổ trò chơi hiện tại<span style="color: red;">*</span> trong ảnh chụp màn hình<br><br><span class="ttdesc">Nếu không thể tìm thấy <span class="hl">tệp thực thi</span> của trò chơi hiện tại (<i>dù là thông qua <span class="hl">theo dõi tiến trình tự động</span> hay khi được thêm làm một mục <span class="hl">Trò chơi Giải phóng Tự động</span></i>), tùy chọn này sẽ mặc định sử dụng chế độ "Màn hình"</span>`,
         replaynotify: "Phát lại thông báo thành tích cuối cùng",
         replaynotifyshortcut: "Phát lại thông báo thành tích cuối cùng bằng cách sử dụng phím tắt được chỉ định",
         replaynotifyempty: `<br><br><span class="ttdesc">Hàng đợi phát lại trống. Mở khóa một thành tích để phát lại thông báo</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Đường dẫn thực thi",
             managesub: [
-                `Liên kết thủ công <span class="hl">tệp thực thi</span> của một trò chơi với một <span class="hl">AppID</span> cụ thể, hoặc <span class="hl">hủy liên kết</span> một liên kết hiện có`,
-                `Steam Achievement Notifier sẽ không còn sử dụng <span class="hl">theo dõi quy trình tự động</span> cho bất kỳ <span class="hl">trò chơi liên kết</span> nào nữa - thay vào đó, tệp thực thi đã chỉ định sẽ được theo dõi mỗi khi <span class="hl">AppID</span> tương ứng được phát hiện`,
-                `<span class="hl" id="appidhelp"><u>Làm thế nào để tìm AppID của một trò chơi Steam?</u></span>`
+                `Nếu Steam vẫn hiển thị một trò chơi là <i>Đang chơi</i> sau khi cửa sổ trò chơi đã đóng, hãy thử thêm một mục mới vào <span class="hl">Trò chơi Giải phóng Tự động</span>`,
+                `Thêm <span class="hl">AppID</span> của một trò chơi cụ thể cùng với <span class="hl">tệp thực thi trò chơi</span> dự kiến của nó, hoặc <span class="hl">xóa</span> một mục hiện có`,
+                `Các mục mới cũng có thể được thêm bằng cách <i>nhấp chuột phải</i> vào <span class="hl">biểu tượng Khay Hệ thống</span> > <span class="hl">Giải phóng Trò chơi Tự động</span> sau khi một trò chơi đã được phát hiện`,
+                `<span class="hl help" id="appidhelp"><u>Làm thế nào để tìm AppID của một trò chơi Steam?</u></span>`
             ],
-            linknew: "Trò chơi Liên kết Mới",
+            linknew: "Mục mới",
             linknewsub: [
-                `Tạo liên kết mới giữa <span class="hl">tệp thực thi của trò chơi</span> và <span class="hl">AppID</span> tương ứng`,
-                `Sau khi tạo, liên kết có thể được <span class="hl">hủy liên kết</span> thông qua hộp thoại <span class="hl">Quản lý Trò chơi Liên kết</span> trước đó`
+                `Thêm <span class="hl">AppID</span> của một trò chơi mới cùng với <span class="hl">tệp thực thi trò chơi</span> dự kiến của nó`,
+                `Sau khi thêm, các mục có thể được <span class="hl">xóa</span> thông qua menu <span class="hl">Trò chơi Giải phóng Tự động</span> trước đó`
             ],
-            linkedit: "Chỉnh sửa Trò chơi đã Liên kết",
+            linkedit: "Chỉnh sửa Mục",
             linkeditsub: [
-                `Chỉnh sửa liên kết hiện có giữa một <span class="hl">tệp thực thi của trò chơi</span> và <span class="hl">AppID</span> liên kết`,
-                `Sau khi được tạo, các liên kết có thể được <span class="hl">hủy liên kết</span> thông qua hộp thoại <span class="hl">Quản lý Trò chơi đã Liên kết</span> trước đó`
+                `Chỉnh sửa <span class="hl">AppID</span> của một trò chơi hiện có cùng với <span class="hl">tệp thực thi trò chơi</span> dự kiến của nó`,
+                `Sau khi thêm, các mục có thể được <span class="hl">xóa</span> thông qua menu <span class="hl">Trò chơi Giải phóng Tự động</span> trước đó`
             ],
-            link: "Liên kết",
+            link: "Thêm"
         }
     },
     exclusions: {

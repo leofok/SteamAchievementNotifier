@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Arquivo EXE do jogo não encontrado!",
         noexesub: "Clique aqui para mais informações",
         noexedialogsub: [
-            `O Steam Achievement Notifier não conseguiu localizar automaticamente o arquivo executável deste jogo. A localização do arquivo executável do jogo é necessária para "liberar" o jogo`,
-            `Para liberar o jogo manualmente, <i>clique com o botão direito</i> no <span class="hl">ícone da bandeja do sistema</span> > <span class="hl">Opções</span> > <span class="hl">Liberar Jogo</span>, ou use o <span class="hl">Atalho para Liberar Jogo</span>`,
-            `Alternativamente, clique no botão <span class="hl">Link</span> abaixo para adicionar o arquivo executável associado à janela em foco ao menu <span class="hl">Jogos Vinculados</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>O que acontece quando eu clico no botão Link?</u></span>`
+            `O Steam Achievement Notifier não conseguiu localizar automaticamente o ficheiro executável deste jogo. A localização do ficheiro executável do jogo é necessária para poder "libertar" o jogo após o seu encerramento`,
+            `Para libertar manualmente o jogo após o encerramento, <i>clique com o botão direito</i> no <span class="hl">ícone da Área de Notificação</span> > <span class="hl">Opções</span> > <span class="hl">Libertar jogo</span>, ou utilize o <span class="hl">Atalho para libertar jogo</span>`,
+            `Em alternativa, clique no botão <span class="hl">Adicionar</span> abaixo para adicionar o ficheiro executável associado a qualquer janela atualmente em foco em <span class="hl">Definições</span> > <span class="hl">Jogos</span> > <span class="hl">Jogos com libertação automática</span>`,
         ],
-        linkgamehelp: "Linkar Jogo via Janela",
+        autorelease: "Libertação automática do jogo",
+        autoreleasesub: [
+            `Se o Steam continuar a mostrar um jogo como <i>A jogar</i> após o encerramento da janela do jogo, tente adicionar uma nova entrada em <span class="hl">Jogos com libertação automática</span>`,
+            `Para fazer isto para o jogo atual, clique no botão <span class="hl">Adicionar</span> abaixo para adicionar o ficheiro executável associado a qualquer janela atualmente em foco em <span class="hl">Definições</span> > <span class="hl">Jogos</span> > <span class="hl">Jogos com libertação automática</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>O que acontece quando clico no botão Adicionar?</u></span>`,
+        linkgamehelp: "Adicionar entrada via foco",
         linkgamehelpsub: [
-            `Ao clicar no botão <span class="hl">Link</span>, uma nova entrada será adicionada automaticamente ao menu <span class="hl">Configurações</span> > <span class="hl">Jogos Vinculados</span>, usando informações da janela em foco.`,
-            `Após clicar no botão <span class="hl">Link</span>, um timer de 5 segundos começará`,
-            `Antes que o timer termine, foque na janela do jogo`,
-            `Quando o timer terminar, uma nova entrada para o <span class="hl">AppID</span> atual será adicionada ao menu <span class="hl">Configurações</span> > <span class="hl">Jogos Vinculados</span>, usando o arquivo executável associado à janela em foco`,
-            `Se precisar tentar novamente, remova a entrada via <span class="hl">Configurações</span> > <span class="hl">Jogos Vinculados</span> clicando no botão <span id="linkhelpunlink"></span>`
+            `Ao clicar no botão <span class="hl">Adicionar</span>, será automaticamente adicionada uma nova entrada em <span class="hl">Definições</span> > <span class="hl">Jogos</span> > <span class="hl">Jogos com libertação automática</span>, utilizando informações da janela atualmente em foco.`,
+            `Após clicar no botão <span class="hl">Adicionar</span>, será iniciado um temporizador de 5 segundos`,
+            `Antes de o temporizador terminar, coloque o foco na janela do jogo`,
+            `Quando o temporizador terminar, será adicionada uma nova entrada para o <span class="hl">AppID</span> atual em <span class="hl">Definições</span> > <span class="hl">Jogos</span> > <span class="hl">Jogos com libertação automática</span>, utilizando o ficheiro executável associado à janela em foco`,
+            `Novas tentativas irão substituir entradas existentes, ou a entrada pode ser removida através de <span class="hl">Definições</span> > <span class="hl">Jogos</span> > <span class="hl">Jogos com libertação automática</span> clicando no botão <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Não foi possível vincular a janela",
-        addlinkfailedsub: `Clique no botão <span class="hl">Link</span> para tentar novamente`,
+        addlinkfailed: "Não foi possível adicionar a janela",
+        addlinkfailedsub: `Clique no botão <span class="hl">Adicionar</span> para tentar novamente`,
         webhookunlockmsg: "$user desbloqueou uma conquista",
         webhookunlockmsgplat: "$user desbloqueou todas as conquistas",
         webhookingame: "em $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Jogos",
             content: {
-                linkedgames: "Jogos Associados",
+                linkedgames: "Jogos com libertação automática",
                 themeswitch: "Troca automática de temas",
                 exclusionlist: "Lista de Exclusão",
                 inclusionlist: "Lista de Inclusão",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Posição na Tela",
                 usecustompos: "Usar Posição Personalizada",
                 setcustompos: "Definir",
+                copycustompos: "Aplicar a Todos",
                 resetcustompos: "Redefinir"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Forçar todas as janelas do aplicativo a renderizar usando o perfil de cor selecionado<br><br><span class="ttdesc">Requer reinício do aplicativo</span>`,
         pollrate: `Defina o intervalo de atualização para dados de conquistas durante o jogo<br><br><span class="ttdesc">O desempenho pode aumentar/diminuir dependendo do valor ou dos recursos de hardware do sistema. Valores mais altos normalmente resultam em uma carga de sistema mais baixa, mas podem atrasar as notificações</span>`,
         initdelay: `Ustaw opóźnienie między wykryciem bieżącego <span class="hl">AppID</span> a rozpoczęciem śledzenia procesów/osiągnięć<br><br><span class="ttdesc">Zwiększenie tej wartości może zapobiec sytuacjom, w których Steam nie może uruchomić aktualnej gry (ze względu na inicjalizację aplikacji w Steamworks przed uruchomieniem gry)</span><br><br><span class="ttdesc">Alternatywnie, zwiększenie tej wartości może być również używane do pominięcia nieprawidłowego wykrywania procesów przed uruchomieniem gry</span>`,
-        releasedelay: `Define quanto tempo o processo em segundo plano espera para reiniciar após o jogo atual ser lançado. Afeta tanto o rastreamento automático de processos quanto os jogos vinculados manualmente.<br><br><span class="ttdesc">Permite um período maior para que o Steamworks seja totalmente liberado do aplicativo. Aumentar esse valor pode prevenir comportamentos incomuns, como rastrear um jogo previamente fechado</span>`,
-        maxretries: `Define o número máximo de tentativas para vincular um processo em execução a um AppID detectado. Afeta tanto o rastreamento automático de processos quanto os jogos vinculados manualmente.<br><br><span class="ttdesc">As tentativas de vinculação são realizadas uma vez a cada segundo. Se um processo em execução não estiver vinculado ao AppID atual após esse número de tentativas, um processo inválido será retornado. Nessas situações, o jogo precisará ser liberado manualmente por meio da Bandeja do Sistema > Opções > Liberar Jogo</span>`,
+        releasedelay: `Defina quanto tempo o processo Worker em segundo plano aguarda antes de reiniciar após o jogo atual ser libertado. Afeta tanto o rastreio automático de processos como os Jogos com libertação automática<br><br><span class="ttdesc">Permite um intervalo de tempo maior para que o Steamworks seja totalmente libertado da aplicação. Aumentar este valor pode evitar comportamentos invulgares, como o rastreio de um jogo anteriormente encerrado</span>`,
+        maxretries: `Defina o número máximo de tentativas para associar um processo em execução a um AppID detetado. Afeta tanto o rastreio automático de processos como os Jogos com libertação automática<br><br><span class="ttdesc">As tentativas são efetuadas uma vez por segundo. Se um processo em execução não for associado ao AppID atual após este número de tentativas, será devolvido um processo inválido. Nesses casos, o jogo terá de ser libertado manualmente através de Área de Notificação > Opções > Libertar jogo</span>`,
         debug: "Abra o Painel de Depuração, que exibe informações detalhadas de rastreamento de processos",
         userust: "Use uma função alternativa baseada em Rust para verificar se os processos de jogo rastreados estão atualmente em execução no sistema. Quando não marcado, o controle de processo padrão baseado em NodeJS será usado em vez disso.",
         notifydebug: "Criar uma janela DevTools para todas as notificações. Útil para depurar/solucionar problemas de notificação",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Definir a posição na tela da notificação",
         usecustompos: "Ativar o posicionamento personalizado para a notificação",
         setcustompos: "Definir a posição personalizada para a notificação",
+        copycustompos: "Aplicar a posição personalizada a todos os outros tipos de notificação",
         resetcustompos: "Redefinir a posição da notificação para a posição personalizada padrão",
         updatetheme: "Atualizar o tema atual com as opções de personalização selecionadas",
         savetheme: "Salvar todas as opções de personalização configuradas como um novo tema",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Definir a cor do terceiro elemento de texto",
         exportachdata: `Exportar dados de conquista para um arquivo JSON quando uma conquista for desbloqueada<br><br><span class="ttdesc">Quando ativado, <span class="ttcode">achdata.json</span> será exportado para:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Ajusta o espaçamento vertical entre os elementos de texto na notificação",
-        ssmode: `Define se a captura de tela deve pegar toda a tela ou apenas a janela do jogo atual<span style="color: red;">*</span><br><br><span class="ttdesc">Se o <span class="hl">arquivo executável</span> do jogo atual não puder ser encontrado (<i>seja por meio do <span class="hl">rastreamento automático de processos</span> ou adicionando-o como um <span class="hl">Jogo Vinculado</span></i>), esta opção será definida como "Tela" por padrão</span>` ,
+        ssmode: `Defina se as capturas de ecrã devem capturar o ecrã inteiro ou a janela do jogo atual<span style="color: red;">*</span><br><br><span class="ttdesc">Se o <span class="hl">ficheiro executável</span> do jogo atual não puder ser localizado (<i>quer através do <span class="hl">rastreio automático de processos</span>, quer quando adicionado como uma entrada de <span class="hl">Jogos com libertação automática</span></i>), esta opção será predefinida para o modo "Ecrã"</span>`,
         replaynotify: "Repetir a última notificação de conquista",
         replaynotifyshortcut: "Repetir a última notificação de conquista usando o atalho de teclado especificado",
         replaynotifyempty: `<br><br><span class="ttdesc">A fila de repetição está vazia. Desbloqueie uma conquista para repetir uma notificação</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Caminho do Executável",
             managesub: [
-                `Associe manualmente o <span class="hl">arquivo executável</span> de um jogo a um <span class="hl">AppID</span> específico, ou <span class="hl">desassocie</span> um existente`,
-                `O Steam Achievement Notifier não usará mais o <span class="hl">rastreamento automático de processos</span> para nenhum dos <span class="hl">jogos associados</span> - em vez disso, o <span class="hl">arquivo executável</span> especificado será rastreado sempre que o <span class="hl">AppID</span> associado for detectado`,
-                `<span class="hl" id="appidhelp"><u>Como encontrar o AppID de um jogo Steam?</u></span>`
+                `Se o Steam continuar a mostrar um jogo como <i>A jogar</i> após o encerramento da janela do jogo, tente adicionar uma nova entrada em <span class="hl">Jogos com libertação automática</span>`,
+                `Adicione o <span class="hl">AppID</span> de um jogo específico juntamente com o respetivo <span class="hl">ficheiro executável do jogo</span> esperado, ou <span class="hl">remova</span> uma entrada existente`,
+                `Novas entradas também podem ser adicionadas ao <i>clicar com o botão direito</i> no <span class="hl">ícone da Área de Notificação</span> > <span class="hl">Libertação automática do jogo</span> depois de um jogo ser detetado`,
+                `<span class="hl help" id="appidhelp"><u>Como encontro o AppID de um jogo Steam?</u></span>`
             ],
-            linknew: "Novo Jogo Associado",
+            linknew: "Nova entrada",
             linknewsub: [
-                `Crie um novo link entre um <span class="hl">arquivo executável do jogo</span> e o <span class="hl">AppID</span> associado`,
-                `Após criado, os links podem ser <span class="hl">desassociados</span> através da janela de <span class="hl">Gerenciar Jogos Associados</span>`
+                `Adicione o <span class="hl">AppID</span> de um novo jogo juntamente com o respetivo <span class="hl">ficheiro executável do jogo</span> esperado`,
+                `Depois de adicionadas, as entradas podem ser <span class="hl">removidas</span> através do menu anterior <span class="hl">Jogos com libertação automática</span>`
             ],
-            linkedit: "Editar Jogo Ligado",
+            linkedit: "Editar entrada",
             linkeditsub: [
-                `Edite uma ligação existente entre um <span class="hl">executável do jogo</span> e o <span class="hl">AppID</span> associado`,
-                `Depois de criadas, as ligações podem ser <span class="hl">desligadas</span> através da janela anterior <span class="hl">Gerir Jogos Ligados</span>`
+                `Edite o <span class="hl">AppID</span> de um jogo existente juntamente com o respetivo <span class="hl">ficheiro executável do jogo</span> esperado`,
+                `Depois de adicionadas, as entradas podem ser <span class="hl">removidas</span> através do menu anterior <span class="hl">Jogos com libertação automática</span>`
             ],
-            link: "Associar",
+            link: "Adicionar"
         }
     },
     exclusions: {

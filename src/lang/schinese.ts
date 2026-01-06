@@ -70,21 +70,26 @@ export const translations = {
         noexe: "未找到游戏的 EXE 文件！",
         noexesub: "点击这里获取更多信息",
         noexedialogsub: [
-            `Steam Achievement Notifier 无法自动找到此游戏的可执行文件。游戏的可执行文件位置是释放游戏所必需的`,
-            `要手动释放游戏，<i>右键点击</i> <span class="hl">系统托盘图标</span> > <span class="hl">选项</span> > <span class="hl">释放游戏</span>，或使用 <span class="hl">释放游戏快捷键</span>`,
-            `另外，点击下面的 <span class="hl">链接</span> 按钮，将焦点窗口的相关可执行文件添加到 <span class="hl">已链接游戏</span> 菜单中`,
-            `<span class="hl help" id="linkgamehelp"><u>点击链接按钮会发生什么？</u></span>`
+            `Steam Achievement Notifier 无法自动定位此游戏的可执行文件。要在游戏关闭后“释放”游戏，需要提供游戏可执行文件的位置`,
+            `要在游戏关闭后手动释放游戏，请<i>右键单击</i><span class="hl">系统托盘图标</span> > <span class="hl">选项</span> > <span class="hl">释放游戏</span>，或使用 <span class="hl">释放游戏快捷键</span>`,
+            `或者，点击下方的 <span class="hl">添加</span> 按钮，将当前获得焦点的窗口所关联的可执行文件添加到 <span class="hl">设置</span> > <span class="hl">游戏</span> > <span class="hl">自动释放游戏</span>`,
         ],
-        linkgamehelp: "通过窗口链接游戏",
+        autorelease: "自动释放游戏",
+        autoreleasesub: [
+            `如果在游戏窗口关闭后 Steam 仍显示游戏为<i>正在游玩</i>，请尝试在 <span class="hl">自动释放游戏</span> 中添加新条目`,
+            `要对当前游戏执行此操作，请点击下方的 <span class="hl">添加</span> 按钮，将当前获得焦点的窗口所关联的可执行文件添加到 <span class="hl">设置</span> > <span class="hl">游戏</span> > <span class="hl">自动释放游戏</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>点击“添加”按钮会发生什么？</u></span>`,
+        linkgamehelp: "通过焦点添加条目",
         linkgamehelpsub: [
-            `点击 <span class="hl">链接</span> 按钮将自动将一个新条目添加到 <span class="hl">设置</span> > <span class="hl">已链接游戏</span> 菜单中，使用当前焦点窗口的信息。`,
-            `点击 <span class="hl">链接</span> 按钮后，会启动一个 5 秒钟的计时器`,
-            `在计时器结束前，聚焦到游戏窗口`,
-            `计时器结束后，当前 <span class="hl">AppID</span> 的新条目将被添加到 <span class="hl">设置</span> > <span class="hl">已链接游戏</span> 菜单中，使用焦点窗口的可执行文件`,
-            `如果需要重试，可以通过 <span class="hl">设置</span> > <span class="hl">已链接游戏</span> 删除该条目，点击 <span id="linkhelpunlink"></span> 按钮`
+            `点击 <span class="hl">添加</span> 按钮后，将使用当前获得焦点的窗口的信息，自动在 <span class="hl">设置</span> > <span class="hl">游戏</span> > <span class="hl">自动释放游戏</span> 中添加一个新条目。`,
+            `点击 <span class="hl">添加</span> 按钮后，将开始一个 5 秒的计时器`,
+            `在计时器结束前，请将焦点切换到游戏窗口`,
+            `计时器结束后，将使用获得焦点窗口所关联的可执行文件，在 <span class="hl">设置</span> > <span class="hl">游戏</span> > <span class="hl">自动释放游戏</span> 中为当前 <span class="hl">AppID</span> 添加一个新条目`,
+            `新的尝试将覆盖现有条目，或者可以通过 <span class="hl">设置</span> > <span class="hl">游戏</span> > <span class="hl">自动释放游戏</span> 点击 <span id="linkhelpunlink"></span> 按钮来移除条目`
         ],
-        addlinkfailed: "无法链接窗口",
-        addlinkfailedsub: `点击 <span class="hl">链接</span> 按钮重试`,
+        addlinkfailed: "无法添加窗口",
+        addlinkfailedsub: `点击 <span class="hl">添加</span> 按钮以重试`,
         webhookunlockmsg: "$user 解锁了一个成就",
         webhookunlockmsgplat: "$user 解锁了所有成就",
         webhookingame: "在 $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "游戏",
             content: {
-                linkedgames: "已连接的游戏",
+                linkedgames: "自动释放游戏",
                 themeswitch: "自动切换主题",
                 exclusionlist: "排除列表",
                 inclusionlist: "包含列表",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "屏幕位置",
                 usecustompos: "使用自定义位置",
                 setcustompos: "设置",
+                copycustompos: "应用到全部",
                 resetcustompos: "重置"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `强制所有应用窗口使用所选的颜色配置文件<br><br><span class="ttdesc">需要重启应用程序</span>`,
         pollrate: `设置游戏过程中成就数据的更新间隔<br><br><span class="ttdesc">性能可能会因系统值或硬件而增加/减少。更高的值通常会导致较低的系统负载，但可能会导致通知延迟</span>`,
         initdelay: `设置当前 <span class="hl">AppID</span> 检测和进程/成就跟踪开始之间的延迟<br><br><span class="ttdesc">增加此值可以避免 Steam 无法启动当前游戏的情况（因为在游戏启动之前 Steamworks 初始化应用程序）</span><br><br><span class="ttdesc">另外，增加此值也可以用于绕过游戏前启动进程错误检测</span>`,
-        releasedelay: `设置当前游戏发布后，后台进程等待重新启动的时间。影响自动进程跟踪和手动链接的游戏。<br><br><span class="ttdesc">为完全释放 Steamworks 应用提供更长的时间间隔。增加此值可防止异常行为，如跟踪先前关闭的游戏</span>`,
-        maxretries: `设置将运行中的进程链接到检测到的 AppID 的最大重试次数。影响自动进程跟踪和手动链接的游戏。<br><br><span class="ttdesc">链接重试每秒尝试一次。如果运行中的进程在此重试次数后未链接到当前 AppID，则将返回无效进程。在这种情况下，游戏需要通过系统托盘 > 选项 > 释放游戏来手动释放</span>`,
+        releasedelay: `设置当前游戏被释放后，后台 Worker 进程在重新启动前等待的时间。此设置会影响自动进程跟踪和自动释放游戏<br><br><span class="ttdesc">允许为 Steamworks 从应用中完全释放提供更长的时间。增加此值可以防止异常行为，例如跟踪已关闭的游戏</span>`,
+        maxretries: `设置将正在运行的进程关联到检测到的 AppID 的最大重试次数。此设置会影响自动进程跟踪和自动释放游戏<br><br><span class="ttdesc">重试将每秒进行一次。如果在此重试次数内仍未将正在运行的进程关联到当前 AppID，将返回一个无效进程。在这种情况下，需要通过 系统托盘 > 选项 > 释放游戏 手动释放游戏</span>`,
         debug: "打开调试面板，显示详细的进程跟踪信息",
         userust: "使用基于 Rust 的替代功能来检查系统上当前是否正在运行跟踪的游戏进程。未选中时，将使用基于 NodeJS 的默认进程检查。",
         notifydebug: "为所有通知创建一个DevTools窗口。用于调试/故障排除通知问题",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "设置通知在屏幕上的位置",
         usecustompos: "启用通知的自定义定位",
         setcustompos: "设置通知的自定义位置",
+        copycustompos: "将自定义位置应用到所有其他通知类型",
         resetcustompos: "将通知的位置重置为默认的自定义位置",
         updatetheme: "使用选择的自定义选项更新当前主题",
         savetheme: "将所有配置的自定义选项保存为新主题",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "设置第三个文本元素的颜色",
         exportachdata: `当成就解锁时，将成就数据导出到 JSON 文件<br><br><span class="ttdesc">启用时，<span class="ttcode">achdata.json</span> 将导出到:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "调整通知中文本元素之间的垂直间距",
-        ssmode: `设置截图时是捕获整个屏幕还是仅捕获当前游戏窗口<span style="color: red;">*</span><br><br><span class="ttdesc">如果无法找到当前游戏的<span class="hl">可执行文件</span>（<i>无论是通过<span class="hl">自动进程追踪</span>，还是将其添加为<span class="hl">关联游戏</span></i>），此选项将默认为“屏幕”模式</span>` ,
+        ssmode: `设置截图时捕获整个屏幕还是当前游戏窗口<span style="color: red;">*</span><br><br><span class="ttdesc">如果无法定位当前游戏的 <span class="hl">可执行文件</span>（<i>无论是通过 <span class="hl">自动进程跟踪</span>，还是作为 <span class="hl">自动释放游戏</span> 条目添加时</i>），此选项将默认使用“屏幕”模式</span>`,
         replaynotify: "重播最后的成就通知",
         replaynotifyshortcut: "使用指定的快捷键重播最后的成就通知",
         replaynotifyempty: `<br><br><span class="ttdesc">重播队列为空。解锁一个成就以重播通知</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "可执行文件路径",
             managesub: [
-                `手动将游戏的 <span class="hl">可执行文件</span> 关联到特定的 <span class="hl">AppID</span>，或者 <span class="hl">取消关联</span> 现有的关联`,
-                `Steam 成就通知器将不再对任何 <span class="hl">关联游戏</span> 使用 <span class="hl">自动进程跟踪</span> - 取而代之的是，指定的 <span class="hl">可执行文件</span> 将在检测到关联的 <span class="hl">AppID</span> 时被跟踪`,
-                `<span class="hl" id="appidhelp"><u>如何找到 Steam 游戏的 AppID？</u></span>`
+                `如果在游戏窗口关闭后 Steam 仍显示游戏为<i>正在游玩</i>，请尝试在 <span class="hl">自动释放游戏</span> 中添加新条目`,
+                `添加指定游戏的 <span class="hl">AppID</span> 及其预期的 <span class="hl">游戏可执行文件</span>，或 <span class="hl">移除</span> 现有条目`,
+                `在检测到游戏后，也可以通过<i>右键单击</i><span class="hl">系统托盘图标</span> > <span class="hl">自动释放游戏</span> 来添加新条目`,
+                `<span class="hl help" id="appidhelp"><u>如何查找 Steam 游戏的 AppID？</u></span>`
             ],
-            linknew: "新建关联游戏",
+            linknew: "新建条目",
             linknewsub: [
-                `创建游戏的 <span class="hl">可执行文件</span> 与关联的 <span class="hl">AppID</span> 之间的新关联`,
-                `创建后，可以通过先前的 <span class="hl">管理关联游戏</span> 对话框 <span class="hl">取消关联</span>`
+                `添加新游戏的 <span class="hl">AppID</span> 及其预期的 <span class="hl">游戏可执行文件</span>`,
+                `添加后，可通过之前的 <span class="hl">自动释放游戏</span> 菜单 <span class="hl">移除</span> 条目`
             ],
-            linkedit: "编辑关联游戏",
+            linkedit: "编辑条目",
             linkeditsub: [
-                `编辑<span class="hl">游戏可执行文件</span>与相关的<span class="hl">AppID</span>之间的现有链接`,
-                `链接创建后，可以通过之前的<span class="hl">管理关联游戏</span>对话框<span class="hl">取消关联</span>`
+                `编辑现有游戏的 <span class="hl">AppID</span> 及其预期的 <span class="hl">游戏可执行文件</span>`,
+                `添加后，可通过之前的 <span class="hl">自动释放游戏</span> 菜单 <span class="hl">移除</span> 条目`
             ],
-            link: "关联",
+            link: "添加"
         }
     },
     exclusions: {

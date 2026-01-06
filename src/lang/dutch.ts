@@ -70,21 +70,26 @@ export const translations = {
         noexe: "EXE-bestand van het spel niet gevonden!",
         noexesub: "Klik hier voor meer informatie",
         noexedialogsub: [
-            `Steam Achievement Notifier kon het uitvoerbare bestand van dit spel niet automatisch vinden. De locatie van het uitvoerbare bestand is vereist om het spel te "vrijgeven"`,
-            `Om het spel handmatig vrij te geven, <i>klik met de rechtermuisknop</i> op het <span class="hl">Systeemvakpictogram</span> > <span class="hl">Opties</span> > <span class="hl">Spel vrijgeven</span>, of gebruik de <span class="hl">Sneltoets voor Spel Vrijgeven</span>`,
-            `Klik anders op de knop <span class="hl">Koppelen</span> hieronder om het uitvoerbare bestand van het actieve venster toe te voegen aan het menu <span class="hl">Gekoppelde Spellen</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>Wat gebeurt er als ik op de knop Koppelen klik?</u></span>`
+            `Steam Achievement Notifier kon het uitvoerbare bestand van dit spel niet automatisch vinden. De locatie van het uitvoerbare bestand van het spel is vereist om het spel na het sluiten te kunnen "vrijgeven"`,
+            `Om het spel handmatig vrij te geven nadat het is gesloten, <i>klik met de rechtermuisknop</i> op het <span class="hl">System Tray-pictogram</span> > <span class="hl">Opties</span> > <span class="hl">Spel vrijgeven</span>, of gebruik de <span class="hl">Sneltoets voor spel vrijgeven</span>`,
+            `U kunt ook op de knop <span class="hl">Toevoegen</span> hieronder klikken om het uitvoerbare bestand dat is gekoppeld aan een venster met focus toe te voegen aan <span class="hl">Instellingen</span> > <span class="hl">Spellen</span> > <span class="hl">Automatisch vrijgeven van spellen</span>`,
         ],
-        linkgamehelp: "Koppel spel via venster",
+        autorelease: "Automatisch spel vrijgeven",
+        autoreleasesub: [
+            `Als Steam een spel nog steeds als <i>Bezig met spelen</i> weergeeft nadat het spelvenster is gesloten, probeer dan een nieuwe vermelding toe te voegen aan <span class="hl">Automatisch vrijgeven van spellen</span>`,
+            `Om dit voor het huidige spel te doen, klikt u op de knop <span class="hl">Toevoegen</span> hieronder om het uitvoerbare bestand dat is gekoppeld aan een venster met focus toe te voegen aan <span class="hl">Instellingen</span> > <span class="hl">Spellen</span> > <span class="hl">Automatisch vrijgeven van spellen</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Wat gebeurt er wanneer ik op de knop Toevoegen klik?</u></span>`,
+        linkgamehelp: "Vermelding toevoegen via focus",
         linkgamehelpsub: [
-            `Door op de knop <span class="hl">Koppelen</span> te klikken, wordt automatisch een nieuw item toegevoegd aan het menu <span class="hl">Instellingen</span> > <span class="hl">Gekoppelde Spellen</span>, met informatie van het huidige actieve venster.`,
-            `Na het klikken op de knop <span class="hl">Koppelen</span> start een timer van 5 seconden`,
-            `Zorg ervoor dat het spelvenster gefocust is voordat de timer afloopt`,
-            `Wanneer de timer afloopt, wordt een nieuw item voor de huidige <span class="hl">AppID</span> toegevoegd aan het menu <span class="hl">Instellingen</span> > <span class="hl">Gekoppelde Spellen</span>, met het uitvoerbare bestand van het actieve venster`,
-            `Als je het opnieuw wilt proberen, verwijder dan het item via <span class="hl">Instellingen</span> > <span class="hl">Gekoppelde Spellen</span> door op de knop <span id="linkhelpunlink"></span> te klikken`
+            `Door op de knop <span class="hl">Toevoegen</span> te klikken, wordt automatisch een nieuwe vermelding toegevoegd aan <span class="hl">Instellingen</span> > <span class="hl">Spellen</span> > <span class="hl">Automatisch vrijgeven van spellen</span>, met behulp van informatie van het momenteel gefocuste venster.`,
+            `Na het klikken op de knop <span class="hl">Toevoegen</span> start een timer van 5 seconden`,
+            `Voordat de timer afloopt, zet de focus op het spelvenster`,
+            `Zodra de timer is afgelopen, wordt een nieuwe vermelding voor het huidige <span class="hl">AppID</span> toegevoegd aan <span class="hl">Instellingen</span> > <span class="hl">Spellen</span> > <span class="hl">Automatisch vrijgeven van spellen</span>, met behulp van het uitvoerbare bestand dat is gekoppeld aan het gefocuste venster`,
+            `Nieuwe pogingen overschrijven bestaande vermeldingen, of de vermelding kan worden verwijderd via <span class="hl">Instellingen</span> > <span class="hl">Spellen</span> > <span class="hl">Automatisch vrijgeven van spellen</span> door op de knop <span id="linkhelpunlink"></span> te klikken`
         ],
-        addlinkfailed: "Kan venster niet koppelen",
-        addlinkfailedsub: `Klik op de knop <span class="hl">Koppelen</span> om opnieuw te proberen`,
+        addlinkfailed: "Kan venster niet toevoegen",
+        addlinkfailedsub: `Klik op de knop <span class="hl">Toevoegen</span> om het opnieuw te proberen`,
         webhookunlockmsg: "$user heeft een prestatie ontgrendeld",
         webhookunlockmsgplat: "$user ontgrendelde alle prestaties",
         webhookingame: "in $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Spellen",
             content: {
-                linkedgames: "Gekoppelde spellen",
+                linkedgames: "Automatisch vrijgeven van spellen",
                 themeswitch: "Automatisch Thema's Wisselen",
                 exclusionlist: "Uitsluitingslijst",
                 inclusionlist: "Inclusielijst",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Schermpositie",
                 usecustompos: "Gebruik Aangepaste Positie",
                 setcustompos: "Instellen",
+                copycustompos: "Toepassen op Alles",
                 resetcustompos: "Herstel"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Dwing alle app-vensters om weer te geven met het geselecteerde kleurprofiel<br><br><span class="ttdesc">Vereist een herstart van de app</span>`,
         pollrate: `Stel het update-interval in voor prestatiegegevens tijdens het spelen<br><br><span class="ttdesc">De prestaties kunnen toenemen/afnemen, afhankelijk van de waarde of de hardware van het systeem. Hogere waarden resulteren doorgaans in lagere systeembelasting, maar kunnen notificaties vertragen</span>`,
         initdelay: `Stel de vertraging in tussen de detectie van de huidige <span class="hl">AppID</span> en wanneer het volgen van processen/prestaties begint<br><br><span class="ttdesc">Het verhogen van deze waarde kan scenario's voorkomen waarin Steam niet in staat is om het huidige spel te starten (doordat de app Steamworks initialiseert voordat het spel is gestart)</span><br><br><span class="ttdesc">Als alternatief kan het verhogen van deze waarde ook worden gebruikt om onjuiste detectie van pre-game launcher-processen te omzeilen</span>`,
-        releasedelay: `Stel in hoelang het achtergrondproces moet wachten om opnieuw op te starten nadat het huidige spel is uitgebracht. Beïnvloedt zowel automatische procesbewaking als handmatig gekoppelde spellen.<br><br><span class="ttdesc">Biedt een langere tijdsperiode om Steamworks volledig vrij te geven van de app. Het verhogen van deze waarde kan ongebruikelijk gedrag voorkomen, zoals het volgen van een eerder gesloten spel</span>`,
-        maxretries: `Stel het maximale aantal pogingen in om een lopend proces te koppelen aan een gedetecteerde AppID. Beïnvloedt zowel automatische procesbewaking als handmatig gekoppelde spellen.<br><br><span class="ttdesc">Pogingen tot koppeling worden één keer per seconde uitgevoerd. Als een lopend proces niet is gekoppeld aan de huidige AppID na dit aantal pogingen, wordt een ongeldig proces geretourneerd. In dergelijke gevallen moet het spel handmatig worden vrijgegeven via Systeemvak > Opties > Spel Vrijgeven</span>`,
+        releasedelay: `Stel in hoe lang het achtergrondproces Worker wacht voordat het opnieuw start nadat het huidige spel is vrijgegeven. Heeft invloed op zowel automatische procestracking als Automatisch vrijgeven van spellen<br><br><span class="ttdesc">Biedt een langer tijdsbestek zodat Steamworks volledig uit de app kan worden vrijgegeven. Het verhogen van deze waarde kan ongewoon gedrag voorkomen, zoals het volgen van een eerder gesloten spel</span>`,
+        maxretries: `Stel het maximale aantal pogingen in om een actief proces te koppelen aan een gedetecteerde AppID. Heeft invloed op zowel automatische procestracking als Automatisch vrijgeven van spellen<br><br><span class="ttdesc">Pogingen worden eenmaal per seconde uitgevoerd. Als een actief proces na dit aantal pogingen niet is gekoppeld aan de huidige AppID, wordt een ongeldig proces geretourneerd. In dergelijke gevallen moet het spel handmatig worden vrijgegeven via System Tray > Opties > Spel vrijgeven</span>`,
         debug: "Open het Debugpaneel, dat gedetailleerde procesvolginformatie weergeeft",
         userust: "Gebruik een alternatieve Rust-gebaseerde functie om te controleren of de getrackte gameprocessen momenteel actief zijn op het systeem. Wanneer niet aangevinkt, zal de standaard NodeJS-gebaseerde procescontrole in plaats daarvan worden gebruikt.",
         notifydebug: "Maak een DevTools-venster voor alle meldingen. Handig voor het oplossen van problemen met meldingen",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Stel de on-screen positie van de melding in",
         usecustompos: "Schakel aangepaste positionering in voor de melding",
         setcustompos: "Stel de aangepaste positie voor de melding in",
+        copycustompos: "De aangepaste positie toepassen op alle andere notificatietypen",
         resetcustompos: "Stel de positie van de melding opnieuw in op de standaard aangepaste positie",
         updatetheme: "Het huidige Thema bijwerken met de geselecteerde aanpassingsopties",
         savetheme: "Sla alle geconfigureerde aanpassingsopties op als een nieuw thema",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Stel de kleur in van het derde tekstelement",
         exportachdata: `Exporteer prestatiegegevens naar een JSON-bestand wanneer een prestatie wordt ontgrendeld<br><br><span class="ttdesc">Wanneer ingeschakeld, wordt <span class="ttcode">achdata.json</span> geëxporteerd naar:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Past de verticale afstand aan tussen tekstelementen in de melding",
-        ssmode: `Stel in of de volledige schermweergave of alleen het huidige spelvenster<span style="color: red;">*</span> moet worden vastgelegd bij schermafbeeldingen<br><br><span class="ttdesc">Als het <span class="hl">uitvoerbare bestand</span> van het huidige spel niet kan worden gevonden (<i>hetzij via <span class="hl">automatische procesdetectie</span> of door het toe te voegen als een <span class="hl">Gekoppeld Spel</span></i>), wordt deze optie standaard ingesteld op "Scherm"</span>`,
+        ssmode: `Stel in of schermafbeeldingen het volledige scherm of het huidige spelvenster vastleggen<span style="color: red;">*</span><br><br><span class="ttdesc">Als het <span class="hl">uitvoerbare bestand</span> van het huidige spel niet kan worden gevonden (<i>hetzij via <span class="hl">automatische procestracking</span> of wanneer het is toegevoegd als een vermelding in <span class="hl">Automatisch vrijgeven van spellen</span></i>), wordt deze optie standaard ingesteld op de modus "Scherm"</span>`,
         replaynotify: "Herhaal de laatste prestatiemelding",
         replaynotifyshortcut: "Herhaal de laatste prestatiemelding met de opgegeven sneltoets",
         replaynotifyempty: `<br><br><span class="ttdesc">De herhalingswachtrij is leeg. Ontgrendel een prestatie om een melding te herhalen</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Pad naar uitvoerbaar bestand",
             managesub: [
-                `Koppel handmatig het <span class="hl">uitvoerbare bestand</span> van een spel aan een specifieke <span class="hl">AppID</span>, of <span class="hl">ontkoppel</span> een bestaande`,
-                `Steam Achievement Notifier zal niet langer <span class="hl">automatisch proces tracking</span> gebruiken voor eventuele <span class="hl">gekoppelde spellen</span> - in plaats daarvan zal het gespecificeerde <span class="hl">uitvoerbare bestand</span> worden gevolgd wanneer de bijbehorende <span class="hl">AppID</span> wordt gedetecteerd`,
-                `<span class="hl" id="appidhelp"><u>Hoe vind ik de AppID van een Steam-spel?</u></span>`
+                `Als Steam een spel nog steeds als <i>Bezig met spelen</i> weergeeft nadat het spelvenster is gesloten, probeer dan een nieuwe vermelding toe te voegen aan <span class="hl">Automatisch vrijgeven van spellen</span>`,
+                `Voeg de <span class="hl">AppID</span> van een specifiek spel toe samen met het verwachte <span class="hl">uitvoerbare bestand van het spel</span>, of <span class="hl">verwijder</span> een bestaande vermelding`,
+                `Nieuwe vermeldingen kunnen ook worden toegevoegd door <i>met de rechtermuisknop te klikken</i> op het <span class="hl">System Tray-pictogram</span> > <span class="hl">Automatisch spel vrijgeven</span> zodra een spel is gedetecteerd`,
+                `<span class="hl help" id="appidhelp"><u>Hoe vind ik de AppID van een Steam-spel?</u></span>`
             ],
-            linknew: "Nieuw Gekoppeld Spel",
+            linknew: "Nieuwe vermelding",
             linknewsub: [
-                `Maak een nieuwe koppeling tussen een <span class="hl">spel uitvoerbaar bestand</span> en de bijbehorende <span class="hl">AppID</span>`,
-                `Eenmaal gemaakt, kunnen koppelingen worden <span class="hl">ontkoppeld</span> via het vorige <span class="hl">Beheer Gekoppelde Spellen</span> dialoogvenster`
+                `Voeg de <span class="hl">AppID</span> van een nieuw spel toe samen met het verwachte <span class="hl">uitvoerbare bestand van het spel</span>`,
+                `Na toevoeging kunnen vermeldingen <span class="hl">worden verwijderd</span> via het vorige menu <span class="hl">Automatisch vrijgeven van spellen</span>`
             ],
-            linkedit: "Bewerk gekoppeld spel",
+            linkedit: "Vermelding bewerken",
             linkeditsub: [
-                `Bewerk een bestaande koppeling tussen een <span class="hl">speluitvoerbaar bestand</span> en de bijbehorende <span class="hl">AppID</span>`,
-                `Eenmaal aangemaakt, kunnen koppelingen worden <span class="hl">ontkoppeld</span> via het vorige <span class="hl">Beheer gekoppelde spellen</span> dialoogvenster`
+                `Bewerk de <span class="hl">AppID</span> van een bestaand spel samen met het verwachte <span class="hl">uitvoerbare bestand van het spel</span>`,
+                `Na toevoeging kunnen vermeldingen <span class="hl">worden verwijderd</span> via het vorige menu <span class="hl">Automatisch vrijgeven van spellen</span>`
             ],
-            link: "Koppelen"
+            link: "Toevoegen"
         }
     },
     exclusions: {

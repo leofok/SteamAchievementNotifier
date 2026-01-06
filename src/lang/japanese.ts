@@ -70,21 +70,26 @@ export const translations = {
         noexe: "ゲームのEXEファイルが見つかりません！",
         noexesub: "詳細についてはここをクリックしてください",
         noexedialogsub: [
-            `Steam Achievement Notifierは、このゲームの実行可能ファイルを自動的に見つけることができませんでした。ゲームを「リリース」するためには、ゲームの実行可能ファイルの場所が必要です`,
-            `ゲームを手動でリリースするには、<i>右クリック</i>して、<span class="hl">システムトレイアイコン</span> > <span class="hl">オプション</span> > <span class="hl">ゲームをリリース</span>を選択するか、<span class="hl">ゲームリリースショートカット</span>を使用してください`,
-            `または、下の<span class="hl">リンク</span>ボタンをクリックして、現在フォーカスされているウィンドウに関連する実行可能ファイルを<span class="hl">リンクされたゲーム</span>メニューに追加してください`,
-            `<span class="hl help" id="linkgamehelp"><u>リンクボタンをクリックするとどうなりますか？</u></span>`
+            `Steam Achievement Notifier は、このゲームの実行ファイルを自動的に特定できませんでした。ゲームを終了後に「リリース」するには、ゲームの実行ファイルの場所が必要です`,
+            `ゲーム終了後に手動でリリースするには、<i>右クリック</i>で <span class="hl">システムトレイアイコン</span> > <span class="hl">オプション</span> > <span class="hl">ゲームをリリース</span> を選択するか、<span class="hl">ゲームをリリース ショートカット</span>を使用してください`,
+            `または、下の <span class="hl">追加</span> ボタンをクリックして、現在フォーカスされているウィンドウに関連付けられた実行ファイルを <span class="hl">設定</span> > <span class="hl">ゲーム</span> > <span class="hl">自動リリース ゲーム</span> に追加してください`,
         ],
-        linkgamehelp: "ウィンドウを通じてゲームをリンク",
+        autorelease: "自動リリース ゲーム",
+        autoreleasesub: [
+            `ゲームウィンドウを閉じた後も Steam がゲームを <i>プレイ中</i> と表示する場合は、<span class="hl">自動リリース ゲーム</span> に新しいエントリを追加してみてください`,
+            `現在のゲームに対してこれを行うには、下の <span class="hl">追加</span> ボタンをクリックして、現在フォーカスされているウィンドウに関連付けられた実行ファイルを <span class="hl">設定</span> > <span class="hl">ゲーム</span> > <span class="hl">自動リリース ゲーム</span> に追加してください`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>追加 ボタンをクリックするとどうなりますか？</u></span>`,
+        linkgamehelp: "フォーカス経由でエントリを追加",
         linkgamehelpsub: [
-            `<span class="hl">リンク</span>ボタンをクリックすると、現在フォーカスされているウィンドウの情報を使用して、<span class="hl">設定</span> > <span class="hl">リンクされたゲーム</span>メニューに新しいエントリが自動的に追加されます。`,
-            `<span class="hl">リンク</span>ボタンをクリックすると、5秒のタイマーが始まります`,
-            `タイマーが終了する前に、ゲームウィンドウにフォーカスを合わせてください`,
-            `タイマーが終了すると、現在の<span class="hl">AppID</span>の新しいエントリが、フォーカスされたウィンドウの実行可能ファイルを使用して、<span class="hl">設定</span> > <span class="hl">リンクされたゲーム</span>メニューに追加されます`,
-            `再試行が必要な場合は、<span class="hl">設定</span> > <span class="hl">リンクされたゲーム</span>からエントリを削除し、<span id="linkhelpunlink"></span>ボタンをクリックしてください`
+            `<span class="hl">追加</span> ボタンをクリックすると、現在フォーカスされているウィンドウの情報を使用して、<span class="hl">設定</span> > <span class="hl">ゲーム</span> > <span class="hl">自動リリース ゲーム</span> に新しいエントリが自動的に追加されます。`,
+            `<span class="hl">追加</span> ボタンをクリックすると、5 秒のタイマーが開始されます`,
+            `タイマーが終了する前に、ゲームウィンドウにフォーカスしてください`,
+            `タイマーが終了すると、現在の <span class="hl">AppID</span> に対する新しいエントリが、フォーカスされているウィンドウに関連付けられた実行ファイルを使用して <span class="hl">設定</span> > <span class="hl">ゲーム</span> > <span class="hl">自動リリース ゲーム</span> に追加されます`,
+            `新しい試行は既存のエントリを上書きします。または、<span class="hl">設定</span> > <span class="hl">ゲーム</span> > <span class="hl">自動リリース ゲーム</span> から <span id="linkhelpunlink"></span> ボタンをクリックしてエントリを削除できます`
         ],
-        addlinkfailed: "ウィンドウのリンクに失敗しました",
-        addlinkfailedsub: `再試行するには、<span class="hl">リンク</span>ボタンをクリックしてください`,
+        addlinkfailed: "ウィンドウを追加できません",
+        addlinkfailedsub: `<span class="hl">追加</span> ボタンをクリックして再試行してください`,
         webhookunlockmsg: "$user がアチーブメントを解除しました",
         webhookunlockmsgplat: "$user がすべての実績を解除しました",
         webhookingame: "$gamename で",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "ゲーム",
             content: {
-                linkedgames: "リンクされたゲーム",
+                linkedgames: "自動リリース ゲーム",
                 themeswitch: "テーマを自動切替",
                 exclusionlist: "除外リスト",
                 inclusionlist: "インクルージョンリスト",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "画面位置",
                 usecustompos: "カスタム位置を使用",
                 setcustompos: "設定",
+                copycustompos: "すべてに適用",
                 resetcustompos: "リセット"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `選択したカラープロファイルを使ってすべてのアプリケーションウィンドウをレンダリングするように強制します<br><br><span class="ttdesc">アプリの再起動が必要です</span>`,
         pollrate: `ゲームプレイ中の実績データの更新間隔を設定します<br><br><span class="ttdesc">値やシステムのハードウェアに応じて、パフォーマンスが向上または低下することがあります。通常、高い値はシステム負荷を低減させますが、通知の遅延を引き起こす可能性があります</span>`,
         initdelay: `現在の <span class="hl">AppID</span> の検出とプロセス/達成のトラッキング開始の間の遅延を設定します<br><br><span class="ttdesc">この値を増やすことで、Steam が現在のゲームを起動できないシナリオを防ぐことができます（ゲームが開始する前に Steamworks がアプリを初期化するため）</span><br><br><span class="ttdesc">また、この値を増やすことで、ゲームの前の起動プロセスの誤検出を回避することもできます</span>`,
-        releasedelay: `現在のゲームがリリースされた後、バックグラウンドプロセスが再起動するまでの待機時間を設定します。自動プロセス追跡と手動でリンクされたゲームの両方に影響します。<br><br><span class="ttdesc">Steamworksがアプリケーションから完全に解放されるためのより長い時間枠を提供します。この値を増やすと、以前に閉じたゲームの追跡などの異常な動作を防ぐことができます</span>`,
-        maxretries: `実行中のプロセスを検出されたAppIDにリンクする試行の最大数を設定します。自動プロセス追跡と手動でリンクされたゲームの両方に影響します。<br><br><span class="ttdesc">リンクの試行は1秒ごとに行われます。この試行回数後に実行中のプロセスが現在のAppIDにリンクされていない場合、無効なプロセスが返されます。そのような場合、ゲームはシステムトレイ > オプション > ゲームのリリースを手動で行う必要があります</span>`,
+        releasedelay: `現在のゲームがリリースされた後、バックグラウンドの Worker プロセスが再起動するまで待機する時間を設定します。自動プロセストラッキングと自動リリース ゲームの両方に影響します<br><br><span class="ttdesc">Steamworks がアプリから完全に解放されるまでの時間を長く確保できます。この値を増やすことで、以前に終了したゲームを追跡してしまうなどの異常な動作を防ぐことができます</span>`,
+        maxretries: `実行中のプロセスを検出された AppID にリンクする最大試行回数を設定します。自動プロセストラッキングと自動リリース ゲームの両方に影響します<br><br><span class="ttdesc">試行は 1 秒ごとに行われます。この回数以内に実行中のプロセスが現在の AppID にリンクされない場合、無効なプロセスが返されます。その場合、システムトレイ > オプション > ゲームをリリース から手動でゲームをリリースする必要があります</span>`,
         debug: "デバッグパネルを開きます。これにより、プロセスの詳細なトラッキング情報が表示されます。",
         userust: "システム上でトラックされたゲームプロセスが現在実行されているかどうかを確認するために、Rustベースの代替機能を使用します。チェックが外れている場合、代わりにデフォルトのNodeJSベースのプロセスチェックが使用されます。",
         notifydebug: "すべての通知に対してDevToolsウィンドウを作成します。通知のデバッグ/トラブルシューティングに便利です",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "通知の画面上の位置を設定する",
         usecustompos: "通知のカスタム位置を有効にする",
         setcustompos: "通知のカスタム位置を設定する",
+        copycustompos: "カスタム位置を他のすべての通知タイプに適用します",
         resetcustompos: "通知の位置をデフォルトのカスタム位置にリセットする",
         updatetheme: "選択したカスタマイズオプションで現在のテーマを更新する",
         savetheme: "すべての設定されたカスタマイズオプションを新しいテーマとして保存する",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "3番目のテキスト要素の色を設定",
         exportachdata: `実績が解除されると、実績データをJSONファイルとしてエクスポート<br><br><span class="ttdesc">有効にすると、<span class="ttcode">achdata.json</span>は以下の場所にエクスポートされます:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "通知内のテキスト要素間の縦の間隔を調整",
-        ssmode: `スクリーンショットを撮る際に、画面全体をキャプチャするか、現在のゲームウィンドウ<span style="color: red;">*</span>のみをキャプチャするかを設定<br><br><span class="ttdesc">現在のゲームの<span class="hl">実行ファイル</span>が見つからない場合（<i>自動プロセス追跡または<span class="hl">リンクされたゲーム</span>として追加された場合</i>）、このオプションはデフォルトで「スクリーン」モードに戻ります</span>`,
+        ssmode: `スクリーンショットで、画面全体をキャプチャするか、現在のゲームウィンドウ<span style="color: red;">*</span>をキャプチャするかを設定します<br><br><span class="ttdesc">現在のゲームの <span class="hl">実行ファイル</span> が特定できない場合（<i><span class="hl">自動プロセストラッキング</span> 経由、または <span class="hl">自動リリース ゲーム</span> のエントリとして追加された場合のいずれでも</i>）、このオプションは既定で「スクリーン」モードになります</span>`,
         replaynotify: "最後の実績通知を再通知",
         replaynotifyshortcut: "指定したショートカットを使用して最後の実績通知を再通知",
         replaynotifyempty: `<br><br><span class="ttdesc">再通知キューは空です。通知を再通知するには実績を解除してください</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "実行可能ファイルのパス",
             managesub: [
-                `特定の <span class="hl">AppID</span> にゲームの <span class="hl">実行可能ファイル</span> を手動でリンクするか、既存のリンクを <span class="hl">解除</span> します`,
-                `Steam Achievement Notifier は <span class="hl">リンクされたゲーム</span> のいずれにも <span class="hl">自動プロセス追跡</span> を使用しなくなります - 代わりに、関連する <span class="hl">AppID</span> が検出されるたびに指定された <span class="hl">実行可能ファイル</span> が追跡されます`,
-                `<span class="hl" id="appidhelp"><u>SteamゲームのAppIDを見つける方法は？</u></span>`
+                `ゲームウィンドウを閉じた後も Steam がゲームを <i>プレイ中</i> と表示する場合は、<span class="hl">自動リリース ゲーム</span> に新しいエントリを追加してみてください`,
+                `特定のゲームの <span class="hl">AppID</span> と、想定される <span class="hl">ゲーム実行ファイル</span> を追加するか、既存のエントリを <span class="hl">削除</span> します`,
+                `ゲームが検出された後、<span class="hl">システムトレイアイコン</span> を <i>右クリック</i> > <span class="hl">自動リリース ゲーム</span> から新しいエントリを追加することもできます`,
+                `<span class="hl help" id="appidhelp"><u>Steam ゲームの AppID はどのように確認しますか？</u></span>`
             ],
-            linknew: "新しいリンクされたゲーム",
+            linknew: "新しいエントリ",
             linknewsub: [
-                `ゲームの <span class="hl">実行可能ファイル</span> と関連する <span class="hl">AppID</span> の間に新しいリンクを作成します`,
-                `作成された後、リンクは以前の <span class="hl">リンクされたゲームを管理</span> ダイアログを介して <span class="hl">解除</span> できます`
+                `新しいゲームの <span class="hl">AppID</span> と、想定される <span class="hl">ゲーム実行ファイル</span> を追加します`,
+                `追加後、エントリは前の <span class="hl">自動リリース ゲーム</span> メニューから <span class="hl">削除</span> できます`
             ],
-            linkedit: "リンクされたゲームを編集",
+            linkedit: "エントリを編集",
             linkeditsub: [
-                `<span class="hl">ゲーム実行ファイル</span> と関連する <span class="hl">AppID</span> の既存のリンクを編集します`,
-                `作成後、リンクは以前の <span class="hl">リンクされたゲームの管理</span> ダイアログから <span class="hl">解除</span> できます`
+                `既存のゲームの <span class="hl">AppID</span> と、想定される <span class="hl">ゲーム実行ファイル</span> を編集します`,
+                `追加後、エントリは前の <span class="hl">自動リリース ゲーム</span> メニューから <span class="hl">削除</span> できます`
             ],
-            link: "リンク",
+            link: "追加"
         }
     },
     exclusions: {

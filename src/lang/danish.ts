@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Spillets EXE-fil blev ikke fundet!",
         noexesub: "Klik her for mere information",
         noexedialogsub: [
-            `Steam Achievement Notifier kunne ikke automatisk finde spillets eksekverbare fil. Placeringen af den eksekverbare fil er nødvendig for at "frigive" spillet`,
-            `For at frigive spillet manuelt skal du <i>højreklikke</i> på <span class="hl">systembakke-ikonet</span> > <span class="hl">Indstillinger</span> > <span class="hl">Frigiv spil</span>, eller bruge <span class="hl">Genvej til frigivelse af spil</span>`,
-            `Alternativt kan du klikke på knappen <span class="hl">Link</span> nedenfor for at tilføje den eksekverbare fil, der er forbundet med det aktive vindue, til menuen <span class="hl">Linkede spil</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>Hvad sker der, når jeg klikker på Link-knappen?</u></span>`
+            `Steam Achievement Notifier kunne ikke automatisk finde den eksekverbare fil til dette spil. Placeringen af spillets eksekverbare fil er påkrævet for at kunne "frigive" spillet, når det er lukket`,
+            `For at frigive spillet manuelt efter lukning skal du <i>højreklikke</i> på <span class="hl">System Tray-ikonet</span> > <span class="hl">Indstillinger</span> > <span class="hl">Frigiv spil</span>, eller bruge <span class="hl">Genvej til frigivelse af spil</span>`,
+            `Alternativt kan du klikke på knappen <span class="hl">Tilføj</span> nedenfor for at tilføje den eksekverbare fil, der er knyttet til et vilkårligt fokuseret vindue, til <span class="hl">Indstillinger</span> > <span class="hl">Spil</span> > <span class="hl">Automatisk frigivelse af spil</span>`,
         ],
-        linkgamehelp: "Link spil via vindue",
+        autorelease: "Automatisk frigivelse af spil",
+        autoreleasesub: [
+            `Hvis Steam stadig viser et spil som <i>Spiller</i> efter spilvinduet er lukket, kan du prøve at tilføje en ny post til <span class="hl">Automatisk frigivelse af spil</span>`,
+            `For at gøre dette for det aktuelle spil skal du klikke på knappen <span class="hl">Tilføj</span> nedenfor for at tilføje den eksekverbare fil, der er knyttet til et vilkårligt fokuseret vindue, til <span class="hl">Indstillinger</span> > <span class="hl">Spil</span> > <span class="hl">Automatisk frigivelse af spil</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Hvad sker der, når jeg klikker på knappen Tilføj?</u></span>`,
+        linkgamehelp: "Tilføj post via fokus",
         linkgamehelpsub: [
-            `Ved at klikke på knappen <span class="hl">Link</span> tilføjes en ny post automatisk til menuen <span class="hl">Indstillinger</span> > <span class="hl">Linkede spil</span> med oplysninger fra det aktuelt aktive vindue.`,
-            `Efter du har klikket på knappen <span class="hl">Link</span>, starter en nedtælling på 5 sekunder`,
-            `Før nedtællingen slutter, skal du fokusere på spilvinduet`,
-            `Når nedtællingen er slut, tilføjes en ny post for den aktuelle <span class="hl">AppID</span> til menuen <span class="hl">Indstillinger</span> > <span class="hl">Linkede spil</span> med den eksekverbare fil, der er forbundet med det aktive vindue`,
-            `Hvis du har brug for at prøve igen, skal du fjerne posten via <span class="hl">Indstillinger</span> > <span class="hl">Linkede spil</span> ved at klikke på knappen <span id="linkhelpunlink"></span>`
+            `Når du klikker på knappen <span class="hl">Tilføj</span>, tilføjes der automatisk en ny post til <span class="hl">Indstillinger</span> > <span class="hl">Spil</span> > <span class="hl">Automatisk frigivelse af spil</span> ved brug af oplysninger fra det aktuelt fokuserede vindue.`,
+            `Efter klik på knappen <span class="hl">Tilføj</span> starter en 5-sekunders timer`,
+            `Før timeren udløber, skal du sætte fokus på spilvinduet`,
+            `Når timeren er udløbet, tilføjes en ny post for det aktuelle <span class="hl">AppID</span> til <span class="hl">Indstillinger</span> > <span class="hl">Spil</span> > <span class="hl">Automatisk frigivelse af spil</span> ved brug af den eksekverbare fil, der er knyttet til det fokuserede vindue`,
+            `Nye forsøg vil overskrive eksisterende poster, eller posten kan fjernes via <span class="hl">Indstillinger</span> > <span class="hl">Spil</span> > <span class="hl">Automatisk frigivelse af spil</span> ved at klikke på knappen <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Kunne ikke linke vindue",
-        addlinkfailedsub: `Klik på knappen <span class="hl">Link</span> for at prøve igen`,
+        addlinkfailed: "Kunne ikke tilføje vinduet",
+        addlinkfailedsub: `Klik på knappen <span class="hl">Tilføj</span> for at prøve igen`,
         webhookunlockmsg: "$user låste op for en præstation",
         webhookunlockmsgplat: "$user låste op for alle præstationer",
         webhookingame: "i $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Spil",
             content: {
-                linkedgames: "Forbundne spil",
+                linkedgames: "Automatisk frigivelse af spil",
                 themeswitch: "Automatisk skift af tema",
                 exclusionlist: "Udelukkelsesliste",
                 inclusionlist: "Inklusionsliste",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Skærmposition",
                 usecustompos: "Brug tilpasset position",
                 setcustompos: "Indstil",
+                copycustompos: "Anvend på Alle",
                 resetcustompos: "Nulstil"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Tving alle app-vinduer til at gengive med den valgte farveprofil<br><br><span class="ttdesc">Kræver genstart af appen</span>`,
         pollrate: `Indstil opdateringsintervallet for præstationsdata under spil<br><br><span class="ttdesc">Ydelsen kan stige/falde afhængigt af værdien eller systemets hardware. Højere værdier resulterer normalt i lavere systembelastning, men kan forsinke meddelelser</span>`,
         initdelay: `Indstil forsinkelsen mellem detektion af det aktuelle <span class="hl">AppID</span> og når sporing af proces/bedrift starter<br><br><span class="ttdesc">Øgning af denne værdi kan forhindre scenarier, hvor Steam ikke kan starte det aktuelle spil (på grund af at appen initialiserer Steamworks, før spillet er startet)</span><br><br><span class="ttdesc">Alternativt kan øgning af denne værdi også bruges til at omgå forkert detektion af processer før spillet</span>`,
-        releasedelay: `Angiv, hvor længe baggrundprocessen venter med at genstarte efter den nuværende spil er udgivet. Påvirker både automatisk procesovervågning og manuelt tilknyttede spil.<br><br><span class="ttdesc">Tillader en længere tidsramme for at frigive Steamworks fuldstændigt fra appen. At øge denne værdi kan forhindre unormal adfærd, såsom sporing af et tidligere lukket spil</span>`,
-        maxretries: `Angiv det maksimale antal forsøg på at linke en kørende proces til en påvist AppID. Påvirker både automatisk procesovervågning og manuelt tilknyttede spil.<br><br><span class="ttdesc">Forsøg på link gennemføres én gang hvert sekund. Hvis en kørende proces ikke er linket til den aktuelle AppID efter dette antal forsøg, returneres en ugyldig proces. I sådanne tilfælde skal spillet frigives manuelt via Systembakke > Indstillinger > Frigiv Spil</span>`,
+        releasedelay: `Indstil hvor længe Worker-processen i baggrunden venter på at genstarte, efter at det aktuelle spil er blevet frigivet. Påvirker både automatisk processporing og Automatisk frigivelse af spil<br><br><span class="ttdesc">Tillader et længere tidsrum, så Steamworks kan blive fuldt frigivet fra appen. Forøgelse af denne værdi kan forhindre usædvanlig adfærd, såsom sporing af et tidligere lukket spil</span>`,
+        maxretries: `Indstil det maksimale antal forsøg på at forbinde en kørende proces med et registreret AppID. Påvirker både automatisk processporing og Automatisk frigivelse af spil<br><br><span class="ttdesc">Forsøg udføres én gang i sekundet. Hvis en kørende proces ikke forbindes med det aktuelle AppID efter dette antal forsøg, returneres en ugyldig proces. I sådanne tilfælde skal spillet frigives manuelt via System Tray > Indstillinger > Frigiv spil</span>`,
         debug: "Åbn fejlfindingspanelet, som viser detaljerede oplysninger om procesovervågning",
         userust: "Brug en alternativ Rust-baseret funktion til at kontrollere, om de trackede spilprocesser i øjeblikket kører på systemet. Når det ikke er markeret, vil standard NodeJS-baseret proceskontrol blive brugt i stedet.",
         notifydebug: "Opret et DevTools-vindue for alle meddelelser. Nyttigt til fejlfinding af meddelelsesproblemer",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Indstil skærmpositionen for meddelelsen",
         usecustompos: "Aktivér brugerdefineret placering for meddelelsen",
         setcustompos: "Indstil brugerdefineret position for meddelelsen",
+        copycustompos: "Anvend den brugerdefinerede placering på alle andre notifikationstyper",
         resetcustompos: "Nulstil positionen for meddelelsen til standard brugerdefineret position",
         updatetheme: "Opdater det aktuelle Tema med de valgte tilpasningsmuligheder",
         savetheme: "Gem alle konfigurerede tilpasningsindstillinger som et nyt tema",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Indstil farven på det tredje tekstelement",
         exportachdata: `Eksporter præstationsdata til en JSON-fil, når en præstation låses op<br><br><span class="ttdesc">Når aktiveret, vil <span class="ttcode">achdata.json</span> blive eksporteret til:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Justerer den lodrette afstand mellem textelementerne i notifikationen",
-        ssmode: `Angiv om hele skærmen eller det aktuelle spilvindue<span style="color: red;">*</span> skal fanges i skærmbilleder<br><br><span class="ttdesc">Hvis spillets <span class="hl">eksekverbare fil</span> ikke kan findes (<i>enten via <span class="hl">automatisk procesovervågning</span> eller tilføjet som et <span class="hl">Tilknyttet Spil</span></i>), vil denne mulighed som standard være "Skærm"</span>`,
+        ssmode: `Indstil om skærmbilleder skal optage hele skærmen eller det aktuelle spilvindue<span style="color: red;">*</span><br><br><span class="ttdesc">Hvis den aktuelle spils <span class="hl">eksekverbare fil</span> ikke kan findes (<i>enten via <span class="hl">automatisk processporing</span> eller når den tilføjes som en post i <span class="hl">Automatisk frigivelse af spil</span></i>), vil denne indstilling som standard blive sat til tilstanden "Skærm"</span>`,
         replaynotify: "Gentag den seneste præstationsnotifikation",
         replaynotifyshortcut: "Gentag den seneste præstationsnotifikation med den angivne tastaturgenvej",
         replaynotifyempty: `<br><br><span class="ttdesc">Gentagelseskøen er tom. Lås op for en præstation for at gentage en notifikation</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Sti til eksekverbar fil",
             managesub: [
-                `Manuelt tilknyt en spils <span class="hl">eksekverbare fil</span> til en specifik <span class="hl">AppID</span>, eller <span class="hl">fjern tilknytningen</span> til en eksisterende`,
-                `Steam Achievement Notifier vil ikke længere bruge <span class="hl">automatisk procesovervågning</span> for nogen <span class="hl">tilknyttede spil</span> - i stedet vil den angivne <span class="hl">eksekverbare fil</span> blive overvåget, når den tilknyttede <span class="hl">AppID</span> registreres`,
-                `<span class="hl" id="appidhelp"><u>Hvordan finder jeg en Steams spillets AppID?</u></span>`
+                `Hvis Steam stadig viser et spil som <i>Spiller</i> efter spilvinduet er lukket, kan du prøve at tilføje en ny post til <span class="hl">Automatisk frigivelse af spil</span>`,
+                `Tilføj et specifikt spils <span class="hl">AppID</span> sammen med det forventede <span class="hl">spil-eksekverbare fil</span>, eller <span class="hl">fjern</span> en eksisterende post`,
+                `Nye poster kan også tilføjes ved at <i>højreklikke</i> på <span class="hl">System Tray-ikonet</span> > <span class="hl">Automatisk frigivelse af spil</span>, når et spil er blevet registreret`,
+                `<span class="hl help" id="appidhelp"><u>Hvordan finder jeg AppID for et Steam-spil?</u></span>`
             ],
-            linknew: "Nyt tilknyttet spil",
+            linknew: "Ny post",
             linknewsub: [
-                `Opret et nyt link mellem en <span class="hl">spils eksekverbare fil</span> og den tilknyttede <span class="hl">AppID</span>`,
-                `Når de er oprettet, kan links <span class="hl">fjernes</span> via den tidligere dialog for <span class="hl">Administrer tilknyttede spil</span>`
+                `Tilføj et nyt spils <span class="hl">AppID</span> sammen med det forventede <span class="hl">spil-eksekverbare fil</span>`,
+                `Når de er tilføjet, kan poster <span class="hl">fjernes</span> via den forrige menu <span class="hl">Automatisk frigivelse af spil</span>`
             ],
-            linkedit: "Rediger Tilknyttet Spil",
+            linkedit: "Rediger post",
             linkeditsub: [
-                `Rediger en eksisterende tilknytning mellem en <span class="hl">spileksekverbar fil</span> og det tilhørende <span class="hl">AppID</span>`,
-                `Når de er oprettet, kan tilknytninger <span class="hl">fjernes</span> via den tidligere <span class="hl">Administrer Tilknyttede Spil</span> dialog`
+                `Rediger et eksisterende spils <span class="hl">AppID</span> sammen med det forventede <span class="hl">spil-eksekverbare fil</span>`,
+                `Når de er tilføjet, kan poster <span class="hl">fjernes</span> via den forrige menu <span class="hl">Automatisk frigivelse af spil</span>`
             ],
-            link: "Link",
+            link: "Tilføj"
         }
     },
     exclusions: {

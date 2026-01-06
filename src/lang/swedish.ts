@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Spelets EXE-fil hittades inte!",
         noexesub: "Klicka här för mer information",
         noexedialogsub: [
-            `Steam Achievement Notifier kunde inte automatiskt hitta den körbara filen för detta spel. Platsen för spelets körbara fil krävs för att "frigöra" spelet`,
-            `För att manuellt frigöra spelet, <i>högerklicka</i> på <span class="hl">systemfältikonen</span> > <span class="hl">Alternativ</span> > <span class="hl">Frigör spel</span>, eller använd <span class="hl">genvägen för att frigöra spel</span>`,
-            `Alternativt, klicka på <span class="hl">Link</span>-knappen nedan för att lägga till den associerade körbara filen för det fokuserade fönstret i <span class="hl">Länkade spel</span>-menyn`,
-            `<span class="hl help" id="linkgamehelp"><u>Vad händer när jag klickar på Link-knappen?</u></span>`
+            `Steam Achievement Notifier kunde inte automatiskt hitta den körbara filen för detta spel. Platsen för spelets körbara fil krävs för att kunna "frigöra" spelet när det har stängts`,
+            `För att manuellt frigöra spelet när det har stängts, <i>högerklicka</i> på <span class="hl">Systemfältsikonen</span> > <span class="hl">Alternativ</span> > <span class="hl">Frigör Spel</span>, eller använd <span class="hl">Genväg för Frigör Spel</span>`,
+            `Alternativt kan du klicka på knappen <span class="hl">Lägg till</span> nedan för att lägga till den körbara filen som är associerad med ett fokuserat fönster i <span class="hl">Inställningar</span> > <span class="hl">Spel</span> > <span class="hl">Automatiskt Frigjorda Spel</span>`,
         ],
-        linkgamehelp: "Länka spel via fönster",
+        autorelease: "Automatisk Frigöring av Spel",
+        autoreleasesub: [
+            `Om Steam fortfarande visar ett spel som <i>Spelar</i> efter att spelfönstret har stängts, försök att lägga till en ny post i <span class="hl">Automatiskt Frigjorda Spel</span>`,
+            `För att göra detta för det aktuella spelet, klicka på knappen <span class="hl">Lägg till</span> nedan för att lägga till den körbara filen som är associerad med ett fokuserat fönster i <span class="hl">Inställningar</span> > <span class="hl">Spel</span> > <span class="hl">Automatiskt Frigjorda Spel</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Vad händer när jag klickar på knappen Lägg till?</u></span>`,
+        linkgamehelp: "Lägg till Post via Fokus",
         linkgamehelpsub: [
-            `Genom att klicka på <span class="hl">Link</span>-knappen läggs automatiskt en ny post till i <span class="hl">Inställningar</span> > <span class="hl">Länkade spel</span>-menyn, med information från det nuvarande fokuserade fönstret.`,
-            `Efter att du har klickat på <span class="hl">Link</span>-knappen startar en 5 sekunders timer`,
-            `Innan timern löper ut, fokusera på spelvinduet`,
-            `När timern har gått ut, läggs en ny post för den aktuella <span class="hl">AppID</span> till i <span class="hl">Inställningar</span> > <span class="hl">Länkade spel</span>-menyn, med den fokuserade fönstrets associerade körbara fil`,
-            `Om du behöver försöka igen, ta bort posten via <span class="hl">Inställningar</span> > <span class="hl">Länkade spel</span> genom att klicka på <span id="linkhelpunlink"></span>-knappen`
+            `Om du klickar på knappen <span class="hl">Lägg till</span> läggs en ny post automatiskt till i <span class="hl">Inställningar</span> > <span class="hl">Spel</span> > <span class="hl">Automatiskt Frigjorda Spel</span>, med information från det för närvarande fokuserade fönstret.`,
+            `Efter att du klickat på knappen <span class="hl">Lägg till</span> startar en timer på 5 sekunder`,
+            `Innan timern tar slut, fokusera spelfönstret`,
+            `När timern har avslutats läggs en ny post för det aktuella <span class="hl">AppID</span> till i <span class="hl">Inställningar</span> > <span class="hl">Spel</span> > <span class="hl">Automatiskt Frigjorda Spel</span>, med den körbara fil som är associerad med det fokuserade fönstret`,
+            `Nya försök kommer att skriva över befintliga poster, eller så kan posten tas bort via <span class="hl">Inställningar</span> > <span class="hl">Spel</span> > <span class="hl">Automatiskt Frigjorda Spel</span> genom att klicka på knappen <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Det gick inte att länka fönstret",
-        addlinkfailedsub: `Klicka på <span class="hl">Link</span>-knappen för att försöka igen`,
+        addlinkfailed: "Det gick inte att lägga till fönstret",
+        addlinkfailedsub: `Klicka på knappen <span class="hl">Lägg till</span> för att försöka igen`,
         webhookunlockmsg: "$user har låst upp en prestation",
         webhookunlockmsgplat: "$user har låst upp alla prestationer",
         webhookingame: "i $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Spel",
             content: {
-                linkedgames: "Länkade spel",
+                linkedgames: "Automatiskt Frigjorda Spel",
                 themeswitch: "Automatisk byte av teman",
                 exclusionlist: "Undantagslista",
                 inclusionlist: "Inklusionslista",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Skärmposition",
                 usecustompos: "Använd anpassad position",
                 setcustompos: "Ange",
+                copycustompos: "Tillämpa på Alla",
                 resetcustompos: "Återställ"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Tvinga alla appfönster att renderas med den valda färgprofilen<br><br><span class="ttdesc">Kräver omstart av appen</span>`,
         pollrate: `Ställ in uppdateringsintervallet för prestationdata under spel<br><br><span class="ttdesc">Prestandan kan öka/minska beroende på värdet eller systemets maskinvara. Högre värden resulterar vanligtvis i lägre systembelastning, men kan orsaka fördröjningar i aviseringar</span>`,
         initdelay: `Ställ in förseningen mellan upptäckten av aktuellt <span class="hl">AppID</span> och när process-/prestations-spårning börjar<br><br><span class="ttdesc">Att öka detta värde kan förhindra scenarier där Steam inte kan starta det aktuella spelet (på grund av att applikationen initialiserar Steamworks innan spelet har startats)</span><br><br><span class="ttdesc">Alternativt kan ökning av detta värde också användas för att kringgå felaktig upptäckt av för-spelsstart-processer</span>`,
-        releasedelay: `Anger hur länge bakgrundsprocessen ska vänta innan den startar om efter att det aktuella spelet har släppts. Påverkar både automatisk processövervakning och manuellt länkade spel.<br><br><span class="ttdesc">Ger en längre tidsram för att helt frigöra Steamworks från appen. Att öka detta värde kan förhindra ovanligt beteende, som att spåra ett tidigare stängt spel</span>`,
-        maxretries: `Anger det maximala antalet försök att länka en körande process till en upptäckt AppID. Påverkar både automatisk processövervakning och manuellt länkade spel.<br><br><span class="ttdesc">Försök att länka utförs en gång per sekund. Om en körande process inte är länkad till det aktuella AppID:et efter detta antal försök returneras en ogiltig process. I sådana fall måste spelet släppas manuellt via Systemfältet > Alternativ > Släpp Spel</span>`,
+        releasedelay: `Ställ in hur länge bakgrundsprocessen Worker väntar innan den startar om efter att det aktuella spelet har frigjorts. Påverkar både automatisk processpårning och Automatiskt Frigjorda Spel<br><br><span class="ttdesc">Tillåter ett längre tidsfönster för att Steamworks ska kunna frigöras helt från appen. Att öka detta värde kan förhindra ovanligt beteende, till exempel att ett tidigare stängt spel fortfarande spåras</span>`,
+        maxretries: `Ställ in det maximala antalet försök att länka en körande process till ett upptäckt AppID. Påverkar både automatisk processpårning och Automatiskt Frigjorda Spel<br><br><span class="ttdesc">Försök görs en gång per sekund. Om en körande process inte länkas till det aktuella AppID:t efter detta antal försök, returneras en ogiltig process. I sådana fall måste spelet frigöras manuellt via Systemfält > Alternativ > Frigör Spel</span>`,
         debug: "Öppna Debugpanelen, som visar detaljerad processpårningsinformation",
         userust: "Använd en alternativ Rust-baserad funktion för att kontrollera om de spårade spelprocesserna för närvarande körs på systemet. När det inte är markerat kommer standardprocesskontrollen baserad på NodeJS att användas istället.",
         notifydebug: "Skapa ett DevTools-fönster för alla aviseringar. Användbart för felsökning av aviseringar",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Ställ in skärmläget för aviseringen",
         usecustompos: "Aktivera anpassad positionering för aviseringen",
         setcustompos: "Ställ in den anpassade positionen för aviseringen",
+        copycustompos: "Tillämpa den anpassade positionen på alla andra aviseringstyper",
         resetcustompos: "Återställ aviseringens position till standardanpassad position",
         updatetheme: "Uppdatera det aktuella temat med de valda anpassningsalternativen",
         savetheme: "Spara alla konfigurerade anpassningsalternativ som ett nytt tema",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Ange färgen för det tredje textelementet",
         exportachdata: `Exportera prestationsdata till en JSON-fil när en prestation låses upp<br><br><span class="ttdesc">När aktiverat kommer <span class="ttcode">achdata.json</span> att exporteras till:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Justera det vertikala avståndet mellan textelementen i notifikationen",
-        ssmode: `Ställ in om hela skärmen eller bara det aktuella spelvinduet ska fångas i skärmdumpar<span style="color: red;">*</span><br><br><span class="ttdesc">Om den aktuella spelets <span class="hl">exekverbara fil</span> inte kan hittas (<i>antingen via <span class="hl">automatisk processövervakning</span> eller genom att lägga till det som ett <span class="hl">Länkat Spel</span></i>), kommer detta alternativ att återgå till "Skärm"-läge som standard</span>` ,
+        ssmode: `Ställ in om hela skärmen eller det aktuella spelfönstret<span style="color: red;">*</span> ska fångas i skärmbilder<br><br><span class="ttdesc">Om den aktuella spelets <span class="hl">körbara fil</span> inte kan hittas (<i>antingen via <span class="hl">automatisk processpårning</span> eller när det läggs till som en post i <span class="hl">Automatiskt Frigjorda Spel</span></i>), kommer detta alternativ som standard att använda läget "Skärm"</span>`,
         replaynotify: "Repetera den senaste prestationen",
         replaynotifyshortcut: "Repetera den senaste prestationen med hjälp av den angivna snabbknappen",
         replaynotifyempty: `<br><br><span class="ttdesc">Kön för upprepning är tom. Lås upp en prestation för att upprepa en notifikation</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Sökväg till Körbar Fil",
             managesub: [
-                `Länka manuellt en <span class="hl">körbar fil</span> för ett spel till en specifik <span class="hl">AppID</span>, eller <span class="hl">avlägsna länkning</span> för en befintlig`,
-                `Steam Achievement Notifier kommer inte längre använda <span class="hl">automatisk processpårning</span> för några <span class="hl">länkade spel</span> - istället kommer den angivna <span class="hl">körbara filen</span> att spåras varje gång den associerade <span class="hl">AppID</span> upptäcks`,
-                `<span class="hl" id="appidhelp"><u>Hur hittar jag ett Steam-spels AppID?</u></span>`
+                `Om Steam fortfarande visar ett spel som <i>Spelar</i> efter att spelfönstret har stängts, försök att lägga till en ny post i <span class="hl">Automatiskt Frigjorda Spel</span>`,
+                `Lägg till ett specifikt spels <span class="hl">AppID</span> tillsammans med dess förväntade <span class="hl">körbara spelfil</span>, eller <span class="hl">ta bort</span> en befintlig post`,
+                `Nya poster kan också läggas till genom att <i>högerklicka</i> på <span class="hl">Systemfältsikonen</span> > <span class="hl">Automatisk Frigöring av Spel</span> när ett spel har upptäckts`,
+                `<span class="hl help" id="appidhelp"><u>Hur hittar jag AppID för ett Steam-spel?</u></span>`
             ],
-            linknew: "Nytt Länkat Spel",
+            linknew: "Ny Post",
             linknewsub: [
-                `Skapa en ny länk mellan en <span class="hl">körbar fil för spelet</span> och det associerade <span class="hl">AppID</span>`,
-                `Efter att ha skapats kan länkar <span class="hl">avlägsnas</span> via den tidigare <span class="hl">Hantera Länkade Spel</span>-dialogrutan`
+                `Lägg till ett nytt spels <span class="hl">AppID</span> tillsammans med dess förväntade <span class="hl">körbara spelfil</span>`,
+                `När de har lagts till kan poster <span class="hl">tas bort</span> via den tidigare menyn <span class="hl">Automatiskt Frigjorda Spel</span>`
             ],
-            linkedit: "Redigera kopplat spel",
+            linkedit: "Redigera Post",
             linkeditsub: [
-                `Redigera en befintlig koppling mellan en <span class="hl">spelbar körbar fil</span> och den associerade <span class="hl">AppID</span>`,
-                `När de skapats kan kopplingar <span class="hl">avkopplas</span> via den tidigare dialogrutan <span class="hl">Hantera kopplade spel</span>`
+                `Redigera ett befintligt spels <span class="hl">AppID</span> tillsammans med dess förväntade <span class="hl">körbara spelfil</span>`,
+                `När de har lagts till kan poster <span class="hl">tas bort</span> via den tidigare menyn <span class="hl">Automatiskt Frigjorda Spel</span>`
             ],
-            link: "Länka",
+            link: "Lägg till"
         }
     },
     exclusions: {

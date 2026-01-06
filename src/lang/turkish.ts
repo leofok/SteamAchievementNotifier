@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Oyunun EXE dosyası bulunamadı!",
         noexesub: "Daha fazla bilgi için buraya tıklayın",
         noexedialogsub: [
-            `Steam Achievement Notifier, bu oyunun çalıştırılabilir dosyasını otomatik olarak bulamadı. Oyunun çalıştırılabilir dosyasının yeri, oyunu "yayınlamak" için gereklidir`,
-            `Oyunu manuel olarak yayınlamak için, <i>sağa tıklayın</i> <span class="hl">Sistem tepsisi simgesi</span> > <span class="hl">Seçenekler</span> > <span class="hl">Oyunu Yayınla</span>, veya <span class="hl">Oyunu Yayınla Kısayolu</span>nu kullanın`,
-            `Alternatif olarak, aşağıdaki <span class="hl">Link</span> butonuna tıklayarak odaklanmış pencerenin ilişkilendirilmiş çalıştırılabilir dosyasını <span class="hl">Bağlantılı Oyunlar</span> menüsüne ekleyin`,
-            `<span class="hl help" id="linkgamehelp"><u>Link butonuna tıkladığımda ne olur?</u></span>`
+            `Steam Achievement Notifier bu oyun için yürütülebilir dosyayı otomatik olarak bulamadı. Oyun kapatıldıktan sonra oyunu "serbest bırakabilmek" için oyunun yürütülebilir dosyasının konumu gereklidir`,
+            `Oyunu kapattıktan sonra manuel olarak serbest bırakmak için <span class="hl">Sistem Tepsisi simgesi</span> üzerinde <i>sağ tıklayın</i> > <span class="hl">Seçenekler</span> > <span class="hl">Oyunu Serbest Bırak</span> yolunu izleyin veya <span class="hl">Oyunu Serbest Bırak Kısayolu</span>nu kullanın`,
+            `Alternatif olarak, aşağıdaki <span class="hl">Ekle</span> düğmesine tıklayarak odaklanmış herhangi bir pencereye ait yürütülebilir dosyayı <span class="hl">Ayarlar</span> > <span class="hl">Oyunlar</span> > <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> bölümüne ekleyebilirsiniz`,
         ],
-        linkgamehelp: "Pencere ile Oyunu Bağla",
+        autorelease: "Oyunu Otomatik Serbest Bırak",
+        autoreleasesub: [
+            `Oyun penceresi kapatıldıktan sonra Steam hâlâ bir oyunu <i>Oynanıyor</i> olarak gösteriyorsa, <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> bölümüne yeni bir giriş eklemeyi deneyin`,
+            `Bunu geçerli oyun için yapmak üzere, aşağıdaki <span class="hl">Ekle</span> düğmesine tıklayarak odaklanmış herhangi bir pencereye ait yürütülebilir dosyayı <span class="hl">Ayarlar</span> > <span class="hl">Oyunlar</span> > <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> bölümüne ekleyin`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Ekle düğmesine tıkladığımda ne olur?</u></span>`,
+        linkgamehelp: "Odak Yoluyla Giriş Ekle",
         linkgamehelpsub: [
-            `<span class="hl">Link</span> butonuna tıkladığınızda, mevcut odaklanmış pencereden alınan bilgilerle <span class="hl">Ayarlar</span> > <span class="hl">Bağlantılı Oyunlar</span> menüsüne yeni bir giriş otomatik olarak eklenir.`,
-            `<span class="hl">Link</span> butonuna tıkladıktan sonra 5 saniyelik bir zamanlayıcı başlar`,
-            `Zamanlayıcı bitmeden önce, oyun penceresini odaklayın`,
-            `Zamanlayıcı sona erdiğinde, mevcut <span class="hl">AppID</span> için yeni bir giriş <span class="hl">Ayarlar</span> > <span class="hl">Bağlantılı Oyunlar</span> menüsüne eklenir, odaklanmış pencerenin ilişkilendirilmiş çalıştırılabilir dosyasını kullanarak`,
-            `Tekrar denemeniz gerekiyorsa, <span class="hl">Ayarlar</span> > <span class="hl">Bağlantılı Oyunlar</span> üzerinden girişi kaldırarak <span id="linkhelpunlink"></span> butonuna tıklayın`
+            `<span class="hl">Ekle</span> düğmesine tıklamak, odaklanmış olan pencereden alınan bilgileri kullanarak <span class="hl">Ayarlar</span> > <span class="hl">Oyunlar</span> > <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> bölümüne otomatik olarak yeni bir giriş ekler.`,
+            `<span class="hl">Ekle</span> düğmesine tıkladıktan sonra 5 saniyelik bir zamanlayıcı başlar`,
+            `Zamanlayıcı sona ermeden önce oyun penceresine odaklanın`,
+            `Zamanlayıcı sona erdiğinde, odaklanmış pencereye ait yürütülebilir dosya kullanılarak geçerli <span class="hl">AppID</span> için <span class="hl">Ayarlar</span> > <span class="hl">Oyunlar</span> > <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> bölümüne yeni bir giriş eklenir`,
+            `Yeni denemeler mevcut girişlerin üzerine yazar veya giriş, <span class="hl">Ayarlar</span> > <span class="hl">Oyunlar</span> > <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> bölümünde <span id="linkhelpunlink"></span> düğmesine tıklanarak kaldırılabilir`
         ],
-        addlinkfailed: "Pencere bağlantısı kurulamadı",
-        addlinkfailedsub: `Yeniden denemek için <span class="hl">Link</span> butonuna tıklayın`,
+        addlinkfailed: "Pencere eklenemedi",
+        addlinkfailedsub: `<span class="hl">Ekle</span> düğmesine tıklayarak tekrar deneyin`,
         webhookunlockmsg: "$user bir başarıyı kilidini açtı",
         webhookunlockmsgplat: "$user tüm başarıları açtı",
         webhookingame: "$gamename'de",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Oyunlar",
             content: {
-                linkedgames: "Bağlantılı Oyunlar",
+                linkedgames: "Otomatik Serbest Bırakılan Oyunlar",
                 themeswitch: "Tema Değişimini Otomatik Yap",
                 exclusionlist: "Dışlama Listesi",
                 inclusionlist: "Dahil Etme Listesi",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Ekran Konumu",
                 usecustompos: "Özel Konumu Kullan",
                 setcustompos: "Ayarla",
+                copycustompos: "Tümüne Uygula",
                 resetcustompos: "Sıfırla"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Tüm uygulama pencerelerinin seçilen renk profiliyle render edilmesini zorla<br><br><span class="ttdesc">Uygulamanın yeniden başlatılması gerekir</span>`,
         pollrate: `Oyun sırasında başarı verileri için güncelleme aralığını ayarlayın<br><br><span class="ttdesc">Performans, değer veya sistem donanımına bağlı olarak artabilir/azalabilir. Daha yüksek değerler genellikle daha düşük sistem yüküne yol açar, ancak bildirimlerin gecikmesine neden olabilir</span>`,
         initdelay: `Mevcut <span class="hl">AppID</span> tespiti ile işlem/başarı takibinin başlaması arasındaki gecikmeyi ayarlayın<br><br><span class="ttdesc">Bu değeri artırmak, Steam'in mevcut oyunu başlatamama senaryolarını önleyebilir (oyun başlatılmadan önce Steamworks uygulamasını başlatma nedeniyle)</span><br><br><span class="ttdesc">Alternatif olarak, bu değerin artırılması aynı zamanda oyun öncesi başlatıcı işlemlerin yanlış tespitini geçersiz kılma amacıyla da kullanılabilir</span>`,
-        releasedelay: `Mevcut oyunun yayımlandıktan sonra arka plan işleminin ne kadar süre bekleyeceğini ayarlar. Hem otomatik işlem izleme hem de manuel olarak bağlanmış oyunları etkiler.<br><br><span class="ttdesc">Steamworks'in uygulamadan tamamen serbest bırakılması için daha uzun bir zaman aralığı sağlar. Bu değeri artırmak, önceki kapatılmış bir oyunun takibini engelleyebilecek anormal davranışları önleyebilir</span>`,
-        maxretries: `Çalışan bir işlemi algılanan bir AppID'ye bağlama girişimlerinin maksimum sayısını ayarlar. Hem otomatik işlem izleme hem de manuel olarak bağlanmış oyunları etkiler.<br><br><span class="ttdesc">Bağlama denemeleri her saniye bir kez gerçekleştirilir. Bir çalışan işlem, bu denemelerin sayısından sonra geçerli AppID'ye bağlanmazsa, geçersiz bir işlem döndürülür. Bu durumlarda, oyunun Sistem Tepsisi > Ayarlar > Oyunu Serbest Bırak seçeneğiyle manuel olarak serbest bırakılması gerekir</span>`,
+        releasedelay: `Geçerli oyun serbest bırakıldıktan sonra arka planda çalışan Worker işleminin yeniden başlatılmadan önce ne kadar süre bekleyeceğini ayarlayın. Hem otomatik işlem izlemeyi hem de Otomatik Serbest Bırakılan Oyunlar'ı etkiler<br><br><span class="ttdesc">Steamworks'ün uygulamadan tamamen serbest bırakılması için daha uzun bir zaman aralığı sağlar. Bu değerin artırılması, daha önce kapatılmış bir oyunun izlenmesi gibi olağan dışı davranışları önleyebilir</span>`,
+        maxretries: `Çalışan bir işlemi algılanan bir AppID ile ilişkilendirmek için maksimum yeniden deneme sayısını ayarlayın. Hem otomatik işlem izlemeyi hem de Otomatik Serbest Bırakılan Oyunlar'ı etkiler<br><br><span class="ttdesc">Yeniden denemeler her saniyede bir yapılır. Bu yeniden deneme sayısından sonra çalışan bir işlem geçerli AppID ile ilişkilendirilemezse, geçersiz bir işlem döndürülür. Bu gibi durumlarda oyun, Sistem Tepsisi > Seçenekler > Oyunu Serbest Bırak yoluyla manuel olarak serbest bırakılmalıdır</span>`,
         debug: "Hata Ayıkla Panelini açın, bu panel işlem takip bilgilerini detaylı bir şekilde gösterir",
         userust: "Takip edilen oyun işlemlerinin şu anda sistemde çalışıp çalışmadığını kontrol etmek için Rust tabanlı alternatif bir işlev kullanın. İşaretlenmediğinde, varsayılan NodeJS tabanlı işlem kontrolü kullanılacaktır.",
         notifydebug: "Tüm bildirimler için bir DevTools penceresi oluştur. Bildirim sorunlarını gidermek/çözmek için kullanışlıdır",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Bildirimin ekran üzerindeki konumunu ayarlayın",
         usecustompos: "Bildirim için özel konumlandırmayı etkinleştirin",
         setcustompos: "Bildirim için özel konumu ayarlayın",
+        copycustompos: "Özel konumu diğer tüm bildirim türlerine uygula",
         resetcustompos: "Bildirim konumunu varsayılan özel konuma sıfırlayın",
         updatetheme: "Seçilen özelleştirme seçenekleriyle mevcut Temayı güncelle",
         savetheme: "Tüm yapılandırılmış özelleştirme seçeneklerini yeni bir Tema olarak kaydedin",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Üçüncü metin öğesinin rengini ayarlayın",
         exportachdata: `Bir başarı kilidi açıldığında başarı verilerini bir JSON dosyasına dışa aktar<br><br><span class="ttdesc">Etkinleştirildiğinde, <span class="ttcode">achdata.json</span> şu konuma dışa aktarılacaktır:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Bildirimdeki metin öğeleri arasındaki dikey boşluğu ayarla",
-        ssmode: `Ekran görüntülerinde tüm ekranı mı yoksa yalnızca mevcut oyun penceresini mi yakalayacağını ayarla<span style="color: red;">*</span><br><br><span class="ttdesc">Eğer mevcut oyunun <span class="hl">çalıştırılabilir dosyası</span> bulunamazsa (<i>ya <span class="hl">otomatik işlem takibi</span> ile ya da bir <span class="hl">Bağlantılı Oyun</span> olarak eklenerek</i>), bu seçenek varsayılan olarak "Ekran" moduna dönecektir</span>` ,
+        ssmode: `Ekran görüntülerinde tüm ekranın mı yoksa geçerli oyun penceresinin mi yakalanacağını ayarlayın<span style="color: red;">*</span><br><br><span class="ttdesc">Geçerli oyunun <span class="hl">yürütülebilir dosyası</span> bulunamazsa (<i><span class="hl">otomatik işlem izleme</span> yoluyla veya <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> girdisi olarak eklenirken</i>), bu seçenek varsayılan olarak "Ekran" modunu kullanır</span>`,
         replaynotify: "Son Başarı Bildirimini Tekrarla",
         replaynotifyshortcut: "Belirtilen kısayol ile son başarı bildirimini tekrarla",
         replaynotifyempty: `<br><br><span class="ttdesc">Tekrar kuyruğu boş. Bir başarıyı açarak bir bildirimi tekrar edebilirsiniz</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Yürütülebilir Dosya Yolu",
             managesub: [
-                `Bir oyunun <span class="hl">yürütülebilir dosyasını</span> belirli bir <span class="hl">AppID</span>'ye manuel olarak bağlayın veya var olan bağlantıyı <span class="hl">bağlantısız</span> yapın`,
-                `Steam Başarı Bildirimi artık herhangi bir <span class="hl">bağlı oyun</span> için <span class="hl">otomatik işlem takibi</span> kullanmayacak - bunun yerine, belirtilen <span class="hl">yürütülebilir dosya</span>, ilişkili <span class="hl">AppID</span> algılandığında izlenecektir`,
-                `<span class="hl" id="appidhelp"><u>Bir Steam oyununun AppID'sini nasıl bulabilirim?</u></span>`
+                `Oyun penceresi kapatıldıktan sonra Steam hâlâ bir oyunu <i>Oynanıyor</i> olarak gösteriyorsa, <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> bölümüne yeni bir giriş eklemeyi deneyin`,
+                `Belirli bir oyunun <span class="hl">AppID</span>'sini beklenen <span class="hl">oyun yürütülebilir dosyası</span> ile birlikte ekleyin veya mevcut bir girişi <span class="hl">kaldırın</span>`,
+                `Bir oyun algılandıktan sonra, <span class="hl">Sistem Tepsisi simgesi</span> üzerinde <i>sağ tıklayarak</i> > <span class="hl">Oyunu Otomatik Serbest Bırak</span> yoluyla da yeni girişler eklenebilir`,
+                `<span class="hl help" id="appidhelp"><u>Bir Steam oyununun AppID'sini nasıl bulurum?</u></span>`
             ],
-            linknew: "Yeni Bağlı Oyun",
+            linknew: "Yeni Giriş",
             linknewsub: [
-                `Bir <span class="hl">oyunun yürütülebilir dosyası</span> ile ilişkili <span class="hl">AppID</span> arasında yeni bir bağlantı oluşturun`,
-                `Oluşturulduktan sonra, bağlantılar önceki <span class="hl">Bağlı Oyunları Yönet</span> iletişim kutusu üzerinden <span class="hl">bağlantısız</span> yapılabilir`
+                `Yeni bir oyunun <span class="hl">AppID</span>'sini beklenen <span class="hl">oyun yürütülebilir dosyası</span> ile birlikte ekleyin`,
+                `Eklendikten sonra girişler, önceki <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> menüsü üzerinden <span class="hl">kaldırılabilir</span>`
             ],
-            linkedit: "Bağlı Oyunu Düzenle",
+            linkedit: "Girişi Düzenle",
             linkeditsub: [
-                `<span class="hl">Oyun çalıştırılabilir dosyası</span> ile ilgili <span class="hl">AppID</span> arasındaki mevcut bağlantıyı düzenle`,
-                `Oluşturulduktan sonra, bağlantılar önceki <span class="hl">Bağlı Oyunları Yönet</span> iletişim kutusundan <span class="hl">kaldırılabilir</span>`
+                `Mevcut bir oyunun <span class="hl">AppID</span>'sini beklenen <span class="hl">oyun yürütülebilir dosyası</span> ile birlikte düzenleyin`,
+                `Eklendikten sonra girişler, önceki <span class="hl">Otomatik Serbest Bırakılan Oyunlar</span> menüsü üzerinden <span class="hl">kaldırılabilir</span>`
             ],
-            link: "Bağla",
+            link: "Ekle"
         }
     },
     exclusions: {

@@ -457,8 +457,7 @@ body[customiser] .opt:has(> .lbl):not(:first-child) {
 }
 
 #posbtns {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
     gap: 0.5rem;
 }
 
@@ -603,6 +602,10 @@ button[updated] > #confirm {
 
 #posbtns > #setcustompos {
     --icon: url("../../icon/recenter.svg");
+}
+
+#posbtns > #copycustompos {
+    --icon: url("../../icon/reorder.svg");
 }
 
 #posbtns > #resetcustompos {

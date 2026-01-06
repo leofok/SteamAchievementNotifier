@@ -127,6 +127,16 @@ export const listeners = {
                         }
                     ]
                 },
+                // Only show this option when global `appid` var is non-zero
+                {
+                    label: await language.get("autorelease"),
+                    icon: nativeImage
+                        .createFromPath(path.join(__root,"icon","link.png"))
+                        .resize({ width: 16 }),
+                    click: () => ipcMain.emit("noexe",null,false,true),
+                    enabled: !!appid,
+                    visible: !!appid
+                },
                 {
                     label: await language.get("replaynotify",["settings","notifications","content"]),
                     icon: nativeImage
@@ -134,6 +144,19 @@ export const listeners = {
                             .resize({ width: 16 }),
                     click: () => ipcMain.emit("replaynotify"),
                     enabled: replay !== null
+                },
+                // Mouse events are ignored on Linux, so add "Show" option to system tray
+                {
+                    label: await language.get("show"),
+                    icon: nativeImage
+                            .createFromPath(path.join(__root,"icon","show.png"))
+                            .resize({ width: 16 }),
+                    click: () => {
+                        win.show()
+                        win.focus()
+                    },
+                    enabled: process.platform === "linux",
+                    visible: process.platform === "linux"
                 },
                 {
                     label: await language.get("exit"),
@@ -146,18 +169,6 @@ export const listeners = {
                     }
                 }
             ]
-
-            // Mouse events are ignored on Linux, so add "Show" option to system tray
-            process.platform === "linux" && template.splice(template.length - 1,0,{
-                label: await language.get("show"),
-                icon: nativeImage
-                        .createFromPath(path.join(__root,"icon","show.png"))
-                        .resize({ width: 16 }),
-                click: () => {
-                    win.show()
-                    win.focus()
-                }
-            })
 
             tray.setContextMenu(Menu.buildFromTemplate(template))
             tray.on("double-click",() => win.show())
@@ -205,7 +216,15 @@ export const listeners = {
 
         ipcMain.on("worker",(event,args) => console.log(JSON.parse(args)))
 
-        ipcMain.on("noexe",(event,addlinkfailed?: boolean) => {
+        const sendnoexeclick = (ipctype: "noexe" | "addlinkfailed",appid: number,skipnotify?: boolean) => {
+            win.show()
+            win.focus()
+            win.webContents.send(`${ipctype}click`,appid,skipnotify)
+        }
+
+        ipcMain.on("noexe",(event,addlinkfailed?: boolean,skipnotify?: boolean) => {
+            if (skipnotify) return sendnoexeclick("noexe",appid,skipnotify)
+            
             const config = sanconfig.get()
             let notifywin: BrowserWindow | null = null
             const ipctype = !addlinkfailed ? "noexe" : "addlinkfailed"
@@ -242,7 +261,7 @@ export const listeners = {
     
                 notifywin.loadFile(path.join(__root,"dist","app",`${ipctype}.html`))
     
-                ipcMain.once(`${ipctype}ready`, async () => {
+                ipcMain.once(`${ipctype}ready`,async () => {
                     if (!notifywin) return
 
                     const { width, height } = notifywin.getBounds()
@@ -261,11 +280,7 @@ export const listeners = {
                     notifywin = null
                 })
 
-                !addlinkfailed && ipcMain.once(`${ipctype}click`,() => {
-                    win.show()
-                    win.focus()
-                    win.webContents.send(`${ipctype}click`,appid)
-                })
+                !addlinkfailed && ipcMain.once(`${ipctype}click`,() => sendnoexeclick(ipctype,appid))
             },config.get("nowtracking") ? 6500 : 0)
         })
 
@@ -579,15 +594,16 @@ export const listeners = {
 
         ipcMain.on("resetwin",setwinsize)
 
-        ipcMain.on("releasegame", () => {
+        ipcMain.on("releasegame",(event,skipdialog?: boolean) => {
             const { noreleasedialog } = sanconfig.get().store
+            const showdialog = skipdialog && !noreleasedialog
 
-            if (!noreleasedialog) {
+            if (!showdialog) {
                 win.show()
                 win.focus()
             }
 
-            win.webContents.send("releasegame",noreleasedialog)
+            win.webContents.send("releasegame",showdialog)
         })
 
         ipcMain.on("suspendresume", () => {

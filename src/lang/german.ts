@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Spiel-EXE nicht gefunden!",
         noexesub: "Klicken Sie hier für mehr Informationen",
         noexedialogsub: [
-            `Steam Achievement Notifier konnte die ausführbare Datei für dieses Spiel nicht automatisch finden. Der Speicherort der ausführbaren Datei ist erforderlich, um das Spiel "freizugeben"`,
-            `Um das Spiel manuell freizugeben, <i>klicken Sie mit der rechten Maustaste</i> auf das <span class="hl">Systemtray-Symbol</span> > <span class="hl">Optionen</span> > <span class="hl">Spiel freigeben</span>, oder verwenden Sie die <span class="hl">Spiel-Freigabe-Verknüpfung</span>`,
-            `Alternativ können Sie auf die <span class="hl">Link</span>-Schaltfläche unten klicken, um die zugehörige ausführbare Datei des fokussierten Fensters zum <span class="hl">Verbundene Spiele</span>-Menü hinzuzufügen`,
-            `<span class="hl help" id="linkgamehelp"><u>Was passiert, wenn ich auf die Link-Schaltfläche klicke?</u></span>`
+            `Steam Achievement Notifier konnte die ausführbare Datei dieses Spiels nicht automatisch finden. Der Speicherort der ausführbaren Datei des Spiels ist erforderlich, um das Spiel nach dem Schließen „freizugeben“`,
+            `Um das Spiel nach dem Schließen manuell freizugeben, <i>klicken Sie mit der rechten Maustaste</i> auf das <span class="hl">System-Tray-Symbol</span> > <span class="hl">Optionen</span> > <span class="hl">Spiel freigeben</span>, oder verwenden Sie die <span class="hl">Verknüpfung zum Freigeben des Spiels</span>`,
+            `Alternativ klicken Sie unten auf die Schaltfläche <span class="hl">Hinzufügen</span>, um die mit einem fokussierten Fenster verknüpfte ausführbare Datei zu <span class="hl">Einstellungen</span> > <span class="hl">Spiele</span> > <span class="hl">Automatische Spielfreigabe</span> hinzuzufügen`,
         ],
-        linkgamehelp: "Spiel über Fenster verbinden",
+        autorelease: "Automatische Spielfreigabe",
+        autoreleasesub: [
+            `Wenn Steam ein Spiel nach dem Schließen des Spielfensters weiterhin als <i>Wird gespielt</i> anzeigt, versuchen Sie, einen neuen Eintrag zu <span class="hl">Automatische Spielfreigabe</span> hinzuzufügen`,
+            `Um dies für das aktuelle Spiel zu tun, klicken Sie unten auf die Schaltfläche <span class="hl">Hinzufügen</span>, um die mit einem fokussierten Fenster verknüpfte ausführbare Datei zu <span class="hl">Einstellungen</span> > <span class="hl">Spiele</span> > <span class="hl">Automatische Spielfreigabe</span> hinzuzufügen`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Was passiert, wenn ich auf die Schaltfläche Hinzufügen klicke?</u></span>`,
+        linkgamehelp: "Eintrag per Fokus hinzufügen",
         linkgamehelpsub: [
-            `Durch Klicken auf die <span class="hl">Link</span>-Schaltfläche wird automatisch ein neuer Eintrag im <span class="hl">Einstellungen</span> > <span class="hl">Verbundene Spiele</span>-Menü hinzugefügt, der Informationen aus dem aktuell fokussierten Fenster verwendet.`,
-            `Nachdem Sie auf die <span class="hl">Link</span>-Schaltfläche geklickt haben, wird ein 5-Sekunden-Timer gestartet`,
-            `Bevor der Timer abläuft, fokussieren Sie das Spiel-Fenster`,
-            `Sobald der Timer abgelaufen ist, wird ein neuer Eintrag für die aktuelle <span class="hl">AppID</span> im <span class="hl">Einstellungen</span> > <span class="hl">Verbundene Spiele</span>-Menü hinzugefügt, wobei die ausführbare Datei des fokussierten Fensters verwendet wird`,
-            `Wenn Sie es erneut versuchen müssen, entfernen Sie den Eintrag über <span class="hl">Einstellungen</span> > <span class="hl">Verbundene Spiele</span> durch Klicken auf die Schaltfläche <span id="linkhelpunlink"></span>`
+            `Durch Klicken auf die Schaltfläche <span class="hl">Hinzufügen</span> wird automatisch ein neuer Eintrag zu <span class="hl">Einstellungen</span> > <span class="hl">Spiele</span> > <span class="hl">Automatische Spielfreigabe</span> hinzugefügt, basierend auf Informationen aus dem aktuell fokussierten Fenster.`,
+            `Nach dem Klicken auf die Schaltfläche <span class="hl">Hinzufügen</span> startet ein 5-Sekunden-Timer`,
+            `Bevor der Timer abläuft, fokussieren Sie das Spielfenster`,
+            `Sobald der Timer abgelaufen ist, wird ein neuer Eintrag für die aktuelle <span class="hl">AppID</span> zu <span class="hl">Einstellungen</span> > <span class="hl">Spiele</span> > <span class="hl">Automatische Spielfreigabe</span> hinzugefügt, unter Verwendung der mit dem fokussierten Fenster verknüpften ausführbaren Datei`,
+            `Neue Versuche überschreiben bestehende Einträge, oder der Eintrag kann über <span class="hl">Einstellungen</span> > <span class="hl">Spiele</span> > <span class="hl">Automatische Spielfreigabe</span> durch Klicken auf die Schaltfläche <span id="linkhelpunlink"></span> entfernt werden`
         ],
-        addlinkfailed: "Fenster konnte nicht verbunden werden",
-        addlinkfailedsub: `Klicken Sie auf die Schaltfläche <span class="hl">Link</span>, um es erneut zu versuchen`,
+        addlinkfailed: "Fenster konnte nicht hinzugefügt werden",
+        addlinkfailedsub: `Klicken Sie auf die Schaltfläche <span class="hl">Hinzufügen</span>, um es erneut zu versuchen`,
         webhookunlockmsg: "$user hat einen Erfolg freigeschaltet",
         webhookunlockmsgplat: "$user hat alle Erfolge freigeschaltet",
         webhookingame: "in $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Spiele",
             content: {
-                linkedgames: "Verknüpfte Spiele",
+                linkedgames: "Automatische Spielfreigabe",
                 themeswitch: "Automatischer Designwechsel",
                 exclusionlist: "Ausschlussliste",
                 inclusionlist: "Einschlussliste",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Bildschirmposition",
                 usecustompos: "Benutzerdefinierte Position verwenden",
                 setcustompos: "Festlegen",
+                copycustompos: "Auf alle Anwenden",
                 resetcustompos: "Zurücksetzen"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Erzwingt, dass alle Anwendungsfenster mit dem ausgewählten Farbprofil gerendert werden<br><br><span class="ttdesc">Erfordert einen Neustart der Anwendung</span>`,
         pollrate: `Legen Sie das Aktualisierungsintervall für Erfolgsdaten während des Spiels fest<br><br><span class="ttdesc">Die Leistung kann je nach Wert oder Systemhardware steigen/abfallen. Höhere Werte führen normalerweise zu einer geringeren Systemlast, können aber auch zu einer stärkeren Verzögerung bei Benachrichtigungen führen</span>`,
         initdelay: `Legen Sie die Verzögerung zwischen der Erkennung der aktuellen <span class="hl">AppID</span> und dem Beginn der Prozess-/Erfolgsverfolgung fest<br><br><span class="ttdesc">Durch Erhöhen dieses Werts können Szenarien vermieden werden, in denen Steam das aktuelle Spiel nicht starten kann (aufgrund der Initialisierung der Anwendung in Steamworks, bevor das Spiel gestartet wurde)</span><br><br><span class="ttdesc">Alternativ kann das Erhöhen dieses Werts auch verwendet werden, um eine falsche Erkennung von Vor-Spielstart-Prozessen zu umgehen</span>`,
-        releasedelay: `Legt fest, wie lange der Hintergrundprozess warten soll, um nach der Freigabe des aktuellen Spiels neu zu starten. Beeinflusst sowohl die automatische Prozessüberwachung als auch manuell verknüpfte Spiele.<br><br><span class="ttdesc">Ermöglicht einen längeren Zeitrahmen, um Steamworks vollständig von der App freizugeben. Eine Erhöhung dieses Werts kann ungewöhnliches Verhalten verhindern, wie z.B. das Verfolgen eines zuvor geschlossenen Spiels</span>`,
-        maxretries: `Legt die maximale Anzahl von Versuchen fest, um einen laufenden Prozess mit einer erkannten AppID zu verknüpfen. Beeinflusst sowohl die automatische Prozessüberwachung als auch manuell verknüpfte Spiele.<br><br><span class="ttdesc">Verbindungsversuche werden einmal pro Sekunde durchgeführt. Wenn ein laufender Prozess nach dieser Anzahl von Versuchen nicht mit der aktuellen AppID verknüpft ist, wird ein ungültiger Prozess zurückgegeben. In solchen Fällen muss das Spiel manuell über das System-Tray > Optionen > Spiel freigeben freigegeben werden</span>`,
+        releasedelay: `Legen Sie fest, wie lange der im Hintergrund laufende Worker-Prozess wartet, bevor er nach der Freigabe des aktuellen Spiels neu gestartet wird. Betrifft sowohl die automatische Prozessverfolgung als auch die Automatische Spielfreigabe<br><br><span class="ttdesc">Ermöglicht ein längeres Zeitfenster, damit Steamworks vollständig aus der Anwendung freigegeben werden kann. Eine Erhöhung dieses Werts kann ungewöhnliches Verhalten verhindern, z. B. das Verfolgen eines zuvor geschlossenen Spiels</span>`,
+        maxretries: `Legen Sie die maximale Anzahl von Versuchen fest, um einen laufenden Prozess mit einer erkannten AppID zu verknüpfen. Betrifft sowohl die automatische Prozessverfolgung als auch die Automatische Spielfreigabe<br><br><span class="ttdesc">Versuche werden einmal pro Sekunde durchgeführt. Wenn ein laufender Prozess nach dieser Anzahl von Versuchen nicht mit der aktuellen AppID verknüpft ist, wird ein ungültiger Prozess zurückgegeben. In solchen Fällen muss das Spiel manuell über System Tray > Optionen > Spiel freigeben freigegeben werden</span>`,
         debug: "Öffnen Sie das Debug-Panel, das detaillierte Prozessverfolgungsinformationen anzeigt",
         userust: "Verwenden Sie eine alternative Rust-basierte Funktion, um zu überprüfen, ob die verfolgten Spielprozesse derzeit auf dem System ausgeführt werden. Wenn diese Option nicht aktiviert ist, wird stattdessen die Standardprozessüberprüfung auf NodeJS-Basis verwendet.",
         notifydebug: "Erstellen Sie ein DevTools-Fenster für alle Benachrichtigungen. Nützlich zum Debuggen/Beheben von Benachrichtigungsproblemen",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Legen Sie die Bildschirmposition der Benachrichtigung fest",
         usecustompos: "Aktivieren Sie die benutzerdefinierte Positionierung für die Benachrichtigung",
         setcustompos: "Legen Sie die benutzerdefinierte Position für die Benachrichtigung fest",
+        copycustompos: "Die benutzerdefinierte Position auf alle anderen Benachrichtigungstypen anwenden",
         resetcustompos: "Setzen Sie die Position der Benachrichtigung auf die Standardbenutzerposition zurück",
         updatetheme: "Das aktuelle Design mit den ausgewählten Anpassungsoptionen aktualisieren",
         savetheme: "Speichern Sie alle konfigurierten Anpassungsoptionen als neues Design",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Die Farbe des dritten Textelements festlegen",
         exportachdata: `Erfolgsdaten in eine JSON-Datei exportieren, wenn ein Erfolg freigeschaltet wird<br><br><span class="ttdesc">Wenn aktiviert, wird <span class="ttcode">achdata.json</span> exportiert nach:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Passt den vertikalen Abstand zwischen den Textelementen in der Benachrichtigung an",
-        ssmode: `Legt fest, ob beim Erstellen von Screenshots der gesamte Bildschirm oder nur das aktuelle Spielfenster<span style="color: red;">*</span> erfasst wird<br><br><span class="ttdesc">Wenn die <span class="hl">ausführbare Datei</span> des aktuellen Spiels nicht gefunden werden kann (<i>entweder über die <span class="hl">automatische Prozessverfolgung</span> oder durch Hinzufügen als <span class="hl">Verknüpftes Spiel</span></i>), wird diese Option standardmäßig auf "Bildschirm" gesetzt</span>`,
+        ssmode: `Legen Sie fest, ob Screenshots den gesamten Bildschirm oder das aktuelle Spielfenster erfassen<span style="color: red;">*</span><br><br><span class="ttdesc">Wenn die <span class="hl">ausführbare Datei</span> des aktuellen Spiels nicht gefunden werden kann (<i>entweder über die <span class="hl">automatische Prozessverfolgung</span> oder beim Hinzufügen als Eintrag in <span class="hl">Automatische Spielfreigabe</span></i>), wird diese Option standardmäßig auf den Modus „Bildschirm“ gesetzt</span>`,
         replaynotify: "Wiederhole die letzte Erfolgsbenachrichtigung",
         replaynotifyshortcut: "Wiederhole die letzte Erfolgsbenachrichtigung mit der angegebenen Tastenkombination",
         replaynotifyempty: `<br><br><span class="ttdesc">Die Wiederholungswarteschlange ist leer. Schalte einen Erfolg frei, um eine Benachrichtigung zu wiederholen</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Ausführungspfad",
             managesub: [
-                `Verknüpfen Sie manuell die <span class="hl">Ausführungsdatei</span> eines Spiels mit einer bestimmten <span class="hl">AppID</span> oder <span class="hl">heben Sie eine bestehende Verknüpfung auf</span>`,
-                `Steam Achievement Notifier wird nicht mehr den <span class="hl">automatischen Prozess-Tracking</span> für irgendwelche <span class="hl">verknüpften Spiele</span> verwenden - stattdessen wird die angegebene <span class="hl">Ausführungsdatei</span> verfolgt, sobald die zugehörige <span class="hl">AppID</span> erkannt wird`,
-                `<span class="hl" id="appidhelp"><u>Wie finde ich eine AppID für ein Steam-Spiel?</u></span>`
+                `Wenn Steam ein Spiel nach dem Schließen des Spielfensters weiterhin als <i>Wird gespielt</i> anzeigt, versuchen Sie, einen neuen Eintrag zu <span class="hl">Automatische Spielfreigabe</span> hinzuzufügen`,
+                `Fügen Sie die <span class="hl">AppID</span> eines bestimmten Spiels zusammen mit der erwarteten <span class="hl">ausführbaren Spieldatei</span> hinzu, oder <span class="hl">entfernen</span> Sie einen bestehenden Eintrag`,
+                `Neue Einträge können auch hinzugefügt werden, indem Sie <i>mit der rechten Maustaste klicken</i> auf das <span class="hl">System-Tray-Symbol</span> > <span class="hl">Automatische Spielfreigabe</span>, sobald ein Spiel erkannt wurde`,
+                `<span class="hl help" id="appidhelp"><u>Wie finde ich die AppID eines Steam-Spiels?</u></span>`
             ],
-            linknew: "Neues verknüpftes Spiel",
+            linknew: "Neuer Eintrag",
             linknewsub: [
-                `Erstellen Sie eine neue Verknüpfung zwischen einer <span class="hl">Spiel-Ausführungsdatei</span> und der zugehörigen <span class="hl">AppID</span>`,
-                `Nachdem sie erstellt wurden, können Verknüpfungen über den vorherigen <span class="hl">Dialog „Verknüpfte Spiele verwalten“</span> <span class="hl">aufgehoben</span> werden`
+                `Fügen Sie die <span class="hl">AppID</span> eines neuen Spiels zusammen mit der erwarteten <span class="hl">ausführbaren Spieldatei</span> hinzu`,
+                `Nach dem Hinzufügen können Einträge über das vorherige Menü <span class="hl">Automatische Spielfreigabe</span> <span class="hl">entfernt</span> werden`
             ],
-            linkedit: "Verknüpftes Spiel bearbeiten",
+            linkedit: "Eintrag bearbeiten",
             linkeditsub: [
-                `Eine bestehende Verknüpfung zwischen einer <span class="hl">Spiel ausführbaren Datei</span> und der zugehörigen <span class="hl">AppID</span> bearbeiten`,
-                `Nach der Erstellung können Verknüpfungen über den vorherigen Dialog <span class="hl">Verknüpfte Spiele verwalten</span> <span class="hl">entfernt</span> werden`
+                `Bearbeiten Sie die <span class="hl">AppID</span> eines bestehenden Spiels zusammen mit der erwarteten <span class="hl">ausführbaren Spieldatei</span>`,
+                `Nach dem Hinzufügen können Einträge über das vorherige Menü <span class="hl">Automatische Spielfreigabe</span> <span class="hl">entfernt</span> werden`
             ],
-            link: "Verknüpfen",
+            link: "Hinzufügen"
         }
     },
     exclusions: {

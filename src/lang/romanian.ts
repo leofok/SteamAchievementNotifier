@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Fișierul EXE al jocului nu a fost găsit!",
         noexesub: "Apasă aici pentru mai multe informații",
         noexedialogsub: [
-            `Steam Achievement Notifier nu a reușit să localizeze automat fișierul executabil al acestui joc. Locatia fișierului executabil al jocului este necesară pentru a "lansa" jocul`,
-            `Pentru a lansa jocul manual, <i>clic dreapta</i> pe <span class="hl">icoana din bara de sistem</span> > <span class="hl">Opțiuni</span> > <span class="hl">Lansează jocul</span>, sau folosește <span class="hl">Scurtătura pentru lansarea jocului</span>`,
-            `Alternativ, apasă pe butonul <span class="hl">Link</span> de mai jos pentru a adăuga fișierul executabil asociat ferestrei în focus în meniul <span class="hl">Jocuri conectate</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>Ce se întâmplă când apas pe butonul Link?</u></span>`
+            `Steam Achievement Notifier nu a reușit să localizeze automat fișierul executabil al acestui joc. Locația fișierului executabil al jocului este necesară pentru a putea „elibera” jocul după ce este închis`,
+            `Pentru a elibera manual jocul după ce este închis, <i>faceți clic dreapta</i> pe <span class="hl">pictograma din zona de notificare</span> > <span class="hl">Opțiuni</span> > <span class="hl">Eliberează jocul</span> sau utilizați <span class="hl">Comanda rapidă de eliberare a jocului</span>`,
+            `Alternativ, faceți clic pe butonul <span class="hl">Adaugă</span> de mai jos pentru a adăuga fișierul executabil asociat oricărei ferestre aflate în prezent în focus la <span class="hl">Setări</span> > <span class="hl">Jocuri</span> > <span class="hl">Jocuri cu eliberare automată</span>`,
         ],
-        linkgamehelp: "Conectează joc prin fereastră",
+        autorelease: "Eliberare automată a jocului",
+        autoreleasesub: [
+            `Dacă Steam afișează în continuare un joc ca <i>În joc</i> după ce fereastra jocului a fost închisă, încercați să adăugați o nouă intrare la <span class="hl">Jocuri cu eliberare automată</span>`,
+            `Pentru a face acest lucru pentru jocul curent, faceți clic pe butonul <span class="hl">Adaugă</span> de mai jos pentru a adăuga fișierul executabil asociat oricărei ferestre aflate în prezent în focus la <span class="hl">Setări</span> > <span class="hl">Jocuri</span> > <span class="hl">Jocuri cu eliberare automată</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Ce se întâmplă când fac clic pe butonul Adaugă?</u></span>`,
+        linkgamehelp: "Adaugă intrare prin focus",
         linkgamehelpsub: [
-            `Apăsând butonul <span class="hl">Link</span>, o nouă intrare va fi adăugată automat în meniul <span class="hl">Setări</span> > <span class="hl">Jocuri conectate</span>, folosind informațiile din fereastra activă.`,
-            `După ce apeși pe butonul <span class="hl">Link</span>, un cronometru de 5 secunde va începe`,
-            `Înainte ca cronometru să se termine, focalizează fereastra jocului`,
-            `Când cronometru se va termina, o nouă intrare pentru <span class="hl">AppID</span> va fi adăugată în meniul <span class="hl">Setări</span> > <span class="hl">Jocuri conectate</span>, folosind fișierul executabil asociat ferestrei active`,
-            `Dacă trebuie să încerci din nou, elimină intrarea din <span class="hl">Setări</span> > <span class="hl">Jocuri conectate</span> făcând clic pe butonul <span id="linkhelpunlink"></span>`
+            `Făcând clic pe butonul <span class="hl">Adaugă</span>, va fi adăugată automat o nouă intrare la <span class="hl">Setări</span> > <span class="hl">Jocuri</span> > <span class="hl">Jocuri cu eliberare automată</span>, folosind informațiile din fereastra aflată în prezent în focus.`,
+            `După ce faceți clic pe butonul <span class="hl">Adaugă</span>, va începe un temporizator de 5 secunde`,
+            `Înainte ca temporizatorul să se termine, aduceți fereastra jocului în prim-plan`,
+            `Odată ce temporizatorul s-a încheiat, va fi adăugată o nouă intrare pentru <span class="hl">AppID</span>-ul curent la <span class="hl">Setări</span> > <span class="hl">Jocuri</span> > <span class="hl">Jocuri cu eliberare automată</span>, folosind fișierul executabil asociat ferestrei aflate în focus`,
+            `Încercările noi vor suprascrie intrările existente sau intrarea poate fi eliminată prin <span class="hl">Setări</span> > <span class="hl">Jocuri</span> > <span class="hl">Jocuri cu eliberare automată</span> făcând clic pe butonul <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Nu s-a putut conecta fereastra",
-        addlinkfailedsub: `Apasă pe butonul <span class="hl">Link</span> pentru a încerca din nou`,
+        addlinkfailed: "Nu se poate adăuga fereastra",
+        addlinkfailedsub: `Faceți clic pe butonul <span class="hl">Adaugă</span> pentru a încerca din nou`,
         webhookunlockmsg: "$user a deblocat o realizare",
         webhookunlockmsgplat: "$user a deblocat toate realizările",
         webhookingame: "în $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Jocuri",
             content: {
-                linkedgames: "Jocuri Conectate",
+                linkedgames: "Jocuri cu eliberare automată",
                 themeswitch: "Comutare automată a temelor",
                 exclusionlist: "Listă de Excludere",
                 inclusionlist: "Listă de Incluziune",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Poziție Ecran",
                 usecustompos: "Utilizare Poziție Personalizată",
                 setcustompos: "Setare",
+                copycustompos: "Aplică Tuturor",
                 resetcustompos: "Resetare"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Forțează toate feroneriile aplicației să se redea folosind profilul de culoare selectat<br><br><span class="ttdesc">Este necesar un restart al aplicației</span>`,
         pollrate: `Setați intervalul de actualizare pentru datele de realizare în timpul jocului<br><br><span class="ttdesc">Performanța poate crește/scădea în funcție de valoarea sau de resursele hardware ale sistemului. Valorile mai mari duc de obicei la o încărcare mai mică a sistemului, dar pot întârzia notificările</span>`,
         initdelay: `Setează întârzierea între detectarea actualului <span class="hl">AppID</span> și începutul urmăririi proceselor/realizărilor<br><br><span class="ttdesc">Creșterea acestei valori poate preveni scenarii în care Steam nu poate porni jocul curent (din cauza inițializării aplicației în Steamworks înainte ca jocul să fie lansat)</span><br><br><span class="ttdesc">Alternativ, creșterea acestei valori poate fi folosită și pentru a evita detectarea incorectă a proceselor de pre-lansare ale jocului</span>`,
-        releasedelay: `Stabilește cât timp așteaptă procesul de fundal să se repornească după ce jocul curent a fost lansat. Afectează atât urmărirea automată a procesului, cât și jocurile legate manual.<br><br><span class="ttdesc">Permite un interval mai lung de timp pentru a elibera complet Steamworks de aplicație. Creșterea acestei valori poate preveni comportamente neobișnuite, cum ar fi urmărirea unui joc închis anterior</span>`,
-        maxretries: `Stabilește numărul maxim de încercări de a lega un proces în execuție la un AppID detectat. Afectează atât urmărirea automată a procesului, cât și jocurile legate manual.<br><br><span class="ttdesc">Încercările de legare sunt efectuate o dată pe secundă. Dacă un proces în execuție nu este legat la AppID-ul curent după această numărătoare de încercări, un proces nevalid va fi returnat. În astfel de cazuri, jocul va trebui eliberat manual prin intermediul Tavă de Sistem > Opțiuni > Eliberează Joc</span>`,
+        releasedelay: `Setați cât timp procesul Worker din fundal așteaptă înainte de a reporni după ce jocul curent a fost eliberat. Afectează atât urmărirea automată a proceselor, cât și Jocurile cu eliberare automată<br><br><span class="ttdesc">Permite un interval de timp mai lung pentru ca Steamworks să fie complet eliberat din aplicație. Creșterea acestei valori poate preveni comportamente neobișnuite, cum ar fi urmărirea unui joc închis anterior</span>`,
+        maxretries: `Setați numărul maxim de reîncercări pentru a asocia un proces în execuție cu un AppID detectat. Afectează atât urmărirea automată a proceselor, cât și Jocurile cu eliberare automată<br><br><span class="ttdesc">Reîncercările sunt efectuate o dată pe secundă. Dacă un proces în execuție nu este asociat cu AppID-ul curent după acest număr de reîncercări, va fi returnat un proces invalid. În astfel de cazuri, jocul va trebui eliberat manual prin Zona de notificare > Opțiuni > Eliberează jocul</span>`,
         debug: "Deschideți Panoul de Depanare, care afișează informații detaliate de urmărire a proceselor",
         userust: "Utilizați o funcție alternativă bazată pe Rust pentru a verifica dacă procesele de joc urmărite rulează în prezent pe sistem. Atunci când nu este bifat, se va folosi în schimb verificarea procesului implicită bazată pe NodeJS.",
         notifydebug: "Creați o fereastră DevTools pentru toate notificările. Util pentru depanarea problemelor de notificare",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Setați poziția notificării pe ecran",
         usecustompos: "Activați poziționarea personalizată pentru notificare",
         setcustompos: "Setați poziția personalizată pentru notificare",
+        copycustompos: "Aplică poziția personalizată tuturor celorlalte tipuri de notificări",
         resetcustompos: "Resetați poziția notificării la poziția personalizată implicită",
         updatetheme: "Actualizați Tema curentă cu opțiunile de personalizare selectate",
         savetheme: "Salvați toate opțiunile de personalizare configurate ca o nouă Temă",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Setează culoarea celui de-al treilea element de text",
         exportachdata: `Exportă datele realizărilor într-un fișier JSON atunci când o realizare este deblocat<br><br><span class="ttdesc">Când este activat, <span class="ttcode">achdata.json</span> va fi exportat în:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Ajustează spațierea verticală dintre elementele de text din notificare",
-        ssmode: `Setează dacă se va captura întreaga fereastră sau doar fereastra jocului curent<span style="color: red;">*</span> în capturile de ecran<br><br><span class="ttdesc">Dacă fișierul <span class="hl">executabil</span> al jocului curent nu poate fi găsit (<i>fie prin <span class="hl">urmărirea automată a proceselor</span>, fie adăugându-l ca un <span class="hl">Joc Legat</span></i>), această opțiune va reveni la modul "Ecran"</span>`,
+        ssmode: `Setați dacă în capturile de ecran să fie capturat întregul ecran sau fereastra jocului curent<span style="color: red;">*</span><br><br><span class="ttdesc">Dacă <span class="hl">fișierul executabil</span> al jocului curent nu poate fi localizat (<i>fie prin <span class="hl">urmărirea automată a proceselor</span>, fie atunci când este adăugat ca intrare în <span class="hl">Jocuri cu eliberare automată</span></i>), această opțiune va fi implicit setată pe modul „Ecran”</span>`,
         replaynotify: "Repetă ultima notificare de realizare",
         replaynotifyshortcut: "Repetă ultima notificare de realizare folosind scurtătura de tastatură specificată",
         replaynotifyempty: `<br><br><span class="ttdesc">Coada de repetare este goală. Deblochează o realizare pentru a repeta o notificare</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Calea către Executabil",
             managesub: [
-                `Asociați manual <span class="hl">fișierul executabil</span> al unui joc la un <span class="hl">AppID</span> specific sau <span class="hl">dezasociați</span> unul existent`,
-                `Steam Achievement Notifier nu va mai utiliza <span class="hl">urmarirea automată a proceselor</span> pentru niciunul dintre <span class="hl">jocurile asociate</span> - în schimb, fișierul executabil specificat va fi urmărit de fiecare dată când AppID-ul asociat este detectat`,
-                `<span class="hl" id="appidhelp"><u>Cum găsesc AppID-ul unui joc Steam?</u></span>`
+                `Dacă Steam afișează în continuare un joc ca <i>În joc</i> după ce fereastra jocului a fost închisă, încercați să adăugați o nouă intrare la <span class="hl">Jocuri cu eliberare automată</span>`,
+                `Adăugați <span class="hl">AppID</span>-ul unui joc specific împreună cu <span class="hl">fișierul executabil al jocului</span> așteptat sau <span class="hl">eliminați</span> o intrare existentă`,
+                `Intrările noi pot fi adăugate și făcând <i>clic dreapta</i> pe <span class="hl">pictograma din zona de notificare</span> > <span class="hl">Eliberare automată a jocului</span> odată ce un joc a fost detectat`,
+                `<span class="hl help" id="appidhelp"><u>Cum găsesc AppID-ul unui joc Steam?</u></span>`
             ],
-            linknew: "Joc Nou Asociat",
+            linknew: "Intrare nouă",
             linknewsub: [
-                `Creați o nouă legătură între un <span class="hl">fișier executabil al jocului</span> și <span class="hl">AppID</span>-ul asociat`,
-                `După ce este creat, legăturile pot fi <span class="hl">dezasociate</span> prin fereastra de <span class="hl">Administrare Jocuri Asociate</span>`
+                `Adăugați <span class="hl">AppID</span>-ul unui joc nou împreună cu <span class="hl">fișierul executabil al jocului</span> așteptat`,
+                `Odată adăugate, intrările pot fi <span class="hl">eliminate</span> din meniul anterior <span class="hl">Jocuri cu eliberare automată</span>`
             ],
-            linkedit: "Editează jocul legat",
+            linkedit: "Editează intrarea",
             linkeditsub: [
-                `Editează o legătură existentă între un <span class="hl">executabil al jocului</span> și <span class="hl">AppID</span>-ul asociat`,
-                `Odată create, legăturile pot fi <span class="hl">detașate</span> prin dialogul anterior <span class="hl">Gestionare jocuri legate</span>`
+                `Editați <span class="hl">AppID</span>-ul unui joc existent împreună cu <span class="hl">fișierul executabil al jocului</span> așteptat`,
+                `Odată adăugate, intrările pot fi <span class="hl">eliminate</span> din meniul anterior <span class="hl">Jocuri cu eliberare automată</span>`
             ],
-            link: "Asociază",
+            link: "Adaugă"
         }
     },
     exclusions: {

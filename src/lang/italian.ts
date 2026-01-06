@@ -70,21 +70,26 @@ export const translations = {
         noexe: "File EXE del gioco non trovato!",
         noexesub: "Clicca qui per maggiori informazioni",
         noexedialogsub: [
-            `Steam Achievement Notifier non è riuscito a trovare automaticamente il file eseguibile per questo gioco. È necessaria la posizione del file eseguibile per "rilasciare" il gioco`,
-            `Per rilasciare il gioco manualmente, <i>clicca con il tasto destro</i> sull'icona della <span class="hl">barra delle applicazioni</span> > <span class="hl">Opzioni</span> > <span class="hl">Rilascia gioco</span>, oppure usa la <span class="hl">Scorciatoia per Rilasciare il Gioco</span>`,
-            `In alternativa, clicca sul pulsante <span class="hl">Collega</span> qui sotto per aggiungere il file eseguibile associato alla finestra attiva al menu <span class="hl">Giochi collegati</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>Cosa succede quando clicco sul pulsante Collega?</u></span>`
+            `Steam Achievement Notifier non è riuscito a individuare automaticamente il file eseguibile di questo gioco. La posizione del file eseguibile del gioco è necessaria per poter "rilasciare" il gioco una volta chiuso`,
+            `Per rilasciare manualmente il gioco una volta chiuso, <i>fai clic con il tasto destro</i> sull'<span class="hl">icona dell'area di notifica</span> > <span class="hl">Opzioni</span> > <span class="hl">Rilascia gioco</span>, oppure utilizza la <span class="hl">Scorciatoia Rilascio gioco</span>`,
+            `In alternativa, fai clic sul pulsante <span class="hl">Aggiungi</span> qui sotto per aggiungere il file eseguibile associato a qualsiasi finestra attualmente attiva in <span class="hl">Impostazioni</span> > <span class="hl">Giochi</span> > <span class="hl">Giochi con rilascio automatico</span>`,
         ],
-        linkgamehelp: "Collega il gioco tramite la finestra",
+        autorelease: "Rilascio automatico del gioco",
+        autoreleasesub: [
+            `Se Steam mostra ancora un gioco come <i>In gioco</i> dopo la chiusura della finestra del gioco, prova ad aggiungere una nuova voce in <span class="hl">Giochi con rilascio automatico</span>`,
+            `Per farlo per il gioco corrente, fai clic sul pulsante <span class="hl">Aggiungi</span> qui sotto per aggiungere il file eseguibile associato a qualsiasi finestra attualmente attiva in <span class="hl">Impostazioni</span> > <span class="hl">Giochi</span> > <span class="hl">Giochi con rilascio automatico</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Cosa succede quando faccio clic sul pulsante Aggiungi?</u></span>`,
+        linkgamehelp: "Aggiungi voce tramite focus",
         linkgamehelpsub: [
-            `Cliccando sul pulsante <span class="hl">Collega</span> verrà automaticamente aggiunta una nuova voce al menu <span class="hl">Impostazioni</span> > <span class="hl">Giochi collegati</span>, utilizzando le informazioni dalla finestra attiva.`,
-            `Dopo aver cliccato sul pulsante <span class="hl">Collega</span>, verrà avviato un timer di 5 secondi`,
-            `Prima che il timer scada, concentra la finestra del gioco`,
-            `Quando il timer sarà scaduto, verrà aggiunta una nuova voce per l'attuale <span class="hl">AppID</span> nel menu <span class="hl">Impostazioni</span> > <span class="hl">Giochi collegati</span>, utilizzando il file eseguibile della finestra attiva`,
-            `Se hai bisogno di riprovare, rimuovi la voce da <span class="hl">Impostazioni</span> > <span class="hl">Giochi collegati</span> cliccando sul pulsante <span id="linkhelpunlink"></span>`
+            `Facendo clic sul pulsante <span class="hl">Aggiungi</span> verrà automaticamente aggiunta una nuova voce in <span class="hl">Impostazioni</span> > <span class="hl">Giochi</span> > <span class="hl">Giochi con rilascio automatico</span>, utilizzando le informazioni della finestra attualmente attiva.`,
+            `Dopo aver fatto clic sul pulsante <span class="hl">Aggiungi</span>, inizierà un timer di 5 secondi`,
+            `Prima che il timer termini, porta in primo piano la finestra del gioco`,
+            `Una volta terminato il timer, verrà aggiunta una nuova voce per l'attuale <span class="hl">AppID</span> in <span class="hl">Impostazioni</span> > <span class="hl">Giochi</span> > <span class="hl">Giochi con rilascio automatico</span>, utilizzando il file eseguibile associato alla finestra attiva`,
+            `I nuovi tentativi sovrascriveranno le voci esistenti, oppure la voce può essere rimossa tramite <span class="hl">Impostazioni</span> > <span class="hl">Giochi</span> > <span class="hl">Giochi con rilascio automatico</span> facendo clic sul pulsante <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Impossibile collegare la finestra",
-        addlinkfailedsub: `Clicca sul pulsante <span class="hl">Collega</span> per riprovare`,
+        addlinkfailed: "Impossibile aggiungere la finestra",
+        addlinkfailedsub: `Fai clic sul pulsante <span class="hl">Aggiungi</span> per riprovare`,
         webhookunlockmsg: "$user ha sbloccato un successo",
         webhookunlockmsgplat: "$user ha sbloccato tutti i successi",
         webhookingame: "in $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Giochi",
             content: {
-                linkedgames: "Giochi collegati",
+                linkedgames: "Giochi con rilascio automatico",
                 themeswitch: "Cambia tema automaticamente",
                 exclusionlist: "Lista di esclusione",
                 inclusionlist: "Lista di inclusione",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Posizione Schermo",
                 usecustompos: "Usa Posizione Personalizzata",
                 setcustompos: "Imposta",
+                copycustompos: "Applica a Tutti",
                 resetcustompos: "Reimposta"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Forza tutte le finestre dell'applicazione a usare il profilo colore selezionato<br><br><span class="ttdesc">Richiede un riavvio dell'applicazione</span>`,
         pollrate: `Imposta l'intervallo di aggiornamento per i dati sugli obiettivi durante il gioco<br><br><span class="ttdesc">Le prestazioni possono aumentare/diminuire a seconda del valore o dell'hardware del sistema. Valori più alti di solito comportano un carico di sistema inferiore, ma possono ritardare le notifiche</span>`,
         initdelay: `Imposta il ritardo tra il rilevamento dell'attuale <span class="hl">AppID</span> e l'avvio del tracciamento dei processi/conquiste<br><br><span class="ttdesc">Aumentando questo valore è possibile evitare scenari in cui Steam non riesce a avviare il gioco corrente (a causa dell'inizializzazione dell'applicazione in Steamworks prima del lancio del gioco)</span><br><br><span class="ttdesc">In alternativa, aumentare questo valore può anche essere utilizzato per evitare la rilevazione errata dei processi di avvio pre-gioco</span>`,
-        releasedelay: `Imposta quanto tempo il processo in background deve attendere per riavviarsi dopo che il gioco attuale è stato rilasciato. Influenza sia il monitoraggio automatico dei processi che i giochi collegati manualmente.<br><br><span class="ttdesc">Consente un periodo più lungo per il completo rilascio di Steamworks dall'applicazione. Aumentare questo valore può prevenire comportamenti insoliti, come il tracciamento di un gioco precedentemente chiuso</span>`,
-        maxretries: `Imposta il numero massimo di tentativi per collegare un processo in esecuzione a un AppID rilevato. Influenza sia il monitoraggio automatico dei processi che i giochi collegati manualmente.<br><br><span class="ttdesc">I tentativi di collegamento vengono effettuati una volta al secondo. Se un processo in esecuzione non è collegato all'AppID corrente dopo questo numero di tentativi, verrà restituito un processo non valido. In tali casi, il gioco dovrà essere rilasciato manualmente tramite Tray di Sistema > Opzioni > Rilascia Gioco</span>`,
+        releasedelay: `Imposta per quanto tempo il processo Worker in background attende prima di riavviarsi dopo che il gioco corrente è stato rilasciato. Influisce sia sul tracciamento automatico dei processi sia sui Giochi con rilascio automatico<br><br><span class="ttdesc">Consente un intervallo di tempo più lungo affinché Steamworks venga completamente rilasciato dall'app. Aumentare questo valore può prevenire comportamenti insoliti, come il tracciamento di un gioco chiuso in precedenza</span>`,
+        maxretries: `Imposta il numero massimo di tentativi per collegare un processo in esecuzione a un AppID rilevato. Influisce sia sul tracciamento automatico dei processi sia sui Giochi con rilascio automatico<br><br><span class="ttdesc">I tentativi vengono effettuati una volta al secondo. Se un processo in esecuzione non viene collegato all'AppID corrente dopo questo numero di tentativi, verrà restituito un processo non valido. In tali casi, il gioco dovrà essere rilasciato manualmente tramite Area di notifica > Opzioni > Rilascia gioco</span>`,
         debug: "Apri il Pannello di Debug, che mostra informazioni dettagliate sul tracciamento dei processi",
         userust: "Utilizza una funzione alternativa basata su Rust per verificare se i processi di gioco tracciati sono attualmente in esecuzione sul sistema. Quando non selezionato, verrà utilizzato invece il controllo dei processi predefinito basato su NodeJS.",
         notifydebug: "Crea una finestra DevTools per tutte le notifiche. Utile per il debug/risoluzione dei problemi delle notifiche",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Imposta la posizione della notifica sullo schermo",
         usecustompos: "Abilita il posizionamento personalizzato per la notifica",
         setcustompos: "Imposta la posizione personalizzata per la notifica",
+        copycustompos: "Applica la posizione personalizzata a tutti gli altri tipi di notifica",
         resetcustompos: "Reimposta la posizione della notifica alla posizione personalizzata predefinita",
         updatetheme: "Aggiorna il Tema attuale con le opzioni di personalizzazione selezionate",
         savetheme: "Salva tutte le opzioni di personalizzazione configurate come un nuovo tema",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Imposta il colore del terzo elemento di testo",
         exportachdata: `Esporta i dati di successo in un file JSON quando un successo viene sbloccato<br><br><span class="ttdesc">Quando abilitato, <span class="ttcode">achdata.json</span> verrà esportato in:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Regola la spaziatura verticale tra gli elementi di testo nella notifica",
-        ssmode: `Imposta se catturare l'intero schermo o solo la finestra del gioco corrente<span style="color: red;">*</span> negli screenshot<br><br><span class="ttdesc">Se il <span class="hl">file eseguibile</span> del gioco corrente non può essere trovato (<i>sia tramite <span class="hl">monitoraggio automatico dei processi</span> che aggiungendolo come <span class="hl">Gioco Collegato</span></i>), questa opzione tornerà automaticamente alla modalità "Schermo"</span>`,
+        ssmode: `Imposta se acquisire l'intero schermo o la finestra del gioco corrente<span style="color: red;">*</span> negli screenshot<br><br><span class="ttdesc">Se il <span class="hl">file eseguibile</span> del gioco corrente non può essere individuato (<i>sia tramite <span class="hl">tracciamento automatico dei processi</span> sia quando aggiunto come voce in <span class="hl">Giochi con rilascio automatico</span></i>), questa opzione utilizzerà per impostazione predefinita la modalità "Schermo"</span>`,
         replaynotify: "Ripeti l'ultima notifica di conquista",
         replaynotifyshortcut: "Ripeti l'ultima notifica di conquista utilizzando la scorciatoia da tastiera specificata",
         replaynotifyempty: `<br><br><span class="ttdesc">La coda di ripetizione è vuota. Sblocca una conquista per ripetere una notifica</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Percorso del file eseguibile",
             managesub: [
-                `Collega manualmente il <span class="hl">file eseguibile</span> di un gioco a uno specifico <span class="hl">AppID</span>, o <span class="hl">scollega</span> uno esistente`,
-                `Steam Achievement Notifier non utilizzerà più il <span class="hl">tracciamento automatico dei processi</span> per nessun <span class="hl">gioco collegato</span> - invece, il file eseguibile specificato verrà tracciato ogni volta che l'AppID associato viene rilevato`,
-                `<span class="hl" id="appidhelp"><u>Come posso trovare l'AppID di un gioco Steam?</u></span>`
+                `Se Steam mostra ancora un gioco come <i>In gioco</i> dopo la chiusura della finestra del gioco, prova ad aggiungere una nuova voce in <span class="hl">Giochi con rilascio automatico</span>`,
+                `Aggiungi l'<span class="hl">AppID</span> di un gioco specifico insieme al relativo <span class="hl">eseguibile del gioco</span> previsto, oppure <span class="hl">rimuovi</span> una voce esistente`,
+                `Le nuove voci possono anche essere aggiunte facendo <i>clic con il tasto destro</i> sull'<span class="hl">icona dell'area di notifica</span> > <span class="hl">Rilascio automatico del gioco</span> una volta che un gioco è stato rilevato`,
+                `<span class="hl help" id="appidhelp"><u>Come trovo l'AppID di un gioco Steam?</u></span>`
             ],
-            linknew: "Nuovo Gioco Collegato",
+            linknew: "Nuova voce",
             linknewsub: [
-                `Crea un nuovo collegamento tra un <span class="hl">file eseguibile del gioco</span> e l'AppID associato`,
-                `Una volta creati, i collegamenti possono essere <span class="hl">scollegati</span> tramite la precedente finestra di dialogo <span class="hl">Gestisci Giochi Collegati</span>`
+                `Aggiungi l'<span class="hl">AppID</span> di un nuovo gioco insieme al relativo <span class="hl">eseguibile del gioco</span> previsto`,
+                `Una volta aggiunte, le voci possono essere <span class="hl">rimosse</span> tramite il precedente menu <span class="hl">Giochi con rilascio automatico</span>`
             ],
-            linkedit: "Modifica gioco collegato",
+            linkedit: "Modifica voce",
             linkeditsub: [
-                `Modifica un collegamento esistente tra un <span class="hl">eseguibile del gioco</span> e l'<span class="hl">AppID</span> associato`,
-                `Una volta creati, i collegamenti possono essere <span class="hl">scollegati</span> tramite la finestra precedente <span class="hl">Gestisci giochi collegati</span>`
+                `Modifica l'<span class="hl">AppID</span> di un gioco esistente insieme al relativo <span class="hl">eseguibile del gioco</span> previsto`,
+                `Una volta aggiunte, le voci possono essere <span class="hl">rimosse</span> tramite il precedente menu <span class="hl">Giochi con rilascio automatico</span>`
             ],
-            link: "Collega",
+            link: "Aggiungi"
         }
     },
     exclusions: {

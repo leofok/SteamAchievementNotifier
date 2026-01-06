@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Game EXE not found!",
         noexesub: "Click here for more information",
         noexedialogsub: [
-            `Steam Achievement Notifier was unable to locate the exectuable file for this game automatically. The location of the game's executable file is required in order to "release" the game`,
-            `To manually release the game, <i>right-click</i> the <span class="hl">System Tray icon</span> > <span class="hl">Options</span> > <span class="hl">Release Game</span>, or use the <span class="hl">Release Game Shortcut</span>`,
-            `Alternatively, click the <span class="hl">Link</span> button below to add any focused window's associated executable file to the <span class="hl">Linked Games</span> menu`,
-            `<span class="hl help" id="linkgamehelp"><u>What happens when I click the Link button?</u></span>`
+            `Steam Achievement Notifier was unable to locate the executable file for this game automatically. The location of the game's executable file is required in order to "release" the game once closed`,
+            `To manually release the game once closed, <i>right-click</i> the <span class="hl">System Tray icon</span> > <span class="hl">Options</span> > <span class="hl">Release Game</span>, or use the <span class="hl">Release Game Shortcut</span>`,
+            `Alternatively, click the <span class="hl">Add</span> button below to add any focused window's associated executable file to <span class="hl">Settings</span> > <span class="hl">Games</span> > <span class="hl">Auto-Release Games</span>`,
         ],
-        linkgamehelp: "Link Game via Window",
+        autorelease: "Auto-Release Game",
+        autoreleasesub: [
+            `If Steam still shows a game as <i>Playing</i> after the game window has closed, try adding a new entry to <span class="hl">Auto-Release Games</span>`,
+            `To do this for the current game, click the <span class="hl">Add</span> button below to add any focused window's associated executable file to <span class="hl">Settings</span> > <span class="hl">Games</span> > <span class="hl">Auto-Release Games</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>What happens when I click the Add button?</u></span>`,
+        linkgamehelp: "Add Entry via Focus",
         linkgamehelpsub: [
-            `Clicking the <span class="hl">Link</span> button will automatically add a new entry to the <span class="hl">Settings</span> > <span class="hl">Linked Games</span> menu, using information from the currently focused window.`,
-            `After clicking the <span class="hl">Link</span> button, a 5-second timer will begin`,
+            `Clicking the <span class="hl">Add</span> button will automatically add a new entry to <span class="hl">Settings</span> > <span class="hl">Games</span> > <span class="hl">Auto-Release Games</span>, using information from the currently focused window.`,
+            `After clicking the <span class="hl">Add</span> button, a 5-second timer will begin`,
             `Before the timer ends, focus the game window`,
-            `Once the timer has ended, a new entry for the current <span class="hl">AppID</span> will be added to the <span class="hl">Settings</span> > <span class="hl">Linked Games</span> menu, using the focused window's associated executable file`,
-            `If you need to try again, remove the entry via <span class="hl">Settings</span> > <span class="hl">Linked Games</span> by clicking the <span id="linkhelpunlink"></span> button`
+            `Once the timer has ended, a new entry for the current <span class="hl">AppID</span> will be added to <span class="hl">Settings</span> > <span class="hl">Games</span> > <span class="hl">Auto-Release Games</span>, using the focused window's associated executable file`,
+            `New attempts will overwrite existing entries, or the entry can be removed via <span class="hl">Settings</span> > <span class="hl">Games</span> > <span class="hl">Auto-Release Games</span> by clicking the <span id="linkhelpunlink"></span> button`
         ],
-        addlinkfailed: "Unable to link window",
-        addlinkfailedsub: `Click the <span class="hl">Link</span> button to try again`,
+        addlinkfailed: "Unable to add window",
+        addlinkfailedsub: `Click the <span class="hl">Add</span> button to try again`,
         webhookunlockmsg: "$user unlocked an achievement",
         webhookunlockmsgplat: "$user unlocked all achievements",
         webhookingame: "in $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Games",
             content: {
-                linkedgames: "Linked Games",
+                linkedgames: "Auto-Release Games",
                 themeswitch: "Auto-Switch Themes",
                 exclusionlist: "Exclusion List",
                 inclusionlist: "Inclusion List",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Screen Position",
                 usecustompos: "Use Custom Position",
                 setcustompos: "Set",
+                copycustompos: "Apply to All",
                 resetcustompos: "Reset"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Force all app windows to render using the selected color profile<br><br><span class="ttdesc">Requires app restart</span>`,
         pollrate: `Set the update interval for achievement data during gameplay<br><br><span class="ttdesc">Performance may increase/decrease depending on the value or system hardware. Higher values typically result in lower system load, but may cause notifications to be more delayed</span>`,
         initdelay: `Set the delay between detection of the current <span class="hl">AppID</span> and when process/achievement tracking starts<br><br><span class="ttdesc">Increasing this value can prevent scenarios where Steam is unable to launch the current game (due to the app initialising Steamworks before the game has launched)</span><br><br><span class="ttdesc">Alternatively, increasing this value can also be used to bypass incorrect detection of pre-game launcher processes</span>`,
-        releasedelay: `Set how long the background Worker process waits to restart after the current game has been released. Affects both automatic process tracking and manually linked games<br><br><span class="ttdesc">Allows a longer timeframe for Steamworks to be fully released from the app. Increasing this value can prevent unusual behaviour, such as tracking a previously closed game</span>`,
-        maxretries: `Set the maximum number of retries to link a running process to a detected AppID. Affects both automatic process tracking and manually linked games<br><br><span class="ttdesc">Retries are attempted once every second. If a running process is not linked to the current AppID after this number of retries, an invalid process will be returned. In such cases, the game will need to be manually released via System Tray > Options > Release Game</span>`,
+        releasedelay: `Set how long the background Worker process waits to restart after the current game has been released. Affects both automatic process tracking and Auto-Release Games<br><br><span class="ttdesc">Allows a longer timeframe for Steamworks to be fully released from the app. Increasing this value can prevent unusual behaviour, such as tracking a previously closed game</span>`,
+        maxretries: `Set the maximum number of retries to link a running process to a detected AppID. Affects both automatic process tracking and Auto-Release Games<br><br><span class="ttdesc">Retries are attempted once every second. If a running process is not linked to the current AppID after this number of retries, an invalid process will be returned. In such cases, the game will need to be manually released via System Tray > Options > Release Game</span>`,
         debug: "Open the Debug Panel, which displays in-depth Process Tracking info",
         userust: "Use an alternative Rust-based function to check whether tracked game processes are currently running on the system. When unchecked, the default Node JS-based process check will be used instead",
         notifydebug: "Create a DevTools window for all notifications. Useful for debugging/troubleshooting notification issues",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Set the on-screen position of the notification",
         usecustompos: "Enable custom positioning for the notification",
         setcustompos: "Set the custom position for the notification",
+        copycustompos: "Apply the custom position to all other notification types",
         resetcustompos: "Reset the position of the notification to the default custom position",
         updatetheme: "Update the current Theme with the selected customisation options",
         savetheme: "Save all configured customisation options as a new Theme",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Set the color of the third text element",
         exportachdata: `Export achievement data to a JSON file when an achievement is unlocked<br><br><span class="ttdesc">When enabled, <span class="ttcode">achdata.json</span> will be exported to:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Adjust the vertical spacing between text elements within the notification",
-        ssmode: `Set whether to capture the entire screen or the current game window<span style="color: red;">*</span> in screenshots<br><br><span class="ttdesc">If the current game's <span class="hl">executable file</span> cannot be located (<i>either via <span class="hl">automatic process tracking</span> or adding as a <span class="hl">Linked Game</span></i>), this option will default to "Screen" mode</span>`,
+        ssmode: `Set whether to capture the entire screen or the current game window<span style="color: red;">*</span> in screenshots<br><br><span class="ttdesc">If the current game's <span class="hl">executable file</span> cannot be located (<i>either via <span class="hl">automatic process tracking</span> or when added as an <span class="hl">Auto-Release Games</span> entry</i>), this option will default to "Screen" mode</span>`,
         replaynotify: "Replay the last achievement notification",
         replaynotifyshortcut: "Replay the last achievement notification using the specified keyboard shortcut",
         replaynotifyempty: `<br><br><span class="ttdesc">Replay queue is empty. Unlock an achievement to replay a notification</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Executable Path",
             managesub: [
-                `Manually link a game's <span class="hl">executable file</span> to a specific <span class="hl">AppID</span>, or <span class="hl">unlink</span> an existing one`,
-                `Steam Achievement Notifier will no longer use <span class="hl">automatic process tracking</span> for any <span class="hl">linked games</span> - instead, the specified <span class="hl">executable file</span> will be tracked whenever the associated <span class="hl">AppID</span> is detected`,
+                `If Steam still shows a game as <i>Playing</i> after the game window has closed, try adding a new entry to <span class="hl">Auto-Release Games</span>`,
+                `Add a specific game's <span class="hl">AppID</span> along with its expected <span class="hl">game executable</span>, or <span class="hl">remove</span> an existing entry`,
+                `New entries can also be added by <i>right-clicking</i> the <span class="hl">System Tray icon</span> > <span class="hl">Auto-Release Game</span> once a game has been detected`,
                 `<span class="hl help" id="appidhelp"><u>How do I find a Steam game's AppID?</u></span>`
             ],
-            linknew: "New Linked Game",
+            linknew: "New Entry",
             linknewsub: [
-                `Create a new link between a <span class="hl">game executable</span> and the associated <span class="hl">AppID</span>`,
-                `Once created, links can be <span class="hl">unlinked</span> via the previous <span class="hl">Manage Linked Games</span> dialog`
+                `Add a new game's <span class="hl">AppID</span> along with its expected <span class="hl">game executable</span>`,
+                `Once added, entries can be <span class="hl">removed</span> via the previous <span class="hl">Auto-Release Games</span> menu`
             ],
-            linkedit: "Edit Linked Game",
+            linkedit: "Edit Entry",
             linkeditsub: [
-                `Edit an existing link between a <span class="hl">game executable</span> and the associated <span class="hl">AppID</span>`,
-                `Once created, links can be <span class="hl">unlinked</span> via the previous <span class="hl">Manage Linked Games</span> dialog`
+                `Edit an existing game's <span class="hl">AppID</span> along with its expected <span class="hl">game executable</span>`,
+                `Once added, entries can be <span class="hl">removed</span> via the previous <span class="hl">Auto-Release Games</span> menu`
             ],
-            link: "Link"
+            link: "Add"
         }
     },
     exclusions: {

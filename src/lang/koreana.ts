@@ -70,21 +70,26 @@ export const translations = {
         noexe: "게임 EXE 파일을 찾을 수 없습니다!",
         noexesub: "자세한 정보를 보려면 여기를 클릭하세요",
         noexedialogsub: [
-            `Steam Achievement Notifier는 이 게임의 실행 파일을 자동으로 찾을 수 없습니다. 게임을 "릴리스"하려면 게임 실행 파일의 위치가 필요합니다`,
-            `게임을 수동으로 릴리스하려면 <i>우클릭</i>하여 <span class="hl">시스템 트레이 아이콘</span> > <span class="hl">옵션</span> > <span class="hl">게임 릴리스</span>를 선택하거나 <span class="hl">게임 릴리스 단축키</span>를 사용하세요`,
-            `또는 아래의 <span class="hl">링크</span> 버튼을 클릭하여 현재 포커스된 윈도우와 관련된 실행 파일을 <span class="hl">링크된 게임</span> 메뉴에 추가할 수 있습니다`,
-            `<span class="hl help" id="linkgamehelp"><u>링크 버튼을 클릭하면 무엇이 발생하나요?</u></span>`
+            `Steam Achievement Notifier가 이 게임의 실행 파일을 자동으로 찾을 수 없었습니다. 게임을 종료한 후 "릴리스"하려면 게임의 실행 파일 위치가 필요합니다`,
+            `게임 종료 후 수동으로 릴리스하려면 <i>마우스 오른쪽 버튼</i>으로 <span class="hl">시스템 트레이 아이콘</span> > <span class="hl">옵션</span> > <span class="hl">게임 릴리스</span>를 선택하거나 <span class="hl">게임 릴리스 바로가기</span>를 사용하세요`,
+            `또는 아래의 <span class="hl">추가</span> 버튼을 클릭하여 현재 포커스된 창과 연결된 실행 파일을 <span class="hl">설정</span> > <span class="hl">게임</span> > <span class="hl">자동 릴리스 게임</span>에 추가하세요`,
         ],
-        linkgamehelp: "윈도우를 통해 게임 링크하기",
+        autorelease: "자동 릴리스 게임",
+        autoreleasesub: [
+            `게임 창을 닫은 후에도 Steam에서 게임이 <i>플레이 중</i>으로 표시된다면 <span class="hl">자동 릴리스 게임</span>에 새 항목을 추가해 보세요`,
+            `현재 게임에 대해 이를 수행하려면 아래의 <span class="hl">추가</span> 버튼을 클릭하여 현재 포커스된 창과 연결된 실행 파일을 <span class="hl">설정</span> > <span class="hl">게임</span> > <span class="hl">자동 릴리스 게임</span>에 추가하세요`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>추가 버튼을 클릭하면 어떻게 되나요?</u></span>`,
+        linkgamehelp: "포커스를 통해 항목 추가",
         linkgamehelpsub: [
-            `<span class="hl">링크</span> 버튼을 클릭하면 현재 포커스된 윈도우의 정보를 사용하여 <span class="hl">설정</span> > <span class="hl">링크된 게임</span> 메뉴에 새 항목이 자동으로 추가됩니다.`,
-            `<span class="hl">링크</span> 버튼을 클릭하면 5초 타이머가 시작됩니다`,
-            `타이머가 끝나기 전에 게임 윈도우에 포커스를 맞추세요`,
-            `타이머가 끝나면, 현재 <span class="hl">AppID</span>에 대한 새 항목이 포커스된 윈도우의 실행 파일을 사용하여 <span class="hl">설정</span> > <span class="hl">링크된 게임</span> 메뉴에 추가됩니다`,
-            `다시 시도해야 하는 경우, <span class="hl">설정</span> > <span class="hl">링크된 게임</span>에서 항목을 삭제하고 <span id="linkhelpunlink"></span> 버튼을 클릭하세요`
+            `<span class="hl">추가</span> 버튼을 클릭하면 현재 포커스된 창의 정보를 사용하여 <span class="hl">설정</span> > <span class="hl">게임</span> > <span class="hl">자동 릴리스 게임</span>에 새 항목이 자동으로 추가됩니다.`,
+            `<span class="hl">추가</span> 버튼을 클릭하면 5초 타이머가 시작됩니다`,
+            `타이머가 끝나기 전에 게임 창에 포커스를 맞추세요`,
+            `타이머가 종료되면 현재 <span class="hl">AppID</span>에 대한 새 항목이 포커스된 창과 연결된 실행 파일을 사용하여 <span class="hl">설정</span> > <span class="hl">게임</span> > <span class="hl">자동 릴리스 게임</span>에 추가됩니다`,
+            `새 시도는 기존 항목을 덮어쓰며, 또는 <span class="hl">설정</span> > <span class="hl">게임</span> > <span class="hl">자동 릴리스 게임</span>에서 <span id="linkhelpunlink"></span> 버튼을 클릭하여 항목을 제거할 수 있습니다`
         ],
-        addlinkfailed: "윈도우 링크에 실패했습니다",
-        addlinkfailedsub: `다시 시도하려면 <span class="hl">링크</span> 버튼을 클릭하세요`,
+        addlinkfailed: "창을 추가할 수 없습니다",
+        addlinkfailedsub: `<span class="hl">추가</span> 버튼을 클릭하여 다시 시도하세요`,
         webhookunlockmsg: "$user가 업적을 잠금 해제했습니다",
         webhookunlockmsgplat: "$user 님이 모든 업적을 해제했습니다",
         webhookingame: "$gamename에서",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "게임",
             content: {
-                linkedgames: "연결된 게임",
+                linkedgames: "자동 릴리스 게임",
                 themeswitch: "테마 자동 전환",
                 exclusionlist: "제외 목록",
                 inclusionlist: "포함 목록",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "화면 위치",
                 usecustompos: "사용자 정의 위치 사용",
                 setcustompos: "설정",
+                copycustompos: "모두에 적용",
                 resetcustompos: "재설정"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `선택한 색상 프로필을 사용하여 모든 애플리케이션 창을 렌더링하도록 강제<br><br><span class="ttdesc">앱 재시작이 필요합니다</span>`,
         pollrate: `게임 중 성취 데이터의 업데이트 간격을 설정합니다<br><br><span class="ttdesc">값이나 시스템 하드웨어에 따라 성능이 증가하거나 감소할 수 있습니다. 일반적으로 높은 값은 시스템 부하를 줄이지만 알림이 지연될 수 있습니다</span>`,
         initdelay: `현재 <span class="hl">AppID</span> 감지와 프로세스/성취 추적 시작 사이의 지연을 설정합니다<br><br><span class="ttdesc">이 값을 증가시키면 Steam이 현재 게임을 시작할 수 없는 시나리오를 방지할 수 있습니다 (게임이 시작되기 전에 Steamworks가 애플리케이션을 초기화하는 경우)</span><br><br><span class="ttdesc">또한 이 값을 증가시켜 게임 전 시작 프로세스의 잘못된 감지를 우회하는 데 사용할 수도 있습니다</span>`,
-        releasedelay: `현재 게임이 출시된 후 백그라운드 프로세스가 다시 시작하기까지 대기하는 시간을 설정합니다. 자동 프로세스 추적 및 수동으로 연결된 게임에 모두 영향을 줍니다.<br><br><span class="ttdesc">앱에서 Steamworks를 완전히 해제하는 데 더 긴 시간 프레임을 제공합니다. 이 값을 높이면 이전에 닫힌 게임 추적과 같은 이상한 동작을 방지할 수 있습니다.</span>`,
-        maxretries: `실행 중인 프로세스를 감지된 AppID에 연결하는 시도의 최대 횟수를 설정합니다. 자동 프로세스 추적 및 수동으로 연결된 게임에 모두 영향을 줍니다.<br><br><span class="ttdesc">연결 시도는 1초마다 수행됩니다. 이 횟수의 시도 후에 실행 중인 프로세스가 현재 AppID에 연결되지 않은 경우 무효한 프로세스가 반환됩니다. 이러한 경우에는 게임을 시스템 트레이 > 옵션 > 게임 릴리스로 수동으로 해제해야 합니다.</span>`,
+        releasedelay: `현재 게임이 릴리스된 후 백그라운드 Worker 프로세스가 다시 시작되기까지 대기하는 시간을 설정합니다. 자동 프로세스 추적과 자동 릴리스 게임 모두에 영향을 미칩니다<br><br><span class="ttdesc">Steamworks가 앱에서 완전히 해제될 수 있도록 더 긴 시간을 허용합니다. 이 값을 늘리면 이전에 종료된 게임을 추적하는 것과 같은 비정상적인 동작을 방지할 수 있습니다</span>`,
+        maxretries: `실행 중인 프로세스를 감지된 AppID에 연결하기 위한 최대 재시도 횟수를 설정합니다. 자동 프로세스 추적과 자동 릴리스 게임 모두에 영향을 미칩니다<br><br><span class="ttdesc">재시도는 1초마다 수행됩니다. 이 횟수 내에 실행 중인 프로세스가 현재 AppID에 연결되지 않으면 잘못된 프로세스가 반환됩니다. 이러한 경우 시스템 트레이 > 옵션 > 게임 릴리스를 통해 수동으로 게임을 릴리스해야 합니다</span>`,
         debug: "디버그 패널을 열면 프로세스 추적 정보가 자세하게 표시됩니다.",
         userust: "시스템에서 추적된 게임 프로세스가 현재 실행 중인지 확인하기 위해 Rust 기반의 대체 기능을 사용합니다. 체크를 해제하면 대신 기본 NodeJS 기반 프로세스 확인이 사용됩니다.",
         notifydebug: "모든 알림에 대한 DevTools 창 생성. 알림 문제의 디버깅/문제 해결에 유용",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "알림의 화면 위치 설정",
         usecustompos: "알림에 대한 사용자 정의 위치 활성화",
         setcustompos: "알림에 대한 사용자 정의 위치 설정",
+        copycustompos: "사용자 지정 위치를 다른 모든 알림 유형에 적용합니다",
         resetcustompos: "알림의 위치를 기본 사용자 정의 위치로 재설정",
         updatetheme: "선택한 사용자 정의 옵션으로 현재 테마를 업데이트합니다",
         savetheme: "구성된 모든 사용자 정의 옵션을 새로운 테마로 저장",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "세 번째 텍스트 요소의 색상 설정",
         exportachdata: `업적이 잠금 해제되면 JSON 파일로 업적 데이터를 내보냅니다<br><br><span class="ttdesc">활성화하면, <span class="ttcode">achdata.json</span>이 다음 경로에 내보내집니다:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "알림 내 텍스트 요소 간의 수직 간격을 조정",
-        ssmode: `스크린샷에서 전체 화면을 캡처할지 현재 게임 창<span style="color: red;">*</span>만 캡처할지를 설정<br><br><span class="ttdesc">현재 게임의 <span class="hl">실행 파일</span>을 찾을 수 없는 경우(<i>자동 프로세스 추적 또는 <span class="hl">연결된 게임</span>으로 추가한 경우</i>), 이 옵션은 기본적으로 "화면" 모드로 설정됩니다</span>`,
+        ssmode: `스크린샷에서 전체 화면을 캡처할지, 현재 게임 창<span style="color: red;">*</span>을 캡처할지 설정합니다<br><br><span class="ttdesc">현재 게임의 <span class="hl">실행 파일</span>을 찾을 수 없는 경우(<i><span class="hl">자동 프로세스 추적</span>을 통해서든, <span class="hl">자동 릴리스 게임</span> 항목으로 추가된 경우든</i>), 이 옵션은 기본적으로 "화면" 모드로 설정됩니다</span>`,
         replaynotify: "최근 성취 알림을 재생",
         replaynotifyshortcut: "지정된 단축키를 사용하여 최근 성취 알림을 재생",
         replaynotifyempty: `<br><br><span class="ttdesc">재생 대기열이 비어 있습니다. 알림을 재생하려면 성취를 해제하세요</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "실행 파일 경로",
             managesub: [
-                `게임의 <span class="hl">실행 파일</span>을 특정 <span class="hl">AppID</span>에 수동으로 연결하거나 기존 연결을 <span class="hl">해제</span>합니다`,
-                `Steam Achievement Notifier는 더 이상 어떤 <span class="hl">연결된 게임</span>에 대해 <span class="hl">자동 프로세스 추적</span>을 사용하지 않습니다. 대신, 연결된 <span class="hl">AppID</span>가 감지될 때마다 지정된 <span class="hl">실행 파일</span>이 추적됩니다`,
-                `<span class="hl" id="appidhelp"><u>Steam 게임의 AppID를 찾는 방법은?</u></span>`
+                `게임 창을 닫은 후에도 Steam에서 게임이 <i>플레이 중</i>으로 표시된다면 <span class="hl">자동 릴리스 게임</span>에 새 항목을 추가해 보세요`,
+                `특정 게임의 <span class="hl">AppID</span>와 예상되는 <span class="hl">게임 실행 파일</span>을 추가하거나 기존 항목을 <span class="hl">제거</span>할 수 있습니다`,
+                `게임이 감지되면 <span class="hl">시스템 트레이 아이콘</span>을 <i>마우스 오른쪽 버튼</i>으로 클릭 > <span class="hl">자동 릴리스 게임</span>을 통해 새 항목을 추가할 수도 있습니다`,
+                `<span class="hl help" id="appidhelp"><u>Steam 게임의 AppID는 어떻게 찾나요?</u></span>`
             ],
-            linknew: "새로운 연결된 게임",
+            linknew: "새 항목",
             linknewsub: [
-                `게임의 <span class="hl">실행 파일</span>과 관련된 <span class="hl">AppID</span> 사이에 새로운 연결을 생성합니다`,
-                `생성된 후, 이전 <span class="hl">연결된 게임 관리</span> 대화 상자를 통해 연결을 <span class="hl">해제</span>할 수 있습니다`
+                `새 게임의 <span class="hl">AppID</span>와 예상되는 <span class="hl">게임 실행 파일</span>을 추가합니다`,
+                `추가된 후에는 이전 <span class="hl">자동 릴리스 게임</span> 메뉴를 통해 항목을 <span class="hl">제거</span>할 수 있습니다`
             ],
-            linkedit: "연결된 게임 편집",
+            linkedit: "항목 편집",
             linkeditsub: [
-                `<span class="hl">게임 실행 파일</span>과 연관된 <span class="hl">AppID</span> 간의 기존 연결을 편집합니다`,
-                `생성 후에는 이전 <span class="hl">연결된 게임 관리</span> 대화 상자를 통해 <span class="hl">연결 해제</span>할 수 있습니다`
+                `기존 게임의 <span class="hl">AppID</span>와 예상되는 <span class="hl">게임 실행 파일</span>을 편집합니다`,
+                `추가된 후에는 이전 <span class="hl">자동 릴리스 게임</span> 메뉴를 통해 항목을 <span class="hl">제거</span>할 수 있습니다`
             ],
-            link: "연결",
+            link: "추가"
         }
     },
     exclusions: {

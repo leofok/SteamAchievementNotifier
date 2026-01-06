@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Fichier EXE du jeu non trouvé !",
         noexesub: "Cliquez ici pour plus d'informations",
         noexedialogsub: [
-            `Steam Achievement Notifier n'a pas pu localiser automatiquement le fichier exécutable de ce jeu. L'emplacement du fichier exécutable est nécessaire pour "libérer" le jeu`,
-            `Pour libérer manuellement le jeu, <i>clic droit</i> sur l'<span class="hl">icône de la barre d'état système</span> > <span class="hl">Options</span> > <span class="hl">Libérer le jeu</span>, ou utilisez le <span class="hl">Raccourci Libérer le Jeu</span>`,
-            `Sinon, cliquez sur le bouton <span class="hl">Lier</span> ci-dessous pour ajouter le fichier exécutable associé à la fenêtre active au menu <span class="hl">Jeux Liés</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>Que se passe-t-il lorsque je clique sur le bouton Lier ?</u></span>`
+            `Steam Achievement Notifier n’a pas pu localiser automatiquement le fichier exécutable de ce jeu. L’emplacement du fichier exécutable du jeu est requis afin de pouvoir « libérer » le jeu une fois celui-ci fermé`,
+            `Pour libérer le jeu manuellement après sa fermeture, <i>cliquez avec le bouton droit</i> sur <span class="hl">l’icône de la System Tray</span> > <span class="hl">Options</span> > <span class="hl">Libérer le jeu</span>, ou utilisez le <span class="hl">Raccourci de libération du jeu</span>`,
+            `Vous pouvez également cliquer sur le bouton <span class="hl">Ajouter</span> ci-dessous pour ajouter le fichier exécutable associé à toute fenêtre active dans <span class="hl">Paramètres</span> > <span class="hl">Jeux</span> > <span class="hl">Libération automatique des jeux</span>`,
         ],
-        linkgamehelp: "Lier le jeu via la fenêtre",
+        autorelease: "Libération automatique du jeu",
+        autoreleasesub: [
+            `Si Steam affiche toujours un jeu comme <i>En cours</i> après la fermeture de la fenêtre du jeu, essayez d’ajouter une nouvelle entrée dans <span class="hl">Libération automatique des jeux</span>`,
+            `Pour effectuer cette action pour le jeu actuel, cliquez sur le bouton <span class="hl">Ajouter</span> ci-dessous afin d’ajouter le fichier exécutable associé à toute fenêtre active dans <span class="hl">Paramètres</span> > <span class="hl">Jeux</span> > <span class="hl">Libération automatique des jeux</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Que se passe-t-il lorsque je clique sur le bouton Ajouter ?</u></span>`,
+        linkgamehelp: "Ajouter une entrée via le focus",
         linkgamehelpsub: [
-            `En cliquant sur le bouton <span class="hl">Lier</span>, une nouvelle entrée sera automatiquement ajoutée au menu <span class="hl">Paramètres</span> > <span class="hl">Jeux Liés</span> en utilisant les informations de la fenêtre active.`,
-            `Après avoir cliqué sur le bouton <span class="hl">Lier</span>, un compte à rebours de 5 secondes commencera`,
-            `Avant la fin du compte à rebours, focalisez-vous sur la fenêtre du jeu`,
-            `Une fois le compte à rebours terminé, une nouvelle entrée pour l'<span class="hl">AppID</span> actuel sera ajoutée au menu <span class="hl">Paramètres</span> > <span class="hl">Jeux Liés</span>, en utilisant le fichier exécutable associé à la fenêtre active`,
-            `Si vous devez réessayer, supprimez l'entrée via <span class="hl">Paramètres</span> > <span class="hl">Jeux Liés</span> en cliquant sur le bouton <span id="linkhelpunlink"></span>`
+            `Cliquer sur le bouton <span class="hl">Ajouter</span> ajoutera automatiquement une nouvelle entrée dans <span class="hl">Paramètres</span> > <span class="hl">Jeux</span> > <span class="hl">Libération automatique des jeux</span>, en utilisant les informations de la fenêtre actuellement active.`,
+            `Après avoir cliqué sur le bouton <span class="hl">Ajouter</span>, un minuteur de 5 secondes démarre`,
+            `Avant la fin du minuteur, placez le focus sur la fenêtre du jeu`,
+            `Une fois le minuteur terminé, une nouvelle entrée pour l’<span class="hl">AppID</span> actuel sera ajoutée dans <span class="hl">Paramètres</span> > <span class="hl">Jeux</span> > <span class="hl">Libération automatique des jeux</span>, en utilisant le fichier exécutable associé à la fenêtre active`,
+            `Les nouvelles tentatives écraseront les entrées existantes, ou l’entrée peut être supprimée via <span class="hl">Paramètres</span> > <span class="hl">Jeux</span> > <span class="hl">Libération automatique des jeux</span> en cliquant sur le bouton <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Impossible de lier la fenêtre",
-        addlinkfailedsub: `Cliquez sur le bouton <span class="hl">Lier</span> pour réessayer`,
+        addlinkfailed: "Impossible d’ajouter la fenêtre",
+        addlinkfailedsub: `Cliquez sur le bouton <span class="hl">Ajouter</span> pour réessayer`,
         webhookunlockmsg: "$user a débloqué un succès",
         webhookunlockmsgplat: "$user a débloqué tous les succès",
         webhookingame: "dans $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Jeux",
             content: {
-                linkedgames: "Jeux liés",
+                linkedgames: "Libération automatique des jeux",
                 themeswitch: "Changement automatique de thème",
                 exclusionlist: "Liste d'exclusion",
                 inclusionlist: "Liste d'inclusion",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Position à l'Écran",
                 usecustompos: "Utiliser une Position Personnalisée",
                 setcustompos: "Définir",
+                copycustompos: "Appliquer à Tout",
                 resetcustompos: "Réinitialiser"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Forcer toutes les fenêtres de l'application à s'afficher avec le profil de couleur sélectionné<br><br><span class="ttdesc">Nécessite un redémarrage de l'application</span>`,
         pollrate: `Définir l'intervalle de mise à jour des données de réalisation pendant le jeu<br><br><span class="ttdesc">Les performances peuvent augmenter/diminuer en fonction de la valeur ou du matériel du système. Les valeurs plus élevées entraînent généralement une charge système plus faible, mais peuvent retarder les notifications</span>`,
         initdelay: `Définissez le délai entre la détection de l'<span class="hl">AppID</span> actuel et le début du suivi des processus/réalisations<br><br><span class="ttdesc">Augmenter cette valeur peut empêcher des scénarios où Steam ne peut pas lancer le jeu actuel (en raison de l'initialisation de l'application dans Steamworks avant le lancement du jeu)</span><br><br><span class="ttdesc">Alternativement, augmenter cette valeur peut également être utilisé pour contourner la détection incorrecte des processus de pré-lancement du jeu</span>`,
-        releasedelay: `Définit pendant combien de temps le processus d'arrière-plan attend de redémarrer après que le jeu actuel a été publié. Affecte à la fois le suivi automatique des processus et les jeux liés manuellement.<br><br><span class="ttdesc">Permet une période plus longue pour que Steamworks soit entièrement libéré de l'application. Augmenter cette valeur peut prévenir les comportements inhabituels, tels que le suivi d'un jeu précédemment fermé</span>`,
-        maxretries: `Définit le nombre maximal de tentatives pour lier un processus en cours à un AppID détecté. Affecte à la fois le suivi automatique des processus et les jeux liés manuellement.<br><br><span class="ttdesc">Les tentatives de liaison sont effectuées une fois par seconde. Si un processus en cours n'est pas lié à l'AppID actuel après ce nombre de tentatives, un processus non valide sera renvoyé. Dans de tels cas, le jeu devra être libéré manuellement via la zone de notification système > Options > Libérer le Jeu</span>`,
+        releasedelay: `Définissez la durée pendant laquelle le processus Worker en arrière-plan attend avant de redémarrer après la libération du jeu actuel. Affecte à la fois le suivi automatique des processus et la Libération automatique des jeux<br><br><span class="ttdesc">Permet un délai plus long pour que Steamworks soit complètement libéré de l’application. L’augmentation de cette valeur peut empêcher des comportements inhabituels, comme le suivi d’un jeu précédemment fermé</span>`,
+        maxretries: `Définissez le nombre maximal de tentatives pour lier un processus en cours d’exécution à un AppID détecté. Affecte à la fois le suivi automatique des processus et la Libération automatique des jeux<br><br><span class="ttdesc">Les tentatives sont effectuées une fois par seconde. Si un processus en cours d’exécution n’est pas lié à l’AppID actuel après ce nombre de tentatives, un processus invalide sera renvoyé. Dans ce cas, le jeu devra être libéré manuellement via System Tray > Options > Libérer le jeu</span>`,
         debug: "Ouvrez le panneau de débogage, qui affiche des informations détaillées de suivi des processus",
         userust: "Utilisez une fonction alternative basée sur Rust pour vérifier si les processus de jeu suivis sont actuellement en cours d'exécution sur le système. Lorsque non cochée, le contrôle de processus par défaut basé sur NodeJS sera utilisé à la place.",
         notifydebug: "Crée une fenêtre DevTools pour toutes les notifications. Utile pour le débogage / le dépannage des problèmes de notification",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Définir la position à l'écran de la notification",
         usecustompos: "Activer le positionnement personnalisé pour la notification",
         setcustompos: "Définir la position personnalisée pour la notification",
+        copycustompos: "Appliquer la position personnalisée à tous les autres types de notifications",
         resetcustompos: "Réinitialiser la position de la notification à la position personnalisée par défaut",
         updatetheme: "Mettre à jour le Thème actuel avec les options de personnalisation sélectionnées",
         savetheme: "Enregistrer toutes les options de personnalisation configurées en tant que nouveau thème",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Définir la couleur du troisième élément de texte",
         exportachdata: `Exporter les données de succès vers un fichier JSON lorsqu'un succès est débloqué<br><br><span class="ttdesc">Lorsqu'il est activé, <span class="ttcode">achdata.json</span> sera exporté vers :<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Ajuste l’espacement vertical entre les éléments de texte dans la notification",
-        ssmode: `Définit si la capture d’écran doit inclure tout l’écran ou uniquement la fenêtre du jeu en cours<span style="color: red;">*</span><br><br><span class="ttdesc">Si le <span class="hl">fichier exécutable</span> du jeu en cours ne peut pas être localisé (<i>soit via le <span class="hl">suivi automatique des processus</span>, soit en l’ajoutant comme un <span class="hl">Jeu Lié</span></i>), cette option reviendra par défaut au mode "Écran"</span>`,
+        ssmode: `Définissez si les captures d’écran doivent inclure l’écran entier ou la fenêtre du jeu actuelle<span style="color: red;">*</span><br><br><span class="ttdesc">Si le <span class="hl">fichier exécutable</span> du jeu actuel ne peut pas être localisé (<i>que ce soit via le <span class="hl">suivi automatique des processus</span> ou lorsqu’il est ajouté comme entrée dans <span class="hl">Libération automatique des jeux</span></i>), cette option sera définie par défaut sur le mode « Écran »</span>`,
         replaynotify: "Répéter la dernière notification de réussite",
         replaynotifyshortcut: "Répéter la dernière notification de réussite en utilisant le raccourci clavier spécifié",
         replaynotifyempty: `<br><br><span class="ttdesc">La file d'attente de répétition est vide. Débloquez une réussite pour répéter une notification</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Chemin du fichier exécutable",
             managesub: [
-                `Lie manuellement le <span class="hl">fichier exécutable</span> d'un jeu à un <span class="hl">AppID</span> spécifique, ou <span class="hl">dissociez</span> un existant`,
-                `Steam Achievement Notifier n'utilisera plus le <span class="hl">suivi automatique des processus</span> pour aucun des <span class="hl">jeux liés</span> - à la place, le fichier exécutable spécifié sera suivi chaque fois que l'ID d'application associé est détecté`,
-                `<span class="hl" id="appidhelp"><u>Comment trouver l'AppID d'un jeu Steam ?</u></span>`
+                `Si Steam affiche toujours un jeu comme <i>En cours</i> après la fermeture de la fenêtre du jeu, essayez d’ajouter une nouvelle entrée dans <span class="hl">Libération automatique des jeux</span>`,
+                `Ajoutez l’<span class="hl">AppID</span> d’un jeu spécifique avec son <span class="hl">fichier exécutable du jeu</span> attendu, ou <span class="hl">supprimez</span> une entrée existante`,
+                `De nouvelles entrées peuvent également être ajoutées en <i>cliquant avec le bouton droit</i> sur <span class="hl">l’icône de la System Tray</span> > <span class="hl">Libération automatique du jeu</span> une fois qu’un jeu a été détecté`,
+                `<span class="hl help" id="appidhelp"><u>Comment trouver l’AppID d’un jeu Steam ?</u></span>`
             ],
-            linknew: "Nouveau jeu lié",
+            linknew: "Nouvelle entrée",
             linknewsub: [
-                `Créez un nouveau lien entre un <span class="hl">fichier exécutable de jeu</span> et l' <span class="hl">AppID</span> associé`,
-                `Une fois créés, les liens peuvent être <span class="hl">dissociés</span> via la boîte de dialogue <span class="hl">Gérer les jeux liés</span> précédente`
+                `Ajoutez l’<span class="hl">AppID</span> d’un nouveau jeu avec son <span class="hl">fichier exécutable du jeu</span> attendu`,
+                `Une fois ajoutées, les entrées peuvent être <span class="hl">supprimées</span> via le menu précédent <span class="hl">Libération automatique des jeux</span>`
             ],
-            linkedit: "Modifier le jeu lié",
+            linkedit: "Modifier l’entrée",
             linkeditsub: [
-                `Modifier un lien existant entre un <span class="hl">exécutable du jeu</span> et l'<span class="hl">AppID</span> associé`,
-                `Une fois créés, les liens peuvent être <span class="hl">dissociés</span> via la fenêtre précédente <span class="hl">Gérer les jeux liés</span>`
+                `Modifiez l’<span class="hl">AppID</span> d’un jeu existant avec son <span class="hl">fichier exécutable du jeu</span> attendu`,
+                `Une fois ajoutées, les entrées peuvent être <span class="hl">supprimées</span> via le menu précédent <span class="hl">Libération automatique des jeux</span>`
             ],
-            link: "Lier",
+            link: "Ajouter"
         }
     },
     exclusions: {

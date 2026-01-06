@@ -552,7 +552,7 @@ window.addEventListener("tabchanged", async ({ detail }: CustomEventInit) => {
             "ps5"
         ]
 
-        document.querySelectorAll(".customopt:has(> #unlockmsgfontsize), .customopt:has(> #titlefontsize), .customopt:has(> #descfontsize)").forEach(async opt => {
+        customiser.querySelectorAll(".customopt:has(> #unlockmsgfontsize), .customopt:has(> #titlefontsize), .customopt:has(> #descfontsize)").forEach(async opt => {
             const { elems, preset } = config.store.customisation[type]
             const elem = opt.querySelector("input") as HTMLInputElement
             const elemid = elem.id.replace(/fontsize$/,"") as "unlockmsg" | "title" | "desc"
@@ -588,10 +588,26 @@ window.addEventListener("tabchanged", async ({ detail }: CustomEventInit) => {
             }
         })
 
-        document.querySelectorAll("button#setcustompos, button#resetcustompos")!.forEach(btn => (btn as HTMLButtonElement).onclick = () => {
+        customiser.querySelectorAll("button#setcustompos, button#resetcustompos")!.forEach(btn => (btn as HTMLButtonElement).onclick = () => {
             btn.id === "setcustompos" && document.getElementById("customiser")!.setAttribute("poswin","")
             ipcRenderer.send("custompos",type,btn.id === "resetcustompos")
         })
+
+        ;(customiser.querySelector("button#copycustompos")! as HTMLButtonElement).onclick = () => {
+            
+            for (const type of (["main","semi","rare","plat"] as NotifyType[])) {
+                if (type === sanhelper.type) continue
+                
+                try {
+                    config.set(`customisation.${type}.usecustompos`,true)
+                    config.set(`customisation.${type}.custompos`,config.get(`customisation.${sanhelper.type}.custompos`))
+    
+                    log.write("INFO",`Custom Position for "${sanhelper.type}" applied to "${type}"`)
+                } catch (err) {
+                    log.write("ERROR",`Unable to apply Custom Position for "${sanhelper.type}" to "${type}": ${err as Error}`)
+                }
+            }
+        }
 
         const visibilitybtn = document.querySelector(".opt.visibility > .visibilitybtn")! as HTMLButtonElement
         const setvisibilityicon = (key: string) => document.documentElement.style.setProperty("--visibility",`url('${sanhelper.setfilepath("icon",`visibility${!config.get(`${keypath}.${key}`) ? "_off" : ""}.svg`)}')`)
@@ -606,11 +622,11 @@ window.addEventListener("tabchanged", async ({ detail }: CustomEventInit) => {
         const { elemselector } = await import("./elemselector")
         elemselector(document.querySelector("#customisercontent .wrapper:has(> select#preset)")!,"elems")
 
-        document.getElementById("customiser")!.toggleAttribute("customfiles",config.get("usecustomfiles"))
+        customiser.toggleAttribute("customfiles",config.get("usecustomfiles"))
 
-        synced && document.getElementById("customiser")!.setAttribute("synced",synced)
+        synced && customiser.setAttribute("synced",synced)
 
-        const synclbl = document.querySelector("#customiser .synclbl")
+        const synclbl = customiser.querySelector(".synclbl")
         synclbl && synced && (synclbl.textContent = `${await language.get("syncedwith",["customiser","theme","content"])} ${await language.get((config.get("trophymode") ? "trophy" : "") + synced)}`)
     }
 
@@ -1063,15 +1079,18 @@ ipcRenderer.on("suspendresume", async (event,suspended: boolean) => {
     }
 })
 
-ipcRenderer.on("noexeclick",async () => {
-    if (!window.appid) return log.write("INFO",`Failed to init Add Link dialog - AppID is 0`)
+ipcRenderer.on("noexeclick",async (event,appid: number,skipnotify?: boolean) => {
+    if (!appid) return log.write("INFO",`Failed to init Add Link dialog - AppID is 0`)
     ipcRenderer.send("noexeclose")
 
     dialog.open({
-        title: await language.get("noexe"),
+        title: await language.get(skipnotify ? "autorelease" : "noexe"),
         type: "default",
-        icon: sanhelper.setfilepath("icon","error.svg"),
-        sub: await language.get("noexedialogsub"),
+        icon: sanhelper.setfilepath("icon",`${skipnotify ? "link" : "error"}.svg`),
+        sub: [
+            ...(skipnotify ? await language.get("autoreleasesub") : await language.get("noexedialogsub")),
+            await language.get("linkgamehelplink")
+        ],
         addHTML: `<span id="noexeclick"></span>`,
         buttons: [{
             id: "addlink",
@@ -1090,15 +1109,15 @@ ipcRenderer.on("noexeclick",async () => {
                     if (!count) {
                         const winpath = getFocusedWinPath().replace(/\\/g,"/")
 
-                        // Re-check `window.appid` is not 0 (i.e. game is still open) before writing to localStorage
-                        if (!winpath || !window.appid) {
+                        // Re-check `appid` is not 0 (i.e. game is still open) before writing to localStorage
+                        if (!winpath || !appid) {
                             ipcRenderer.send("noexe",true)
                         } else {
                             const lsobj = JSON.parse(localStorage.getItem("linkgame")!)
                             lsobj[window.appid] = winpath
 
                             localStorage.setItem("linkgame",JSON.stringify(lsobj,null,4))
-                            log.write("INFO",`"${window.appid}" written to "linkgame" localStorage object successfully`)
+                            log.write("INFO",`"${appid}" written to "linkgame" localStorage object successfully`)
                         }
 
                         addlinkbtn.removeAttribute("timer")
@@ -1106,7 +1125,7 @@ ipcRenderer.on("noexeclick",async () => {
                         
                         if (winpath && window.appid) {
                             dialog.close()
-                            ipcRenderer.send("releasegame")
+                            ipcRenderer.send("releasegame",true)
                         }
 
                         return
@@ -1119,6 +1138,7 @@ ipcRenderer.on("noexeclick",async () => {
     })
 
     sanhelper.sethelpdialog(document.getElementById("linkgamehelp")!,"linkgamehelp")
+    document.querySelector(".wrapper#contentcontainer:has(#noexeclick)")!.toggleAttribute("autorelease",skipnotify)
 })
 
 ipcRenderer.on("ragame",async (event,status: "wait" | "idle" | "start" | "stop" | "achievement",ragame?: RAGame) => {

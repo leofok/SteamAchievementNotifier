@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Pelin EXE:tä ei löydy!",
         noexesub: "Klikkaa tästä saadaksesi lisätietoja",
         noexedialogsub: [
-            `Steam Achievement Notifier ei onnistunut löytämään pelin suoritettavaa tiedostoa automaattisesti. Pelin suoritettavan tiedoston sijainti on tarpeen, jotta peli voidaan "vapauttaa"`,
-            `Vapauttaaksesi pelin manuaalisesti, <i>napsauta hiiren oikealla</i> <span class="hl">järjestelmäpalkin kuvaketta</span> > <span class="hl">Asetukset</span> > <span class="hl">Vapauta peli</span>, tai käytä <span class="hl">Pelin vapautuksen pikanäppäintä</span>`,
-            `Vaihtoehtoisesti, napsauta alla olevaa <span class="hl">Linkitä</span>-painiketta lisätäksesi aktiivisen ikkunan liitetyn suoritettavan tiedoston <span class="hl">Linkitetyt pelit</span> -valikkoon`,
-            `<span class="hl help" id="linkgamehelp"><u>Mitä tapahtuu, kun klikkaan Linkitä-painiketta?</u></span>`
+            `Steam Achievement Notifier ei pystynyt paikantamaan tämän pelin suoritettavaa tiedostoa automaattisesti. Pelin suoritettavan tiedoston sijainti vaaditaan, jotta peli voidaan "vapauttaa" sen sulkemisen jälkeen`,
+            `Vapauttaaksesi pelin manuaalisesti sen sulkemisen jälkeen, <i>napsauta hiiren oikealla painikkeella</i> <span class="hl">System Tray -kuvaketta</span> > <span class="hl">Asetukset</span> > <span class="hl">Vapauta peli</span>, tai käytä <span class="hl">Pelin vapautuksen pikanäppäintä</span>`,
+            `Vaihtoehtoisesti napsauta alla olevaa <span class="hl">Lisää</span>-painiketta lisätäksesi minkä tahansa aktiivisen ikkunan siihen liittyvän suoritettavan tiedoston kohtaan <span class="hl">Asetukset</span> > <span class="hl">Pelit</span> > <span class="hl">Pelien automaattinen vapautus</span>`,
         ],
-        linkgamehelp: "Linkitä peli ikkunan kautta",
+        autorelease: "Pelien automaattinen vapautus",
+        autoreleasesub: [
+            `Jos Steam näyttää pelin edelleen tilassa <i>Pelaa</i> pelin ikkunan sulkemisen jälkeen, kokeile lisätä uusi merkintä kohtaan <span class="hl">Pelien automaattinen vapautus</span>`,
+            `Tehdäksesi tämän nykyiselle pelille, napsauta alla olevaa <span class="hl">Lisää</span>-painiketta lisätäksesi minkä tahansa aktiivisen ikkunan siihen liittyvän suoritettavan tiedoston kohtaan <span class="hl">Asetukset</span> > <span class="hl">Pelit</span> > <span class="hl">Pelien automaattinen vapautus</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Mitä tapahtuu, kun napsautan Lisää-painiketta?</u></span>`,
+        linkgamehelp: "Lisää merkintä fokuksen kautta",
         linkgamehelpsub: [
-            `Klikkaamalla <span class="hl">Linkitä</span>-painiketta, uusi syöte lisätään automaattisesti <span class="hl">Asetukset</span> > <span class="hl">Linkitetyt pelit</span> -valikkoon käyttäen nykyisen aktiivisen ikkunan tietoja.`,
-            `Linkitä-painikkeen klikkaamisen jälkeen alkaa 5 sekunnin ajastin`,
-            `Ennen ajastimen loppumista, siirrä pelin ikkuna aktiiviseksi`,
-            `Kun ajastin päättyy, uusi syöte nykyisestä <span class="hl">AppID</span>:stä lisätään <span class="hl">Asetukset</span> > <span class="hl">Linkitetyt pelit</span> -valikkoon käyttäen aktiivisen ikkunan suoritettavaa tiedostoa`,
-            `Jos haluat yrittää uudelleen, poista syöte <span class="hl">Asetukset</span> > <span class="hl">Linkitetyt pelit</span> -valikosta napsauttamalla <span id="linkhelpunlink"></span>-painiketta`
+            `Napsauttamalla <span class="hl">Lisää</span>-painiketta lisätään automaattisesti uusi merkintä kohtaan <span class="hl">Asetukset</span> > <span class="hl">Pelit</span> > <span class="hl">Pelien automaattinen vapautus</span>, käyttäen tietoja tällä hetkellä aktiivisesta ikkunasta.`,
+            `Lisää-painikkeen napsauttamisen jälkeen käynnistyy 5 sekunnin ajastin`,
+            `Ennen kuin ajastin päättyy, siirrä fokus pelin ikkunaan`,
+            `Kun ajastin on päättynyt, nykyiselle <span class="hl">AppID</span>:lle lisätään uusi merkintä kohtaan <span class="hl">Asetukset</span> > <span class="hl">Pelit</span> > <span class="hl">Pelien automaattinen vapautus</span>, käyttäen aktiiviseen ikkunaan liittyvää suoritettavaa tiedostoa`,
+            `Uudet yritykset korvaavat olemassa olevat merkinnät, tai merkintä voidaan poistaa kohdasta <span class="hl">Asetukset</span> > <span class="hl">Pelit</span> > <span class="hl">Pelien automaattinen vapautus</span> napsauttamalla <span id="linkhelpunlink"></span>-painiketta`
         ],
-        addlinkfailed: "Ikkunan linkittäminen epäonnistui",
-        addlinkfailedsub: `Klikkaa <span class="hl">Linkitä</span>-painiketta yrittääksesi uudelleen`,
+        addlinkfailed: "Ikkunan lisääminen epäonnistui",
+        addlinkfailedsub: `Napsauta <span class="hl">Lisää</span>-painiketta yrittääksesi uudelleen`,
         webhookunlockmsg: "$user avasi saavutuksen",
         webhookunlockmsgplat: "$user avasi kaikki saavutukset",
         webhookingame: "pelissä $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Pelit",
             content: {
-                linkedgames: "Linkitetyt pelit",
+                linkedgames: "Pelien automaattinen vapautus",
                 themeswitch: "Vaihda teemoja automaattisesti",
                 exclusionlist: "Poissulkemislista",
                 inclusionlist: "Sisällysluettelo",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Näytön Sijainti",
                 usecustompos: "Käytä Mukautettua Sijaintia",
                 setcustompos: "Aseta",
+                copycustompos: "Käytä Kaikkiin",
                 resetcustompos: "Palauta"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Pakota kaikki sovellusikkunat käyttämään valittua väritilaa<br><br><span class="ttdesc">Vaatii sovelluksen uudelleenkäynnistyksen</span>`,
         pollrate: `Aseta päivitysväli saavutustietojen aikana pelattaessa<br><br><span class="ttdesc">Suorituskyky voi lisääntyä/vähentyä arvon tai järjestelmän laitteiston mukaan. Korkeammat arvot johtavat yleensä pienempään järjestelmän kuormitukseen, mutta voivat viivästyttää ilmoituksia</span>`,
         initdelay: `Aseta viive nykyisen <span class="hl">AppID</span>-tunnuksen havaitsemisen ja prosessin/saavutusten seurannan aloittamisen välillä<br><br><span class="ttdesc">Tämän arvon suurentaminen voi estää tilanteita, joissa Steam ei pysty käynnistämään nykyistä peliä (koska sovellus käynnistää Steamworksin ennen kuin peli on käynnistynyt)</span><br><br><span class="ttdesc">Vaihtoehtoisesti tämän arvon suurentamista voidaan myös käyttää ohittamaan esipelin käynnistysprosessien virheellinen havaitseminen</span>`,
-        releasedelay: `Aseta kuinka kauan taustaprosessin on odotettava uudelleenkäynnistymistä sen jälkeen, kun nykyinen peli on julkaistu. Vaikuttaa sekä automaattiseen prosessin seurantaan että manuaalisesti linkitettyihin peleihin.<br><br><span class="ttdesc">Mahdollistaa pidemmän aikajakson Steamworksin täydelliseen vapauttamiseen sovelluksesta. Tämän arvon lisääminen voi estää epätavallista käyttäytymistä, kuten aiemmin suljetun pelin seurannan</span>`,
-        maxretries: `Aseta enimmäismäärä uudelleenyrittämisiä linkittää käynnissä oleva prosessi havaittuun AppID:hun. Vaikuttaa sekä automaattiseen prosessin seurantaan että manuaalisesti linkitettyihin peleihin.<br><br><span class="ttdesc">Yrityksiä linkittää suoritetaan kerran sekunnissa. Jos käynnissä oleva prosessi ei ole linkitetty nykyiseen AppID:hun tämän yritysmäärän jälkeen, palautetaan virheellinen prosessi. Tällaisissa tapauksissa peli on vapautettava manuaalisesti Järjestelmälokero > Asetukset > Vapauta peli -välilehdellä</span>`,
+        releasedelay: `Määritä, kuinka kauan taustalla toimiva Worker-prosessi odottaa ennen uudelleenkäynnistystä, kun nykyinen peli on vapautettu. Vaikuttaa sekä automaattiseen prosessien seurantaan että Pelien automaattiseen vapautukseen<br><br><span class="ttdesc">Mahdollistaa pidemmän aikavälin, jotta Steamworks voidaan vapauttaa kokonaan sovelluksesta. Tämän arvon kasvattaminen voi estää epätavallista toimintaa, kuten aiemmin suljetun pelin seuraamisen</span>`,
+        maxretries: `Määritä enimmäismäärä yrityksiä käynnissä olevan prosessin yhdistämiseksi havaittuun AppID:hen. Vaikuttaa sekä automaattiseen prosessien seurantaan että Pelien automaattiseen vapautukseen<br><br><span class="ttdesc">Yritykset tehdään kerran sekunnissa. Jos käynnissä olevaa prosessia ei yhdistetä nykyiseen AppID:hen tämän yritysmäärän jälkeen, palautetaan virheellinen prosessi. Tällaisissa tapauksissa peli on vapautettava manuaalisesti System Tray > Asetukset > Vapauta peli</span>`,
         debug: "Avaa Vianetsintäpaneeli, joka näyttää yksityiskohtaiset prosessiseurantatiedot",
         userust: "Käytä vaihtoehtoista Rust-pohjaista toimintoa tarkistaaksesi, ovatko seuratut peliprosessit tällä hetkellä käynnissä järjestelmässä. Kun ei ole valittu, oletusarvoinen NodeJS-pohjainen prosessin tarkistus otetaan käyttöön sen sijaan.",
         notifydebug: "Luo DevTools-ikkuna kaikille ilmoituksille. Hyödyllinen vianmääritykseen ja ongelmanratkaisuun ilmoitusongelmien yhteydessä",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Aseta ilmoituksen näytöllä oleva sijainti",
         usecustompos: "Ota käyttöön mukautettu sijainti ilmoitukselle",
         setcustompos: "Aseta mukautettu sijainti ilmoitukselle",
+        copycustompos: "Käytä mukautettua sijaintia kaikkiin muihin ilmoitustyyppeihin",
         resetcustompos: "Palauta ilmoituksen sijainti oletusmukautettuun sijaintiin",
         updatetheme: "Päivitä nykyinen Teema valituilla mukautusasetuksilla",
         savetheme: "Tallenna kaikki mukauttamisasetukset uutena teemana",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Aseta kolmannen tekstielementin väri",
         exportachdata: `Vie saavutustiedot JSON-tiedostoon, kun saavutus avataan<br><br><span class="ttdesc">Kun käytössä, <span class="ttcode">achdata.json</span> viedään sijaintiin:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Säätää pystysuuntaista välistystä ilmoituksen tekstielementtien välillä",
-        ssmode: `Määrittää, tallennetaanko koko näyttö vai nykyinen pelin ikkuna<span style="color: red;">*</span> näyttökuvissa<br><br><span class="ttdesc">Jos nykyisen pelin <span class="hl">suoritettavaa tiedostoa</span> ei löydy (<i>joko <span class="hl">automaattisen prosessinseurannan</span> tai <span class="hl">Linkitetyn pelin</span> kautta</i>), tämä asetus palautuu oletuksena "Näyttö"-tilaan</span>`,
+        ssmode: `Määritä, tallennetaanko kuvakaappauksiin koko näyttö vai nykyinen pelin ikkuna<span style="color: red;">*</span><br><br><span class="ttdesc">Jos nykyisen pelin <span class="hl">suoritettavaa tiedostoa</span> ei voida paikantaa (<i>joko <span class="hl">automaattisen prosessiseurannan</span> kautta tai kun se on lisätty merkintänä kohtaan <span class="hl">Pelien automaattinen vapautus</span></i>), tämä asetus määritetään oletuksena tilaan "Näyttö"</span>`,
         replaynotify: "Toista viimeisin saavutuksen ilmoitus",
         replaynotifyshortcut: "Toista viimeisin saavutuksen ilmoitus käyttämällä määritettyä pikanäppäintä",
         replaynotifyempty: `<br><br><span class="ttdesc">Toistovuoro on tyhjä. Avaa saavutus toistaaksesi ilmoituksen</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Suoritettavan tiedoston polku",
             managesub: [
-                `Liitä pelin <span class="hl">suoritettava tiedosto</span> tiettyyn <span class="hl">AppID</span>:hen manuaalisesti tai <span class="hl">poista liitos</span> olemassa olevalta`,
-                `Steam Achievement Notifier ei enää käytä <span class="hl">automaattista prosessiseurantaa</span> millekään <span class="hl">liitetyille peleille</span> - sen sijaan määritettyä <span class="hl">suoritettavaa tiedostoa</span> seurataan aina, kun vastaava <span class="hl">AppID</span> havaitaan`,
-                `<span class="hl" id="appidhelp"><u>Kuinka löydän Steam-pelin AppID:n?</u></span>`
+                `Jos Steam näyttää pelin edelleen tilassa <i>Pelaa</i> pelin ikkunan sulkemisen jälkeen, kokeile lisätä uusi merkintä kohtaan <span class="hl">Pelien automaattinen vapautus</span>`,
+                `Lisää tietyn pelin <span class="hl">AppID</span> yhdessä sen odotetun <span class="hl">pelin suoritettavan tiedoston</span> kanssa, tai <span class="hl">poista</span> olemassa oleva merkintä`,
+                `Uusia merkintöjä voidaan myös lisätä <i>napsauttamalla hiiren oikealla painikkeella</i> <span class="hl">System Tray -kuvaketta</span> > <span class="hl">Pelien automaattinen vapautus</span>, kun peli on havaittu`,
+                `<span class="hl help" id="appidhelp"><u>Miten löydän Steam-pelin AppID:n?</u></span>`
             ],
-            linknew: "Uusi liitetty peli",
+            linknew: "Uusi merkintä",
             linknewsub: [
-                `Luo uusi linkki <span class="hl">pelinsuoritettavan tiedoston</span> ja siihen liittyvän <span class="hl">AppID:n</span> välille`,
-                `Luotuaan linkkejä ne voidaan <span class="hl">poistaa</span> aikaisemman <span class="hl">Hallinnoi liitettyjä pelejä</span> -valintaikkunan kautta`
+                `Lisää uuden pelin <span class="hl">AppID</span> yhdessä sen odotetun <span class="hl">pelin suoritettavan tiedoston</span> kanssa`,
+                `Lisäyksen jälkeen merkinnät voidaan <span class="hl">poistaa</span> edellisestä <span class="hl">Pelien automaattinen vapautus</span> -valikosta`
             ],
-            linkedit: "Muokkaa liitettyä peliä",
+            linkedit: "Muokkaa merkintää",
             linkeditsub: [
-                `Muokkaa olemassa olevaa linkkiä <span class="hl">pelin suoritettavan tiedoston</span> ja siihen liitetyn <span class="hl">AppID:n</span> välillä`,
-                `Kun linkki on luotu, sen voi <span class="hl">poistaa</span> aiemman <span class="hl">Hallinnoi liitettyjä pelejä</span> -valintaikkunan kautta`
+                `Muokkaa olemassa olevan pelin <span class="hl">AppID</span> yhdessä sen odotetun <span class="hl">pelin suoritettavan tiedoston</span> kanssa`,
+                `Lisäyksen jälkeen merkinnät voidaan <span class="hl">poistaa</span> edellisestä <span class="hl">Pelien automaattinen vapautus</span> -valikosta`
             ],
-            link: "Linkitä",
+            link: "Lisää"
         }
     },
     exclusions: {

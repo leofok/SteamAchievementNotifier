@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Nie znaleziono pliku EXE gry!",
         noexesub: "Kliknij tutaj, aby uzyskać więcej informacji",
         noexedialogsub: [
-            `Steam Achievement Notifier nie udało się automatycznie znaleźć pliku wykonywalnego dla tej gry. Lokalizacja pliku wykonywalnego gry jest wymagana, aby "uwolnić" grę`,
-            `Aby ręcznie uwolnić grę, <i>kliknij prawym przyciskiem</i> na <span class="hl">ikonie w zasobniku systemowym</span> > <span class="hl">Opcje</span> > <span class="hl">Uwolnij grę</span>, lub użyj <span class="hl">Skrótu do uwolnienia gry</span>`,
-            `Alternatywnie, kliknij przycisk <span class="hl">Link</span> poniżej, aby dodać powiązany plik wykonywalny aktywnego okna do menu <span class="hl">Powiązane gry</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>Co się stanie, gdy kliknę przycisk Link?</u></span>`
+            `Steam Achievement Notifier nie był w stanie automatycznie zlokalizować pliku wykonywalnego tej gry. Lokalizacja pliku wykonywalnego gry jest wymagana, aby można było „zwolnić” grę po jej zamknięciu`,
+            `Aby ręcznie zwolnić grę po jej zamknięciu, <i>kliknij prawym przyciskiem myszy</i> <span class="hl">ikonę zasobnika systemowego</span> > <span class="hl">Opcje</span> > <span class="hl">Zwolnij grę</span> lub użyj <span class="hl">Skrótu zwalniania gry</span>`,
+            `Alternatywnie kliknij poniżej przycisk <span class="hl">Dodaj</span>, aby dodać plik wykonywalny powiązany z aktualnie aktywnym oknem do <span class="hl">Ustawienia</span> > <span class="hl">Gry</span> > <span class="hl">Gry z automatycznym zwalnianiem</span>`,
         ],
-        linkgamehelp: "Linkowanie gry przez okno",
+        autorelease: "Automatyczne zwalnianie gry",
+        autoreleasesub: [
+            `Jeśli Steam nadal pokazuje grę jako <i>W grze</i> po zamknięciu okna gry, spróbuj dodać nowy wpis do <span class="hl">Gry z automatycznym zwalnianiem</span>`,
+            `Aby zrobić to dla bieżącej gry, kliknij poniżej przycisk <span class="hl">Dodaj</span>, aby dodać plik wykonywalny powiązany z aktualnie aktywnym oknem do <span class="hl">Ustawienia</span> > <span class="hl">Gry</span> > <span class="hl">Gry z automatycznym zwalnianiem</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Co się stanie po kliknięciu przycisku Dodaj?</u></span>`,
+        linkgamehelp: "Dodaj wpis przez fokus",
         linkgamehelpsub: [
-            `Klikając przycisk <span class="hl">Link</span>, automatycznie zostanie dodany nowy wpis do menu <span class="hl">Ustawienia</span> > <span class="hl">Powiązane gry</span>, korzystając z informacji z aktualnie aktywnego okna.`,
-            `Po kliknięciu przycisku <span class="hl">Link</span>, rozpocznie się 5-sekundowy timer`,
-            `Zanim timer wygaśnie, skup uwagę na oknie gry`,
-            `Po zakończeniu timera, nowy wpis dla aktualnego <span class="hl">AppID</span> zostanie dodany do menu <span class="hl">Ustawienia</span> > <span class="hl">Powiązane gry</span>, używając powiązanego pliku wykonywalnego aktywnego okna`,
-            `Jeśli musisz spróbować ponownie, usuń wpis z <span class="hl">Ustawienia</span> > <span class="hl">Powiązane gry</span>, klikając przycisk <span id="linkhelpunlink"></span>`
+            `Kliknięcie przycisku <span class="hl">Dodaj</span> spowoduje automatyczne dodanie nowego wpisu do <span class="hl">Ustawienia</span> > <span class="hl">Gry</span> > <span class="hl">Gry z automatycznym zwalnianiem</span>, przy użyciu informacji z aktualnie aktywnego okna.`,
+            `Po kliknięciu przycisku <span class="hl">Dodaj</span> rozpocznie się 5-sekundowy licznik`,
+            `Zanim licznik się zakończy, ustaw fokus na oknie gry`,
+            `Po zakończeniu licznika zostanie dodany nowy wpis dla bieżącego <span class="hl">AppID</span> do <span class="hl">Ustawienia</span> > <span class="hl">Gry</span> > <span class="hl">Gry z automatycznym zwalnianiem</span>, przy użyciu pliku wykonywalnego powiązanego z aktywnym oknem`,
+            `Nowe próby nadpiszą istniejące wpisy lub wpis można usunąć przez <span class="hl">Ustawienia</span> > <span class="hl">Gry</span> > <span class="hl">Gry z automatycznym zwalnianiem</span>, klikając przycisk <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Nie udało się połączyć okna",
-        addlinkfailedsub: `Kliknij przycisk <span class="hl">Link</span>, aby spróbować ponownie`,
+        addlinkfailed: "Nie można dodać okna",
+        addlinkfailedsub: `Kliknij przycisk <span class="hl">Dodaj</span>, aby spróbować ponownie`,
         webhookunlockmsg: "$user odblokował osiągnięcie",
         webhookunlockmsgplat: "$user odblokował wszystkie osiągnięcia",
         webhookingame: "w $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Gry",
             content: {
-                linkedgames: "Połączone gry",
+                linkedgames: "Gry z automatycznym zwalnianiem",
                 themeswitch: "Automatyczna zmiana motywów",
                 exclusionlist: "Lista wyłączeń",
                 inclusionlist: "Lista dołączania",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Pozycja Ekranu",
                 usecustompos: "Użyj Niestandardowej Pozycji",
                 setcustompos: "Ustaw",
+                copycustompos: "Zastosuj do Wszystkich",
                 resetcustompos: "Resetuj"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Wymusza renderowanie wszystkich okien aplikacji przy użyciu wybranego profilu kolorów<br><br><span class="ttdesc">Wymaga ponownego uruchomienia aplikacji</span>`,
         pollrate: `Ustaw interwał aktualizacji danych o osiągnięciach podczas gry<br><br><span class="ttdesc">Wydajność może wzrosnąć/zmaleć w zależności od wartości lub sprzętu systemowego. Wyższe wartości zazwyczaj prowadzą do mniejszego obciążenia systemu, ale mogą opóźniać powiadomienia</span>`,
         initdelay: `Ustaw opóźnienie między wykryciem bieżącego <span class="hl">AppID</span> a rozpoczęciem śledzenia procesów/osiągnięć<br><br><span class="ttdesc">Zwiększenie tej wartości może zapobiec sytuacjom, w których Steam nie może uruchomić aktualnej gry (ze względu na inicjalizację aplikacji w Steamworks przed uruchomieniem gry)</span><br><br><span class="ttdesc">Alternatywnie, zwiększenie tej wartości może być również używane do pominięcia nieprawidłowego wykrywania procesów przed uruchomieniem gry</span>`,
-        releasedelay: `Ustawia, jak długo proces w tle ma czekać na ponowne uruchomienie po wydaniu obecnej gry. Wpływa zarówno na automatyczne śledzenie procesów, jak i gry ręcznie połączone.<br><br><span class="ttdesc">Umożliwia dłuższy okres na całkowite uwolnienie Steamworks od aplikacji. Zwiększenie tej wartości może zapobiec nietypowemu zachowaniu, takiemu jak śledzenie wcześniej zamkniętej gry</span>`,
-        maxretries: `Ustawia maksymalną liczbę prób połączenia działającego procesu z wykrytym AppID. Wpływa zarówno na automatyczne śledzenie procesów, jak i gry ręcznie połączone.<br><br><span class="ttdesc">Próby połączenia są podejmowane raz na sekundę. Jeśli działający proces nie jest połączony z bieżącym AppID po tej liczbie prób, zostanie zwrócony błędny proces. W takich przypadkach grę należy uwolnić ręcznie za pomocą zasobnika systemowego > Opcje > Zwolnij grę</span>`,
+        releasedelay: `Ustaw, jak długo proces Worker w tle czeka przed ponownym uruchomieniem po zwolnieniu bieżącej gry. Wpływa zarówno na automatyczne śledzenie procesów, jak i Gry z automatycznym zwalnianiem<br><br><span class="ttdesc">Pozwala na dłuższy czas, aby Steamworks został w pełni zwolniony z aplikacji. Zwiększenie tej wartości może zapobiec nietypowemu zachowaniu, takiemu jak śledzenie wcześniej zamkniętej gry</span>`,
+        maxretries: `Ustaw maksymalną liczbę prób powiązania uruchomionego procesu z wykrytym AppID. Wpływa zarówno na automatyczne śledzenie procesów, jak i Gry z automatycznym zwalnianiem<br><br><span class="ttdesc">Próby są podejmowane raz na sekundę. Jeśli uruchomiony proces nie zostanie powiązany z bieżącym AppID po tej liczbie prób, zostanie zwrócony nieprawidłowy proces. W takich przypadkach grę należy zwolnić ręcznie przez Zasobnik systemowy > Opcje > Zwolnij grę</span>`,
         debug: "Otwórz panel debugowania, który wyświetla szczegółowe informacje o śledzeniu procesów",
         userust: "Użyj alternatywnej funkcji opartej na Rust, aby sprawdzić, czy śledzone procesy gry są obecnie uruchomione na systemie. Gdy nie jest zaznaczone, zostanie użyta domyślna kontrola procesów oparta na NodeJS.",
         notifydebug: "Utwórz okno narzędzi deweloperskich dla wszystkich powiadomień. Przydatne do debugowania/problemów z powiadomieniami",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Ustaw pozycję powiadomienia na ekranie",
         usecustompos: "Włącz niestandardowe pozycjonowanie powiadomienia",
         setcustompos: "Ustaw niestandardową pozycję powiadomienia",
+        copycustompos: "Zastosuj niestandardową pozycję do wszystkich pozostałych typów powiadomień",
         resetcustompos: "Zresetuj pozycję powiadomienia do domyślnej niestandardowej pozycji",
         updatetheme: "Aktualizuj bieżący Motyw z wybranymi opcjami dostosowania",
         savetheme: "Zapisz wszystkie skonfigurowane opcje dostosowania jako nowy motyw",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Ustaw kolor trzeciego elementu tekstowego",
         exportachdata: `Eksportuj dane osiągnięć do pliku JSON, gdy osiągnięcie zostanie odblokowane<br><br><span class="ttdesc">Po włączeniu, plik <span class="ttcode">achdata.json</span> zostanie wyeksportowany do:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Dostosuj pionowy odstęp między elementami tekstowymi w powiadomieniu",
-        ssmode: `Ustaw, czy w zrzutach ekranu ma być uchwycony cały ekran, czy tylko aktualne okno gry<span style="color: red;">*</span><br><br><span class="ttdesc">Jeśli nie można znaleźć <span class="hl">pliku wykonywalnego</span> bieżącej gry (<i>zarówno za pomocą <span class="hl">automatycznego śledzenia procesów</span>, jak i dodając ją jako <span class="hl">Linked Game</span></i>), ta opcja domyślnie przełączy się na tryb "Ekran"</span>`,
+        ssmode: `Ustaw, czy w zrzutach ekranu przechwytywać cały ekran czy bieżące okno gry<span style="color: red;">*</span><br><br><span class="ttdesc">Jeśli <span class="hl">plik wykonywalny</span> bieżącej gry nie może zostać zlokalizowany (<i>ani przez <span class="hl">automatyczne śledzenie procesów</span>, ani gdy został dodany jako wpis w <span class="hl">Gry z automatycznym zwalnianiem</span></i>), ta opcja domyślnie przełączy się w tryb „Ekran”</span>`,
         replaynotify: "Powtórz ostatnie powiadomienie o osiągnięciu",
         replaynotifyshortcut: "Powtórz ostatnie powiadomienie o osiągnięciu za pomocą określonego skrótu klawiszowego",
         replaynotifyempty: `<br><br><span class="ttdesc">Kolejka powtórzeń jest pusta. Odblokuj osiągnięcie, aby powtórzyć powiadomienie</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Ścieżka do pliku wykonywalnego",
             managesub: [
-                `Ręcznie połącz plik <span class="hl">wykonywalny</span> gry z określonym <span class="hl">AppID</span>, lub <span class="hl">rozłącz</span> istniejący`,
-                `Steam Achievement Notifier nie będzie już używał <span class="hl">automatycznego śledzenia procesów</span> dla żadnej <span class="hl">połączonej gry</span> - zamiast tego określony <span class="hl">plik wykonywalny</span> będzie śledzony za każdym razem, gdy zostanie wykryte powiązane <span class="hl">AppID</span>`,
-                `<span class="hl" id="appidhelp"><u>Jak znaleźć AppID gry Steam?</u></span>`
+                `Jeśli Steam nadal pokazuje grę jako <i>W grze</i> po zamknięciu okna gry, spróbuj dodać nowy wpis do <span class="hl">Gry z automatycznym zwalnianiem</span>`,
+                `Dodaj <span class="hl">AppID</span> konkretnej gry wraz z oczekiwanym <span class="hl">plikiem wykonywalnym gry</span> lub <span class="hl">usuń</span> istniejący wpis`,
+                `Nowe wpisy można również dodać, <i>klikając prawym przyciskiem myszy</i> <span class="hl">ikonę zasobnika systemowego</span> > <span class="hl">Automatyczne zwalnianie gry</span>, gdy gra zostanie wykryta`,
+                `<span class="hl help" id="appidhelp"><u>Jak znaleźć AppID gry Steam?</u></span>`
             ],
-            linknew: "Nowa połączona gra",
+            linknew: "Nowy wpis",
             linknewsub: [
-                `Utwórz nowe połączenie między <span class="hl">plikiem wykonywalnym gry</span>, a powiązanym <span class="hl">AppID</span>`,
-                `Po utworzeniu połączenia można je <span class="hl">rozłączyć</span> za pomocą wcześniejszego okna dialogowego <span class="hl">Zarządzaj połączonymi grami</span>`
+                `Dodaj <span class="hl">AppID</span> nowej gry wraz z oczekiwanym <span class="hl">plikiem wykonywalnym gry</span>`,
+                `Po dodaniu wpisy można <span class="hl">usunąć</span> przez poprzednie menu <span class="hl">Gry z automatycznym zwalnianiem</span>`
             ],
-            linkedit: "Edytuj powiązaną grę",
+            linkedit: "Edytuj wpis",
             linkeditsub: [
-                `Edytuj istniejące powiązanie między <span class="hl">plikiem wykonywalnym gry</span> a powiązanym <span class="hl">AppID</span>`,
-                `Po utworzeniu, powiązania można <span class="hl">odłączyć</span> za pomocą poprzedniego okna <span class="hl">Zarządzaj powiązanymi grami</span>`
+                `Edytuj <span class="hl">AppID</span> istniejącej gry wraz z oczekiwanym <span class="hl">plikiem wykonywalnym gry</span>`,
+                `Po dodaniu wpisy można <span class="hl">usunąć</span> przez poprzednie menu <span class="hl">Gry z automatycznym zwalnianiem</span>`
             ],
-            link: "Połącz",
+            link: "Dodaj"
         }
     },
     exclusions: {

@@ -70,21 +70,26 @@ export const translations = {
         noexe: "Soubor EXE hry nebyl nalezen!",
         noexesub: "Klikněte zde pro více informací",
         noexedialogsub: [
-            `Steam Achievement Notifier nedokázal automaticky najít spustitelný soubor této hry. Umístění spustitelného souboru je nutné k "uvolnění" hry`,
-            `Pro manuální uvolnění hry <i>klikněte pravým tlačítkem</i> na <span class="hl">ikonu v systémové liště</span> > <span class="hl">Možnosti</span> > <span class="hl">Uvolnit hru</span>, nebo použijte <span class="hl">Klávesovou zkratku pro uvolnění hry</span>`,
-            `Alternativně klikněte na tlačítko <span class="hl">Propojit</span> níže a přidejte spustitelný soubor asociovaný s aktuálně aktivním oknem do nabídky <span class="hl">Propojené hry</span>`,
-            `<span class="hl help" id="linkgamehelp"><u>Co se stane, když kliknu na tlačítko Propojit?</u></span>`
+            `Steam Achievement Notifier se nepodařilo automaticky najít spustitelný soubor této hry. Umístění spustitelného souboru hry je vyžadováno, aby bylo možné hru po jejím zavření „uvolnit“`,
+            `Chcete-li hru po jejím zavření uvolnit ručně, <i>klikněte pravým tlačítkem</i> na <span class="hl">ikonu v System Tray</span> > <span class="hl">Možnosti</span> > <span class="hl">Uvolnit hru</span>, nebo použijte <span class="hl">Zkratku pro uvolnění hry</span>`,
+            `Případně klikněte na tlačítko <span class="hl">Přidat</span> níže a přidejte spustitelný soubor přiřazený k aktuálně aktivnímu oknu do <span class="hl">Nastavení</span> > <span class="hl">Hry</span> > <span class="hl">Automatické uvolnění her</span>`,
         ],
-        linkgamehelp: "Propojení hry přes okno",
+        autorelease: "Automatické uvolnění hry",
+        autoreleasesub: [
+            `Pokud Steam po zavření okna hry stále zobrazuje hru jako <i>Hraje se</i>, zkuste přidat novou položku do <span class="hl">Automatické uvolnění her</span>`,
+            `Chcete-li to provést pro aktuální hru, klikněte na tlačítko <span class="hl">Přidat</span> níže a přidejte spustitelný soubor přiřazený k aktuálně aktivnímu oknu do <span class="hl">Nastavení</span> > <span class="hl">Hry</span> > <span class="hl">Automatické uvolnění her</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>Co se stane po kliknutí na tlačítko Přidat?</u></span>`,
+        linkgamehelp: "Přidat položku pomocí fokusu",
         linkgamehelpsub: [
-            `Kliknutím na tlačítko <span class="hl">Propojit</span> se automaticky přidá nový záznam do nabídky <span class="hl">Nastavení</span> > <span class="hl">Propojené hry</span> s využitím informací z aktuálně aktivního okna.`,
-            `Po kliknutí na tlačítko <span class="hl">Propojit</span> začne odpočítávání 5 sekund`,
-            `Před koncem odpočítávání aktivujte okno hry`,
-            `Po skončení odpočítávání bude do nabídky <span class="hl">Nastavení</span> > <span class="hl">Propojené hry</span> přidán nový záznam pro aktuální <span class="hl">AppID</span> s využitím spustitelného souboru asociovaného s aktivním oknem`,
-            `Pokud potřebujete zkusit znovu, odstraňte záznam prostřednictvím <span class="hl">Nastavení</span> > <span class="hl">Propojené hry</span> kliknutím na tlačítko <span id="linkhelpunlink"></span>`
+            `Kliknutí na tlačítko <span class="hl">Přidat</span> automaticky přidá novou položku do <span class="hl">Nastavení</span> > <span class="hl">Hry</span> > <span class="hl">Automatické uvolnění her</span> s využitím informací z aktuálně aktivního okna.`,
+            `Po kliknutí na tlačítko <span class="hl">Přidat</span> se spustí 5sekundový časovač`,
+            `Před vypršením časovače přepněte fokus na okno hry`,
+            `Po vypršení časovače bude přidána nová položka pro aktuální <span class="hl">AppID</span> do <span class="hl">Nastavení</span> > <span class="hl">Hry</span> > <span class="hl">Automatické uvolnění her</span> s využitím spustitelného souboru přiřazeného k aktivnímu oknu`,
+            `Nové pokusy přepíší existující položky, případně lze položku odebrat přes <span class="hl">Nastavení</span> > <span class="hl">Hry</span> > <span class="hl">Automatické uvolnění her</span> kliknutím na tlačítko <span id="linkhelpunlink"></span>`
         ],
-        addlinkfailed: "Nelze propojit okno",
-        addlinkfailedsub: `Klikněte na tlačítko <span class="hl">Propojit</span> a zkuste to znovu`,
+        addlinkfailed: "Nelze přidat okno",
+        addlinkfailedsub: `Klikněte na tlačítko <span class="hl">Přidat</span> a zkuste to znovu`,
         webhookunlockmsg: "$user odemkl úspěch",
         webhookunlockmsgplat: "$user odemkl všechny úspěchy",
         webhookingame: "ve $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "Hry",
             content: {
-                linkedgames: "Propojené hry",
+                linkedgames: "Automatické uvolnění her",
                 themeswitch: "Automatické přepínání témat",
                 exclusionlist: "Seznam vyloučení",
                 inclusionlist: "Seznam zahrnutí",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "Pozice na obrazovce",
                 usecustompos: "Použít vlastní pozici",
                 setcustompos: "Nastavit",
+                copycustompos: "Použít na Vše",
                 resetcustompos: "Resetovat"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `Vynutit vykreslování všech oken aplikace pomocí vybraného barevného profilu<br><br><span class="ttdesc">Vyžaduje restart aplikace</span>`,
         pollrate: `Nastavit interval aktualizace dat o úspěších během hry<br><br><span class="ttdesc">Výkon může stoupat/klesat v závislosti na hodnotě nebo hardwarových zdrojích systému. Vyšší hodnoty obvykle znamenají nižší zátěž systému, ale mohou způsobit zpoždění upozornění</span>`,
         initdelay: `Nastavte zpoždění mezi detekcí aktuálního <span class="hl">AppID</span> a zahájením sledování procesů/úspěchů<br><br><span class="ttdesc">Zvýšení této hodnoty může zabránit scénářům, kdy Steam není schopen spustit aktuální hru (kvůli inicializaci aplikace ve Steamworks před spuštěním hry)</span><br><br><span class="ttdesc">Alternativně lze zvýšení této hodnoty také použít k obejití nesprávné detekce procesů spouštění před hrou</span>`,
-        releasedelay: `Nastavuje, jak dlouho bude proces pozadí čekat na restart po uvolnění aktuální hry. Ovlivňuje jak automatické sledování procesu, tak ručně propojené hry.<br><br><span class="ttdesc">Umožňuje delší časový rámec pro úplné uvolnění Steamworks z aplikace. Zvýšení této hodnoty může zabránit neobvyklému chování, jako je sledování dříve uzavřené hry</span>`,
-        maxretries: `Nastavuje maximální počet pokusů o propojení běžícího procesu s detekovaným AppID. Ovlivňuje jak automatické sledování procesu, tak ručně propojené hry.<br><br><span class="ttdesc">Pokusy o propojení se provádějí každou sekundu. Pokud běžící proces není po tomto počtu pokusů propojen s aktuálním AppID, bude vrácen neplatný proces. V takových případech bude hra muset být uvolněna ručně pomocí Oznamovací oblasti systému > Možnosti > Uvolnit Hru</span>`,
+        releasedelay: `Nastavte, jak dlouho proces Worker běžící na pozadí čeká na restart po uvolnění aktuální hry. Ovlivňuje jak automatické sledování procesů, tak Automatické uvolnění her<br><br><span class="ttdesc">Umožňuje delší časový rámec pro úplné uvolnění Steamworks z aplikace. Zvýšení této hodnoty může zabránit neobvyklému chování, například sledování dříve zavřené hry</span>`,
+        maxretries: `Nastavte maximální počet pokusů o propojení běžícího procesu s detekovaným AppID. Ovlivňuje jak automatické sledování procesů, tak Automatické uvolnění her<br><br><span class="ttdesc">Pokusy probíhají jednou za sekundu. Pokud běžící proces nebude po tomto počtu pokusů propojen s aktuálním AppID, bude vrácen neplatný proces. V takových případech bude nutné hru uvolnit ručně přes System Tray > Možnosti > Uvolnit hru</span>`,
         debug: "Otevřete Panel Ladění, který zobrazuje podrobné informace o sledování procesů",
         userust: "Použijte alternativní funkci založenou na Rust k ověření, zda jsou sledované herní procesy aktuálně spuštěny na systému. Když není zaškrtnuto, bude místo toho použita výchozí kontrola procesů založená na NodeJS.",
         notifydebug: "Vytvořit okno DevTools pro všechna oznámení. Užitečné pro ladění/problémování problémů s oznámeními",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "Nastavit pozici oznámení na obrazovce",
         usecustompos: "Povolit vlastní umístění pro oznámení",
         setcustompos: "Nastavit vlastní pozici pro oznámení",
+        copycustompos: "Použít vlastní pozici na všechny ostatní typy oznámení",
         resetcustompos: "Obnovit pozici oznámení na výchozí vlastní pozici",
         updatetheme: "Aktualizovat aktuální Téma s vybranými možnostmi přizpůsobení",
         savetheme: "Uložit všechny nakonfigurované možnosti přizpůsobení jako nové téma",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "Nastavit barvu třetího textového prvku",
         exportachdata: `Exportovat data o úspěších do souboru JSON při odemknutí úspěchu<br><br><span class="ttdesc">Pokud je povoleno, <span class="ttcode">achdata.json</span> bude exportován do:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "Upraví svislý rozestup mezi textovými prvky v oznámení",
-        ssmode: `Nastaví, zda se má při snímání obrazovky zachytit celá obrazovka nebo aktuální herní okno<span style="color: red;">*</span><br><br><span class="ttdesc">Pokud nelze najít <span class="hl">spustitelný soubor</span> aktuální hry (<i>ať už pomocí <span class="hl">automatického sledování procesů</span> nebo přidáním jako <span class="hl">Propojená hra</span></i>), tato možnost se automaticky nastaví na režim "Obrazovka"</span>`,
+        ssmode: `Nastavte, zda mají snímky obrazovky zachycovat celou obrazovku nebo aktuální okno hry<span style="color: red;">*</span><br><br><span class="ttdesc">Pokud nelze najít <span class="hl">spustitelný soubor</span> aktuální hry (<i>ať už prostřednictvím <span class="hl">automatického sledování procesů</span> nebo při přidání jako položky do <span class="hl">Automatické uvolnění her</span></i>), bude tato možnost ve výchozím nastavení nastavena na režim „Obrazovka“</span>`,
         replaynotify: "Zopakovat poslední oznámení o úspěchu",
         replaynotifyshortcut: "Zopakovat poslední oznámení o úspěchu pomocí zadané klávesové zkratky",
         replaynotifyempty: `<br><br><span class="ttdesc">Fronta opakování je prázdná. Odemkni úspěch pro opakování oznámení</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "Cesta k spustitelnému souboru",
             managesub: [
-                `Ručně propojte <span class="hl">spustitelný soubor</span> hry s konkrétním <span class="hl">AppID</span> nebo <span class="hl">zrušte propojení</span> existujícího`,
-                `Steam Achievement Notifier již nebude používat <span class="hl">automatické sledování procesu</span> pro žádné <span class="hl">propojené hry</span> - místo toho bude sledován určený <span class="hl">spustitelný soubor</span>, pokud je zjištěn odpovídající <span class="hl">AppID</span>`,
-                `<span class="hl" id="appidhelp"><u>Jak najdu AppID hry ve službě Steam?</u></span>`
+                `Pokud Steam po zavření okna hry stále zobrazuje hru jako <i>Hraje se</i>, zkuste přidat novou položku do <span class="hl">Automatické uvolnění her</span>`,
+                `Přidejte <span class="hl">AppID</span> konkrétní hry spolu s očekávaným <span class="hl">spustitelným souborem hry</span>, nebo <span class="hl">odeberte</span> existující položku`,
+                `Nové položky lze také přidat <i>kliknutím pravým tlačítkem</i> na <span class="hl">ikonu v System Tray</span> > <span class="hl">Automatické uvolnění hry</span> poté, co je hra detekována`,
+                `<span class="hl help" id="appidhelp"><u>Jak najdu AppID hry na Steamu?</u></span>`
             ],
-            linknew: "Nová propojená hra",
+            linknew: "Nová položka",
             linknewsub: [
-                `Vytvořte nový odkaz mezi <span class="hl">spustitelným souborem hry</span> a příslušným <span class="hl">AppID</span>`,
-                `Po vytvoření mohou být odkazy <span class="hl">zrušeny</span> prostřednictvím předchozího dialogu <span class="hl">Spravovat propojené hry</span>`
+                `Přidejte <span class="hl">AppID</span> nové hry spolu s očekávaným <span class="hl">spustitelným souborem hry</span>`,
+                `Po přidání lze položky <span class="hl">odebrat</span> prostřednictvím předchozí nabídky <span class="hl">Automatické uvolnění her</span>`
             ],
-            linkedit: "Upravit propojenou hru",
+            linkedit: "Upravit položku",
             linkeditsub: [
-                `Upravit existující propojení mezi <span class="hl">spustitelným souborem hry</span> a příslušným <span class="hl">AppID</span>`,
-                `Po vytvoření lze propojení <span class="hl">zrušit</span> pomocí předchozího dialogu <span class="hl">Spravovat propojené hry</span>`
+                `Upravte <span class="hl">AppID</span> existující hry spolu s očekávaným <span class="hl">spustitelným souborem hry</span>`,
+                `Po přidání lze položky <span class="hl">odebrat</span> prostřednictvím předchozí nabídky <span class="hl">Automatické uvolnění her</span>`
             ],
-            link: "Propojit",
+            link: "Přidat"
         }
     },
     exclusions: {

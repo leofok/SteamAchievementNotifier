@@ -70,21 +70,26 @@ export const translations = {
         noexe: "未找到遊戲的 EXE 檔案！",
         noexesub: "點擊這裡了解更多資訊",
         noexedialogsub: [
-            `Steam Achievement Notifier 無法自動找到此遊戲的可執行檔案。遊戲的可執行檔案位置是「釋放」遊戲所必須的`,
-            `要手動釋放遊戲，<i>右鍵點擊</i> <span class="hl">系統匣圖示</span> > <span class="hl">選項</span> > <span class="hl">釋放遊戲</span>，或使用 <span class="hl">釋放遊戲快捷鍵</span>`,
-            `另外，點擊下面的 <span class="hl">Link</span> 按鈕將焦點視窗的相關可執行檔案添加到 <span class="hl">已連結遊戲</span> 菜單`,
-            `<span class="hl help" id="linkgamehelp"><u>點擊 Link 按鈕會發生什麼？</u></span>`
+            `Steam Achievement Notifier 無法自動找到此遊戲的可執行檔。若要在遊戲關閉後「釋放」遊戲，必須提供遊戲可執行檔的位置`,
+            `若要在遊戲關閉後手動釋放遊戲，請在 <span class="hl">系統匣圖示</span> 上 <i>按一下滑鼠右鍵</i> > <span class="hl">選項</span> > <span class="hl">釋放遊戲</span>，或使用 <span class="hl">釋放遊戲快捷鍵</span>`,
+            `或者，按一下下方的 <span class="hl">新增</span> 按鈕，將任何目前取得焦點之視窗所關聯的可執行檔新增至 <span class="hl">設定</span> > <span class="hl">遊戲</span> > <span class="hl">自動釋放遊戲</span>`,
         ],
-        linkgamehelp: "通過視窗連結遊戲",
+        autorelease: "自動釋放遊戲",
+        autoreleasesub: [
+            `如果在遊戲視窗關閉後，Steam 仍顯示遊戲為 <i>遊玩中</i>，請嘗試在 <span class="hl">自動釋放遊戲</span> 中新增一個項目`,
+            `若要針對目前的遊戲進行此操作，請按一下下方的 <span class="hl">新增</span> 按鈕，將任何目前取得焦點之視窗所關聯的可執行檔新增至 <span class="hl">設定</span> > <span class="hl">遊戲</span> > <span class="hl">自動釋放遊戲</span>`,
+        ],
+        linkgamehelplink: `<span class="hl help" id="linkgamehelp"><u>當我按一下「新增」按鈕時會發生什麼事？</u></span>`,
+        linkgamehelp: "透過焦點新增項目",
         linkgamehelpsub: [
-            `點擊 <span class="hl">Link</span> 按鈕將會自動將新條目添加至 <span class="hl">設定</span> > <span class="hl">已連結遊戲</span> 菜單，並使用當前焦點視窗的資訊`,
-            `點擊 <span class="hl">Link</span> 按鈕後，會開始 5 秒計時器`,
-            `在計時器結束前，請將焦點放到遊戲視窗`,
-            `計時器結束後，會將當前 <span class="hl">AppID</span> 的新條目添加至 <span class="hl">設定</span> > <span class="hl">已連結遊戲</span> 菜單，並使用焦點視窗的可執行檔案`,
-            `如果需要重試，請透過 <span class="hl">設定</span> > <span class="hl">已連結遊戲</span> 刪除該條目，並點擊 <span id="linkhelpunlink"></span> 按鈕`
+            `按一下 <span class="hl">新增</span> 按鈕後，系統將會使用目前取得焦點之視窗的資訊，自動在 <span class="hl">設定</span> > <span class="hl">遊戲</span> > <span class="hl">自動釋放遊戲</span> 中新增一個項目。`,
+            `按下 <span class="hl">新增</span> 按鈕後，將會開始 5 秒倒數計時`,
+            `在倒數結束前，請將焦點切換至遊戲視窗`,
+            `倒數結束後，系統將會使用取得焦點之視窗所關聯的可執行檔，在 <span class="hl">設定</span> > <span class="hl">遊戲</span> > <span class="hl">自動釋放遊戲</span> 中新增目前 <span class="hl">AppID</span> 的項目`,
+            `新的嘗試將會覆寫現有項目，或可在 <span class="hl">設定</span> > <span class="hl">遊戲</span> > <span class="hl">自動釋放遊戲</span> 中按一下 <span id="linkhelpunlink"></span> 按鈕來移除該項目`
         ],
-        addlinkfailed: "無法連結視窗",
-        addlinkfailedsub: `點擊 <span class="hl">Link</span> 按鈕重試`,
+        addlinkfailed: "無法新增視窗",
+        addlinkfailedsub: `請按一下 <span class="hl">新增</span> 按鈕以再試一次`,
         webhookunlockmsg: "$user 解鎖了一個成就",
         webhookunlockmsgplat: "$user 解鎖了所有成就",
         webhookingame: "在 $gamename",
@@ -248,7 +253,7 @@ export const translations = {
         games: {
             title: "遊戲",
             content: {
-                linkedgames: "已連結的遊戲",
+                linkedgames: "自動釋放遊戲",
                 themeswitch: "自動切換主題",
                 exclusionlist: "排除清單",
                 inclusionlist: "包含清單",
@@ -501,6 +506,7 @@ export const translations = {
                 pos: "螢幕位置",
                 usecustompos: "使用自訂位置",
                 setcustompos: "設定",
+                copycustompos: "套用至全部",
                 resetcustompos: "重設"
             }
         },
@@ -617,8 +623,8 @@ export const translations = {
         colorprofile: `強制所有應用程式視窗使用選定的顏色設定檔<br><br><span class="ttdesc">需要重新啟動應用程式</span>`,
         pollrate: `設定遊戲中成就資料的更新間隔<br><br><span class="ttdesc">效能可能會因系統值或硬體而增加/減少。較高的值通常會導致較低的系統負載，但可能會造成通知延遲</span>`,
         initdelay: `設定當前 <span class="hl">AppID</span> 檢測與進程/成就追踪開始之間的延遲<br><br><span class="ttdesc">增加此值可以避免 Steam 無法啟動當前遊戲的情況（因為在遊戲啟動之前 Steamworks 初始化應用程序）</span><br><br><span class="ttdesc">另外，增加此值也可以用於繞過遊戲前啟動進程錯誤檢測</span>`,
-        releasedelay: `設定背景處理程序在當前遊戲發布後重新啟動前等待的時間。影響自動處理追蹤和手動連結的遊戲。<br><br><span class="ttdesc">提供更長的時間間隔，完全從應用中釋放 Steamworks。增加此值可防止異常行為，例如追蹤先前關閉的遊戲</span>`,
-        maxretries: `設定將運行中的處理程序連結到檢測到的 AppID 的最大重試次數。影響自動處理追蹤和手動連結的遊戲。<br><br><span class="ttdesc">連結嘗試每秒執行一次。如果運行中的處理程序在此重試次數後未連結到當前 AppID，將返回無效的處理程序。在這種情況下，需要通過系統托盤 > 選項 > 釋放遊戲來手動釋放遊戲</span>`,
+        releasedelay: `設定目前遊戲被釋放後，背景 Worker 處理程序在重新啟動前所等待的時間。此設定會影響自動處理程序追蹤與自動釋放遊戲<br><br><span class="ttdesc">可提供較長的時間讓 Steamworks 完全從應用程式中釋放。提高此數值可避免異常行為，例如持續追蹤已關閉的遊戲</span>`,
+        maxretries: `設定將執行中的處理程序連結至偵測到之 AppID 的最大重試次數。此設定會影響自動處理程序追蹤與自動釋放遊戲<br><br><span class="ttdesc">每秒會嘗試一次重試。若在此重試次數後，執行中的處理程序仍未連結至目前的 AppID，將會回傳無效的處理程序。在此情況下，必須透過 系統匣 > 選項 > 釋放遊戲 手動釋放該遊戲</span>`,
         debug: "打開除錯面板，顯示詳細的處理追蹤資訊",
         userust: "使用基於 Rust 的替代功能來檢查系統上目前是否正在執行追蹤的遊戲處理。未選中時，將使用基於 NodeJS 的預設處理檢查。",
         notifydebug: "為所有通知創建 DevTools 視窗。用於調試/排除通知問題",
@@ -695,6 +701,7 @@ export const translations = {
         pos: "設置通知在屏幕上的位置",
         usecustompos: "啟用通知的自定義定位",
         setcustompos: "設置通知的自定義位置",
+        copycustompos: "將自訂位置套用至所有其他通知類型",
         resetcustompos: "將通知的位置重置為默認的自定義位置",
         updatetheme: "使用選擇的自定義選項更新當前主題",
         savetheme: "將所有配置的自定義選項保存為新主題",
@@ -809,7 +816,7 @@ export const translations = {
         descfontcolor: "設定第三個文字元素的顏色",
         exportachdata: `當成就解鎖時，將成就數據匯出為 JSON 文件<br><br><span class="ttdesc">啟用後，<span class="ttcode">achdata.json</span> 將匯出至:<br><br><ul><li><span class="hllb">%localappdata\\Steam Achievement Notifier (V1.9)</span></li><li>🐧 <span class="hllb">~/.local/share/Steam Achievement Notifier (V1.9)</span></li></ul></span>`,
         textvspace: "調整通知中各文本元素之間的垂直間距",
-        ssmode: `設定是否要在截圖中捕捉整個螢幕或僅當前遊戲視窗<span style="color: red;">*</span><br><br><span class="ttdesc">如果無法找到當前遊戲的<span class="hl">可執行檔案</span>（<i>無論是透過<span class="hl">自動進程追蹤</span>，還是將其添加為<span class="hl">已連結遊戲</span></i>），此選項將預設為「螢幕」模式</span>` ,
+        ssmode: `設定螢幕截圖時要擷取整個螢幕或目前的遊戲視窗<span style="color: red;">*</span><br><br><span class="ttdesc">如果無法找到目前遊戲的 <span class="hl">可執行檔</span>（<i>無論是透過 <span class="hl">自動處理程序追蹤</span>，或是新增為 <span class="hl">自動釋放遊戲</span> 項目時</i>），此選項將預設使用「螢幕」模式</span>`,
         replaynotify: "重播最後的成就通知",
         replaynotifyshortcut: "使用指定的快捷鍵重播最後的成就通知",
         replaynotifyempty: `<br><br><span class="ttdesc">重播隊列為空。解鎖一個成就以重播通知</span>`,
@@ -838,21 +845,22 @@ export const translations = {
         content: {
             exepath: "執行檔路徑",
             managesub: [
-                `手動將遊戲的 <span class="hl">執行檔</span> 關聯至特定的 <span class="hl">AppID</span>，或 <span class="hl">取消關聯</span> 一個現有的`,
-                `Steam 成就通知器將不再對任何 <span class="hl">已關聯的遊戲</span> 使用 <span class="hl">自動進程追蹤</span> - 取而代之的是，指定的 <span class="hl">執行檔</span> 將在檢測到相應的 <span class="hl">AppID</span> 時被追蹤`,
-                `<span class="hl" id="appidhelp"><u>如何找到 Steam 遊戲的 AppID？</u></span>`
+                `如果在遊戲視窗關閉後，Steam 仍顯示遊戲為 <i>遊玩中</i>，請嘗試在 <span class="hl">自動釋放遊戲</span> 中新增一個項目`,
+                `新增特定遊戲的 <span class="hl">AppID</span> 及其預期的 <span class="hl">遊戲可執行檔</span>，或 <span class="hl">移除</span> 現有項目`,
+                `當偵測到遊戲後，也可在 <span class="hl">系統匣圖示</span> 上 <i>按一下滑鼠右鍵</i> > <span class="hl">自動釋放遊戲</span> 來新增項目`,
+                `<span class="hl help" id="appidhelp"><u>我要如何找到 Steam 遊戲的 AppID？</u></span>`
             ],
-            linknew: "新增關聯遊戲",
+            linknew: "新增項目",
             linknewsub: [
-                `創建一個新的連結，將遊戲的 <span class="hl">執行檔</span> 與關聯的 <span class="hl">AppID</span> 連接`,
-                `創建後，這些連結可以通過之前的 <span class="hl">管理已關聯的遊戲</span> 對話框進行 <span class="hl">取消關聯</span>`
+                `新增新遊戲的 <span class="hl">AppID</span> 及其預期的 <span class="hl">遊戲可執行檔</span>`,
+                `新增後，可透過先前的 <span class="hl">自動釋放遊戲</span> 選單 <span class="hl">移除</span> 這些項目`
             ],
-            linkedit: "編輯已連結遊戲",
+            linkedit: "編輯項目",
             linkeditsub: [
-                `編輯現有的<span class="hl">遊戲可執行檔</span>與相關的<span class="hl">AppID</span>連結`,
-                `連結建立後，可以透過先前的<span class="hl">管理已連結遊戲</span>對話框<span class="hl">取消連結</span>`
+                `編輯現有遊戲的 <span class="hl">AppID</span> 及其預期的 <span class="hl">遊戲可執行檔</span>`,
+                `新增後，可透過先前的 <span class="hl">自動釋放遊戲</span> 選單 <span class="hl">移除</span> 這些項目`
             ],
-            link: "關聯",
+            link: "新增"
         }
     },
     exclusions: {
