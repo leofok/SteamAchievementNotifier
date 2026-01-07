@@ -27,7 +27,8 @@ Each notification type - **Main** (*for regular achievements*), **Rare** (*for a
 <img width="100%" height="100%" src="img/SANUIV1.9.jpg">
 </p>
 
-> ### 🛑 Fullscreen display modes are not supported\*
+> [!CAUTION]
+> #### Fullscreen display modes are not supported\*
 > Games using **DirectX 9/10/11** require **Borderless**/**Borderless Windowed** mode to be enabled via in-game display settings in order for notifications to show above the game window
 > 
 > \**If a game supports and runs using **DirectX 12**, notifications will usually show above the game window when **Fullscreen** is enabled*
@@ -36,7 +37,10 @@ Each notification type - **Main** (*for regular achievements*), **Rare** (*for a
 
 <div align="center">
 
-| <a href="#features">Features</a> | <a href="#updates">Updates</a> | <a href="#installation">Installation</a> | <a href="#credits">Credits</a> |
+<!-- | <a href="#features">Features</a> | <a href="#updates">Updates</a> | <a href="#installation">Installation</a> | <a href="#credits">Credits</a> |
+| --- | --- | --- | --- | -->
+
+| <a href="#features">Features</a> | <a href="#installation">Installation</a> | <a href="#wiki">Wiki</a> | <a href="#credits">Credits</a> |
 | --- | --- | --- | --- |
 
 </div>
@@ -59,9 +63,11 @@ Each notification type - **Main** (*for regular achievements*), **Rare** (*for a
 
 - 📷 **Additional Media Options**: Includes options to automatically take a Steam screenshot when any achievement is unlocked, as well as generating a **Screenshot with Notification Overlay** (*by selecting the dropdown option under **Settings** > **Additional Media***), which takes a screenshot of your chosen monitor, and overlays an image of the achievement notification - including all customisations! Also new to V1.9, the **Notification Image** option generates an image of the notification itself, which can then be directly shared or added as an overlay elsewhere!
 
-> 🐧 In order to enable the **Take Steam Screenshot** option on Linux, `xdotool` must be installed on the system
+> [!WARNING]
+> 🐧 In order to enable **Take Steam Screenshot** on Linux, `xdotool` must be installed on the system
 
-> 🐧 In order to enable the **HDR Mode** option on Linux, `libxcb1`, `libxrandr2` and `libdbus-1-3` must be installed on the system
+> [!WARNING]
+> 🐧 In order to enable **HDR Mode** on Linux, `libxcb1`, `libxrandr2` and `libdbus-1-3` must be installed on the system
 
 - 🎥 **Stream Notifications**: Building on the foundations of the **Duplicate Notification to Window** option available in previous versions, **Stream Notifications** creates a background window that duplicates all on-screen notifications - including all customisations - which is targetable as a window source within streaming software, such as OBS/Streamlabs/Twitch Studio etc. By setting this window as your source, you can overlay all achievement notifications directly in your streams!
 
@@ -69,19 +75,24 @@ Each notification type - **Main** (*for regular achievements*), **Rare** (*for a
 
 - 💬 **Native OS Preset**: **V1.9** adds a new **Notification Preset** type - **Native OS**\* shows a real OS notification containing the unlock message, achievement title and description, along with the achievement icon!
 
-> ⚠ *\*Some features are not supported and will be made unavailable when this Notification Preset is selected*
+> [!WARNING]
+> \*Some features are not supported and will be made unavailable when this Notification Preset is selected
 
 - 🌍 **Localisation Support**: All UI and notification elements have been translated into most Steam-supported languages - select your preferred language from the **Settings** menu! Additionally, the new **Translate Achievements to Steam Language**\* option displays achievement information in the user's chosen Steam UI language!
 
-> ⚠ \**Some translated achievement information will only be locally available after unlocking the achievement. The **Max Translation Retries** option controls how many times a missing translation will be searched for (repeated once per second) before using the default achievement information provided by Steamworks instead*
+> [!WARNING]
+> \*Some translated achievement information will only be locally available after unlocking the achievement.
+> 
+> The **Max Translation Retries** option controls how many times a missing translation will be searched for (repeated once per second) before using the default achievement information provided by Steamworks instead
 
 - 📡 **Auto Updater**: Using [electron-builder's autoUpdater](https://www.electron.build/auto-update.html), users will now be notified if a new update is available - if so, downloading/installation of the new version will all be handled automatically by the app!
 
-- 🕹 **Retro Achievements Support**: Starting from **V1.9.26**, display customised notifications for **Retro Achievements** earned in supported emulators\*! Most existing in-app functionality available for Steam achievements - such as Screenshots/Notification Images/Game Art etc. - is also available for **Retro Achievements** notifications!
+- 🕹 **Retro Achievements Support**: Display customised notifications for **Retro Achievements** earned in supported emulators\*! Most existing in-app functionality available for Steam achievements - such as Screenshots/Notification Images/Game Art etc. - is also available for **Retro Achievements** notifications!
 
-> ℹ \**For information on currently supported/incompatible emulators, prerequisites and setup, see the [Retro Achievements](https://github.com/SteamAchievementNotifier/SteamAchievementNotifier/blob/master/RA.md) section*
+> [!NOTE]
+> \*For information on currently supported/incompatible emulators, prerequisites and setup, see the [Retro Achievements](https://github.com/SteamAchievementNotifier/SteamAchievementNotifier/blob/master/RA.md) section
 
-<h2 align="center" id="updates">Updates</h2>
+<!-- <h2 align="center" id="updates">Updates</h2>
 
 > ℹ *This is not a full changelog - only updates added since **V1.9** which are not present in previous releases (or options that have since undergone significant changes) will be listed*
  
@@ -106,13 +117,13 @@ Each notification type - **Main** (*for regular achievements*), **Rare** (*for a
     - **Disable Icon Caching**: By default, all achievement icons will be cached from the game's Steam Community page. Enable this option to prevent this behaviour - and revert to icons provided by Steamworks upon unlocking the achievement - which will greatly improve performance for games with a large number of achievements
     - **Post to Discord Server**: Post unlocked achievement information for all games to a specified Discord server via a webhook
 - **Games**
-    - **Linked Games**: Associate a game (via its **AppID**) with a specific executable file on your system. **Linked Games** added via this menu will bypass <a href="#automaticprocesstracking">**automatic process tracking**</a>, so only the specified executable will be checked when the associated game's **AppID** is detected as running by Steam Achievement Notifier
+    - **Auto-Release Games**: Associate a game (via its **AppID**) with a specific executable file on your system. **Auto-Release Games** added via this menu will bypass <a href="#automaticprocesstracking">**automatic process tracking**</a>, so only the specified executable will be checked when the game's **AppID** is detected as running by Steam Achievement Notifier
     - **Auto-Switch Themes**: Add any game's **AppID** and select any previously saved **Theme** to automatically switch to the chosen **Theme** when the game is detected. Additionally, an independent **Screenshot Source** can be selected for each entry
     - **Exclusion List**: Any AppID added to the **Exclusion List** won't be tracked for achievements while Steam Achievement Notifier is active
 - **Additional Media**: Various options for generating additional media achievements are unlocked - such as **Take Steam Screenshot**, **Screenshot with Notification Overlay** and **Notification Image**
     - **Screenshot with Notification Overlay**
         - **HDR Mode**: Take screenshots using a method compatible with monitors using High Dynamic Range (HDR)
-        - **Screenshot Delay**: Add a delay of up to 5 seconds before taking a screenshot when using the **Screenshot with Notification Overlay** option. Useful when achievements usually unlock at inopportune times, such as during cutscene transitions!
+        - **Screenshot Delay**: Add a delay of up to 10 seconds before taking a screenshot when using the **Screenshot with Notification Overlay** option. Useful when achievements usually unlock at inopportune times, such as during cutscene transitions!
 - **Streaming**
     - <span id="audiosrc">**Audio Source**:</span> As audio is generated from within notifications by default, a new **Settings** option has been added for **V1.9** - setting **Audio Source** to **App** will ensure that notification audio can be captured by streaming software via the app window itself (*Or, if sounds aren't your thing, mute all in-app audio by selecting the **Off** option*)
     - **Achievement Stats Overlay** > **Always on Top**: Sets the Achievement Stats Overlay to "Always on Top" mode, allowing the window to be displayed above the game window (instead of being used as a streaming source)
@@ -189,7 +200,7 @@ Additionally, there are several in-app options to control various aspects of **a
 - **Release Delay**: If **Steam Achievement Notifier** shows the **Now Tracking** notification for a game that has been recently closed, try increasing the value of the **Settings** > **Advanced** > **Release Delay** option to a higher value.
 
 - **Max Process Retries**: If the current game takes a long time to start (*and subsquently misses the initial window to locate the running exectuable - default: 10 retries at 1 retry per second*), try increasing the **Settings** > **Advanced** > **Max Process Retries** option to a higher value.
-
+ -->
 <h2 align="center" id="installation">Installation</h2>
 
 1. Download the installer/executable from the [Releases](https://github.com/steamAchievementNotifier/SteamAchievementNotifier/releases) page (*under **Assets** at the bottom of the page*)
@@ -200,9 +211,9 @@ Additionally, there are several in-app options to control various aspects of **a
 <h3 align="center">🏆 Happy Achievement Hunting! 🏆</h3>
 <hr>
 
-<h2 align="center" id="knownissues">Known Issues</h2>
+<h2 align="center" id="wiki">Wiki</h2>
 
-For details on known issues when installing or running the app, see the [Known Issues](https://github.com/SteamAchievementNotifier/SteamAchievementNotifier/blob/master/KNOWNISSUES.md) section.
+For help with common issues, frequently asked questions and in-depth information on settings and features, please see the [Steam Achievement Notifier Wiki](https://github.com/SteamAchievementNotifier/SteamAchievementNotifier/wiki).
 
 <h2 align="center" id="credits">Credits</h2>
 
@@ -222,3 +233,4 @@ For details on known issues when installing or running the app, see the [Known I
 - [icojs](https://github.com/egy186/icojs) by [egy186](https://github.com/egy186)
 - [iro.js](https://github.com/jaames/iro.js) by [jaames](https://github.com/jaames)
 - [sortable](https://github.com/SortableJS/Sortable) by [SortableJS](https://github.com/SortableJS)
+- [new-vdf-parser](https://crates.io/crates/new-vdf-parser) by [Tormak9970](https://github.com/Tormak9970)

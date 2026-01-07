@@ -14,8 +14,8 @@ The below table outlines current compatibility for emulators supporting **Retro 
 | Dolphin | ✔ | [Requires log file](#dolphin): `dolphin.log` |
 | Bizhawk | ❌ | No external log-to-file functionality, but PS1 cores can be loaded via RetroArch |
 | DuckStation | ✔ | [Requires `RA_Integration-x64.dll` + log file](#duckstation): `RALog.txt`  |
-| PCSX2 [Nightly] | ✔ | [Requires log file](#pcsx2): `emulog.txt` |
-| PPSPP | ❌ | Logs to file if run in developer mode via `.bat` script. PPSPP core can be loaded via RetroArch |
+| PCSX2 | ✔ | [Requires log file](#pcsx2): `emulog.txt` |
+| PPSPP | ✔ | [Requires log file](#ppsspp): `log.txt` |
 | RALibRetro | ❔ | Not tested |
 | RANes | ❔ | Not tested |
 | RALibRetro | ❔ | Not tested |
@@ -106,7 +106,7 @@ To enable *log-to-file* functionality:
 
 <details>
     <summary>
-    <h4 id="pcsx2">PCSX2 [Nightly]</h4>
+    <h4 id="pcsx2">PCSX2</h4>
     </summary>
 
 - **PCSX2 > Tools > Enable File Logging** must be enabled
@@ -119,6 +119,16 @@ To enable *log-to-file* functionality:
 
 - **Duckstation > Settings > Achievements > RAIntegration (Developer Only)** must be enabled
 
+</details>
+
+<details>
+    <summary>
+    <h4 id="ppsspp">PPSSPP</h4>
+    </summary>
+
+- **PPSSPP > Settings > Developer Tools > General > Log to File** must be enabled and configured with the following settings:
+    
+    - **Achievements**: *Info*
 </details>
 
 Once complete, this **log file** can then be selected in **Steam Achievement Notifier** for the associated emulator.
@@ -157,10 +167,8 @@ Once an emulator is enabled, a **Log File Path** option will appear. Click the �
 
 <details>
     <summary>
-    <h4>PCSX2 [Nightly]</h4>
+    <h4>PCSX2</h4>
     </summary>
-
-> ❗ Due to recent updates, the contents of `emulog.txt` can currently only be accessed in the Nightly release of PCSX2
 
 - Using default installation settings, `emulog.txt` is stored in:
 
@@ -211,6 +219,16 @@ Once an emulator is enabled, a **Log File Path** option will appear. Click the �
     - `%USERPROFILE%\Documents\Duckstation\RACache`\*
 
 > ⚠ \*`RACache/RALog.txt` will only be generated after adding `RA_Integration-x64.dll` and [enabling support in Duckstation](#logfiles)
+</details>
+
+<details>
+    <summary>
+    <h4>PPSSPP</h4>
+    </summary>
+
+- Using default installation settings, `log.txt` is stored in:
+
+    - `%PROGRAMFILES%\PPSSPP\PSP\memstick\PSP\SYSTEM\DUMP`
 </details>
 
 <br>
