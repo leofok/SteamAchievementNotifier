@@ -110,7 +110,7 @@
             <div class="wrapper cont">
                 <span class="wrapper title" id="style"></span>
                 <div class="wrapper optcont">
-                    <div class="wrapper opt">
+                    <div class="wrapper opt" nosubdisable>
                         <span class="lbl"></span>
                         <select name="bgstyle" id="bgstyle">
                             <option value="solid"></option>
@@ -126,6 +126,10 @@
                             <span class="lbl"></span>
                             <button class="menubtn delbtn"></button>
                             <button class="optbtn img" id="bgimg" img></button>
+                        </div>
+                        <div class="wrapper opt sub">
+                            <span></span>
+                            <input type="checkbox" id="bgachicon">
                         </div>
                         <div class="wrapper opt" value="100">
                             <span class="lbl"></span>
@@ -333,11 +337,11 @@
                 <div class="wrapper optcont">
                     <div class="wrapper opt" value="0">
                         <span class="lbl"></span>
-                        <input unit="percent" type="range" min="50" max="150" step="5" value="100" id="iconscale" os>
+                        <input unit="percent" type="range" min="50" max="150" step="5" value="100" id="iconscale">
                     </div>
                     <div class="wrapper opt" value="0">
                         <span class="lbl"></span>
-                        <input unit="percent" type="range" min="0" max="100" step="25" value="0" id="iconroundness" os>
+                        <input unit="percent" type="range" min="0" max="100" step="25" value="0" id="iconroundness">
                     </div>
                     <div class="wrapper opt">
                         <span class="lbl"></span>
@@ -346,7 +350,7 @@
                     </div>
                     <div class="wrapper opt">
                         <span></span>
-                        <input type="checkbox" id="usegameicon" os>
+                        <input type="checkbox" id="usegameicon">
                         <div class="wrapper opt sub">
                             <span class="lbl"></span>
                             <select name="gameicontype" id="gameicontype">
@@ -357,12 +361,12 @@
                     </div>
                     <div class="wrapper opt">
                         <span></span>
-                        <input type="checkbox" id="usecustomimgicon" os>
+                        <input type="checkbox" id="usecustomimgicon">
                     </div>
                     <div class="wrapper opt">
                         <span class="lbl"></span>
                         <button class="menubtn delbtn"></button>
-                        <button class="optbtn img" id="customimgicon" img></button>
+                        <button class="optbtn img" id="customimgicon" img os></button>
                     </div>
                     <div class="wrapper opt">
                         <span></span>
@@ -484,7 +488,7 @@
             <div class="wrapper opt">
                 <span class="lbl"></span>
                 <button class="menubtn pinbtn"></button>
-                <select name="themeselect" id="themeselect"></select>
+                <select name="themeselect" id="themeselect" os></select>
             </div>
             <div class="wrapper cont">
                 <span class="wrapper title" id="theme"></span>

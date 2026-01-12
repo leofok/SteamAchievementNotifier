@@ -88,7 +88,7 @@ const notifyhelper = {
     
         return notifyhelper.playaudio(customisation,iswebview,skipaudio,type)
     },
-    setcustomisations: (customisation: Customisation,percent: { value: number, rarity: number, semirarity: number },iswebview: "customiser" | "sspreview" | "ss" | null,appid: number,steampath: string,steam3id: number,hqicon: string,temp: string,percentimg: "bronze" | "silver" | "gold",gamearticon: string,gameartlibhero: string,gameartlogo: string,ra?: boolean): Promise<HTMLImageElement[] | null> => {
+    setcustomisations: (customisation: Customisation,percent: { value: number, rarity: number, semirarity: number },iswebview: "customiser" | "sspreview" | "ss" | null,appid: number,steampath: string,steam3id: number,hqicon: string,temp: string,percentimg: "bronze" | "silver" | "gold",gamearticon: string,gameartlibhero: string,gameartlogo: string,icon: string,ra?: boolean): Promise<HTMLImageElement[] | null> => {
         return new Promise<HTMLImageElement[] | null>(async (resolve,reject) => {
             const fontloader = document.getElementById("fontloader")
             fontloader && fontloader.remove()
@@ -135,7 +135,7 @@ const notifyhelper = {
                 return convertedicon
             }
 
-            const gamearturl: string | null = (customisation.bgstyle === "gameart" || customisation.bgstyle === "bgimg") ? await getpreloadimgurl("bgstyle",gamearticon,gameartlibhero,gameartlogo) : null
+            const bgimgurl: string | null = (customisation.bgstyle === "gameart" || customisation.bgstyle === "bgimg") ? (customisation.bgstyle === "bgimg" && customisation.bgachicon ? icon : await getpreloadimgurl("bgstyle",gamearticon,gameartlibhero,gameartlogo)) : null
             const gameiconurl: string | null = customisation.usecustomimgicon ? customisation.customimgicon : (customisation.usegameicon ? (ra ? gamearticon : (appid ? await getpreloadimgurl("usegameicon",gamearticon,gameartlibhero,gameartlogo) : "../img/gameicon.png")) : null)
     
             gameiconurl && ((document.getElementById("achicon")! as HTMLImageElement)!.src = gameiconurl)
@@ -173,7 +173,7 @@ const notifyhelper = {
                 ["--displaytime",`${customisation.displaytime}s`],
                 ["--scale",`${customisation.scale / 100}`],
                 ["--gradientangle",`${customisation.gradientangle}deg`],
-                ["--bgimg",`url('${gamearturl}')`],
+                ["--bgimg",`url('${bgimgurl}')`],
                 ["--bgimgbrightness",`${customisation.bgimgbrightness}%`],
                 ["--brightness",`${customisation.brightness}%`],
                 ["--roundness",`${(customisation.roundness / 4) * (customisation.scale / 100)}px`],
@@ -379,7 +379,7 @@ try {
                 
                 if (!steampath) throw new Error(`Steam installation path not found!`)
     
-                notifyhelper.setcustomisations(customisation,percent,iswebview,appid,steampath,steam3id,hqicon,temp,percentimg,gamearticon,gameartlibhero,gameartlogo,ra)
+                notifyhelper.setcustomisations(customisation,percent,iswebview,appid,steampath,steam3id,hqicon,temp,percentimg,gamearticon,gameartlibhero,gameartlogo,icon,ra)
                 .then(preloadimgs => {
                     preloadimgs && preloadimgs.forEach(img => imgs.push(img))
                     resolve({

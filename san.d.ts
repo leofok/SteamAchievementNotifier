@@ -164,6 +164,7 @@ declare interface Customisation {
     bgstyle: "solid" | "gradient" | "bgimg" | "gameart",
     gradientangle: number,
     bgimg: string,
+    bgachicon: boolean,
     bgimgbrightness: number,
     brightness: number,
     blur: number,

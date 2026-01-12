@@ -2,7 +2,8 @@ body[customiser][soundonly] .wrapper#customiser > .wrapper#webview,
 body[customiser][soundonly] #customisercontent > #customiseropts > .cont:not(:has(.title#sound)),
 #customiser[customfiles] .opt:has(#importtheme,#exporttheme),
 .optcont:has(.opt > input[type="checkbox"]#glowrarity:checked) > .opt:has(#glow) > .opt:has(#glowcolor),
-.optcont:has(.opt > input[type="checkbox"]#iconborderrarity:checked) > .opt:has(#iconborderimg) {
+.optcont:has(.opt > input[type="checkbox"]#iconborderrarity:checked) > .opt:has(#iconborderimg),
+.optcont:has(.sub > input[type="checkbox"]#bgachicon:checked) > .opt > .opt:has(.img#bgimg) {
     opacity: 0.5;
     pointer-events: none;
 }
@@ -51,6 +52,7 @@ body:not([main],[semi]) .cont:has( #iconanim:not(:checked)) ~ .cont:has(.title#c
 .optcont:has(.opt > select#soundmode > option[value="folder"]:not(:checked)) > .opt:has(#sounddir),
 .optcont:has(.opt > select#bgstyle > option[value="gradient"]:not(:checked)) > .opt > .opt:has(#gradientangle),
 .optcont:has(.opt > select#bgstyle > option[value="bgimg"]:not(:checked)) > .opt > .opt:has(#bgimg),
+.optcont:has(.opt > select#bgstyle > option[value="bgimg"]:not(:checked)) > .opt > .opt:has(#bgachicon),
 .optcont:has(.opt > select#bgstyle > option[value="bgimg"]:not(:checked)) > .opt > .opt:has(#bgimgbrightness),
 .optcont:has(.opt > select#bgstyle > option[value="gameart"]:not(:checked)) > .opt > .opt:has(#brightness),
 .optcont:has(.opt > select#bgstyle > option[value="bgimg"]:not(:checked)) > .opt > .opt:has(#blur),
@@ -71,7 +73,7 @@ body[plat] .opt:has(#glow) > .opt:has(#glowrarity,#glowcolorbronze,#glowcolorsil
 .optcont:has(.opt > input[type="checkbox"]#usecustompos:not(:checked)) > .opt#posbtns,
 .optcont:has(.opt > .img#logo[novalue]) > .opt:has(input#replacelogo),
 .optcont:has(.opt > .img[id="decoration1"][novalue]):has(.opt > .img[id="decoration2"][novalue]):has(.opt > .img[id="decoration3"][novalue]) > .opt:has(input#replacelogo),
-#customiseropts:has(.wrapper#elemselector > .wrapper > .wrapper > select#unlockmsg > option[value="off"]:checked) > .wrapper:has(.title#preset) > .optcont > .opt:has(#customtext),
+#customiseropts:has(.wrapper#elemselector > .wrapper > .wrapper > select#unlockmsg > option[value="off"]:checked) > .wrapper:has(.title#preset) > .optcont:has(select#preset > option[value="os"]:not(:checked)) > .opt:has(#customtext),
 body[plat] #customisercontent .wrapper:has(> #showhiddenicon),
 body[plat] #customisercontent .wrapper:has(> .img#hiddenicon),
 .opt:has(#alldetails),
@@ -136,7 +138,17 @@ body[trophymode][semi] .opt:has(input#iconborderrarity) {
 #customiseropts:has(.opt > select#preset > option[value="windows"]:checked) > .cont:has(select#bgstyle > option[value="bgimg"]:checked) ~ .cont:has(.title#colors) > .optcont > .opt:has(input#secondarycolor),
 #customiseropts:has(.opt > select#preset > option[value="windows"]:checked) > .cont:has(select#bgstyle > option[value="gameart"]:checked) ~ .cont:has(.title#colors) > .optcont > .opt:has(input#secondarycolor),
 #customiseropts:has(.opt > select#preset > option[value="gfwl"]:checked) > .cont:has(select#bgstyle > option[value="bgimg"]:checked) ~ .cont:has(.title#colors) > .optcont > .opt:has(input#secondarycolor),
-#customiseropts:has(.opt > select#preset > option[value="gfwl"]:checked) > .cont:has(select#bgstyle > option[value="gameart"]:checked) ~ .cont:has(.title#colors) > .optcont > .opt:has(input#secondarycolor) {
+#customiseropts:has(.opt > select#preset > option[value="gfwl"]:checked) > .cont:has(select#bgstyle > option[value="gameart"]:checked) ~ .cont:has(.title#colors) > .optcont > .opt:has(input#secondarycolor),
+#customiseropts:has(.opt > select#preset > option[value="xqjan"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#decorationscale),
+#customiseropts:has(.opt > select#preset > option[value="steamdeck"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#logoscale),
+#customiseropts:has(.opt > select#preset > option[value="epicgames"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#logoscale),
+#customiseropts:has(.opt > select#preset > option[value="xboxone"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#decorationscale),
+#customiseropts:has(.opt > select#preset > option[value="xbox360"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#decorationscale),
+#customiseropts:has(.opt > select#preset > option[value="ps3"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#logoscale),
+#customiseropts:has(.opt > select#preset > option[value="windows"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#decorationscale),
+#customiseropts:has(.opt > select#preset > option[value="gfwl"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#decorationscale),
+#customiseropts:has(.opt > select#preset > option[value="os"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#logoscale),
+#customiseropts:has(.opt > select#preset > option[value="os"]:checked) > .cont:has(.title#icons) > .optcont > .opt:has(input#decorationscale) {
     display: none;
 }
 

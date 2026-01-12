@@ -350,6 +350,7 @@ export const sanconfig = {
                 bgstyle: "solid",
                 gradientangle: 90,
                 bgimg: "",
+                bgachicon: false,
                 bgimgbrightness: 100,
                 brightness: 100,
                 blur: 0,
