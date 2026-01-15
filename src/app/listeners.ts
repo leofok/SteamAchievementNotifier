@@ -1614,14 +1614,19 @@ export const listeners = {
             }
         })
 
-        for (const [key,value] of new Map<string,BrowserWindow | number | GameArtObj | null>([
-            ["appid",appid],
-            ["win",win],
-            ["worker",worker],
-            ["gameartobj",gameartobj]
-        ])) {
-            const type = typeof value === "number" ? "num" : "obj"
-            ipcMain.on(`ss_${key}`,() => ipcMain.emit(`ss_${key}${type}`,null,value))
+        const listenersvars = {
+            get appid(): number { return appid },
+            get win(): BrowserWindow { return win },
+            get worker(): BrowserWindow | null { return worker },
+            get gameartobj(): GameArtObj { return gameartobj }
+        }
+
+        for (const key of Object.keys(listenersvars) as (keyof typeof listenersvars)[]) {
+            ipcMain.on(`ss_${key}`,() => {
+                const value = listenersvars[key]
+                const type = typeof value === "number" ? "num" : "obj"
+                ipcMain.emit(`ss_${key}${type}`,null,value)
+            })
         }
 
         ipcMain.on("buildnotify",async (event,notify: Notify) => ipcMain.emit("buildnotifyobj",null,await buildnotify(notify)))

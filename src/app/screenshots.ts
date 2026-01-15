@@ -151,7 +151,7 @@ export const screenshot = {
             const srcpath = screenshot.srcpath(notify.id)
             
             // Wait to receive global vars from `listeners.ts`
-            const [win, worker, appid] = await Promise.all((["win","worker","appid"] as const).map(lv => screenshot.getlistenersvar(lv))) as [BrowserWindow,BrowserWindow,number]
+            const [win,worker,appid] = await Promise.all((["win","worker","appid"] as const).map(lv => screenshot.getlistenersvar(lv))) as [BrowserWindow,BrowserWindow,number]
 
             sswins.set(notify.id,sswinsobj)
 
