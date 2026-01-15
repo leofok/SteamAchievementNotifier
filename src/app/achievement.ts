@@ -4,7 +4,7 @@ import { get } from "https"
 import { sanhelper, __root } from "./sanhelper"
 import { log } from "./log"
 
-export const cachedata = (client: any, apinames: string[]): Achievement[] => {
+export const cachedata = (client: any,apinames: string[]): Achievement[] => {
     const {
         isActivated,
         getAchievementDisplayAttribute,
@@ -34,14 +34,10 @@ export const cachedata = (client: any, apinames: string[]): Achievement[] => {
 export const checkunlockstatus = (cache: Achievement[], live: Achievement[]): Achievement[] => {
     const unlocked: Achievement[] = []
 
-    live.forEach(live => {
-        const match = cache.find(cached => cached.apiname === live.apiname)
-
-        if (match && live.unlocked !== match.unlocked) {
-            unlocked.push(live)
-            // match.unlocked = achievement.unlocked
-        }
-    })
+    for (const ach of live) {
+        const match = cache.find(cached => cached.apiname === ach.apiname)
+        match && ach.unlocked !== match.unlocked && unlocked.push(ach)
+    }
 
     return unlocked
 }
@@ -72,34 +68,32 @@ export const downloadicon = async (achievement: { apiname: string, iconurl: stri
     const dest = path.join(sanhelper.temp,`${apiname}.${format || "jpg"}`)
 
     try {
-        const promise = await new Promise<string>((resolve,reject) => {
-            get(iconurl, res => {
+        const iconpath = await new Promise<string>((resolve,reject) => {
+            get(iconurl,res => {
                 const file = createWriteStream(dest)
                 res.pipe(file)
         
                 file
-                .on("finish", () => {
+                .on("finish",() => {
                     file.close()
                     resolve(dest)
                 })
-                .on("error", err => {
+                .on("error",err => {
                     log.write("ERROR",`Error caching achievement icon for "${apiname}": ${err}`)
                     reject("")
                 })
             })
         })
 
-        return promise
+        return iconpath
     } catch (err) {
         return err as string
     }
 }
 
-/** As Steamworks' `getAchievementIcon()` function does not allow specification of whether to fetch locked/unlocked versions of achievement icons, they cannot be locally cached.
- * 
- * Caching icons from the user's Steam Community page ensures icons are locally available upon unlocking an achievement.
- * 
- * *`getAchievementIcon()` is then used as a fallback, in case caching the icon via this function fails.* */
+// As Steamworks' `getAchievementIcon()` function does not allow specification of whether to fetch locked/unlocked versions of achievement icons, they cannot be locally cached.
+// Caching icons from the user's Steam Community page ensures icons are locally available upon unlocking an achievement.
+// `getAchievementIcon()` is then used as a fallback, in case caching the icon via this function fails.
 export const cacheachievementicons = async (gamename: string, steam64id: string, appid: number, url?: string): Promise<string[]> => {
     const steamurl = url || `https://steamcommunity.com/profiles/${steam64id}/stats/${appid}/?xml=1`
     const icons: string[] = []
