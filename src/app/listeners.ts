@@ -212,7 +212,15 @@ export const listeners = {
             worker.loadFile(path.join(__root,"dist","app","worker.html"))
             sanhelper.devmode && sanhelper.setdevtools(worker)
             worker.once("closed",() => log.write("EXIT",`"Worker" process closed`))
+
+            const config = sanconfig.get()
+            config.get("raemus").length && worker.webContents.send("startra")
         })
+
+        // Starts/stops `ratimer` in `worker.ts` based on whether any emulators are selected under Settings > RetroAchievements > Emulators
+        for (const action of (["start","stop"] as const)) {
+            ipcMain.on(`ra${action}`,() => worker && worker.webContents.send(`ra${action}`))
+        }
 
         ipcMain.on("worker",(event,args) => console.log(JSON.parse(args)))
 
@@ -1722,6 +1730,9 @@ export const listeners = {
             gameid = ragame?.gameid || 0
             win.webContents.send("ragame",status,ragame)
         })
+        
+        ipcMain.on("emu",(event,_emu: string | null) => emu = _emu) // Updates global `emu` variable with name of current emulator (or `null` if nothing is running)
+        ipcMain.on("getemu",event => ipcMain.emit("sendemu",null,emu)) // Sends emulator name to `screenshot.ts` if `notify.ra` is true
 
         ipcMain.on("betaunsupported",() => {
             if (!sanhelper.beta) return
@@ -1734,9 +1745,6 @@ export const listeners = {
 
             updatetray(tray,undefined,undefined,true)
         })
-        
-        ipcMain.on("emu",(event,_emu: string | null) => emu = _emu) // Updates global `emu` variable with name of current emulator (or `null` if nothing is running)
-        ipcMain.on("getemu",event => ipcMain.emit("sendemu",null,emu)) // Sends emulator name to `screenshot.ts` if `notify.ra` is true
 
         return
     }

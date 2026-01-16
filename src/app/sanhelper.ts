@@ -1208,7 +1208,7 @@ export const sanhelper: SANHelper = {
                     config.set("raemus",raemus)
                     input.checked = config.get("raemus").includes(input.id)
 
-                    return
+                    return ipcRenderer.send(`ra${config.get("raemus").length ? "start" : "stop"}`)
                 }
             }
 

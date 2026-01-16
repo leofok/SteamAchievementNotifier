@@ -436,15 +436,16 @@ for (const emu of rasupported) {
 const getactionstr = (action: LogAction) => `${action.key}:${action.file}:${action.action}:${action.value}:${action.mode}`
 
 const startra = () => {
-    if (ratimer) return
+    if (ratimer) return log.write("WARN",`"ratimer" already active`)
+    log.write("INFO",`"ratimer" started`)
 
     ratimer = setInterval(async () => {
         sanhelper.devmode && (window.racached = racached)
         const logmap = getlogmap()
 
         // Limits actions to active emulator
-        logmap.forEach(async (file,key) => {
-            if (!fs.existsSync(file) || (emu && emu !== key)) return
+        for (const [key,file] of logmap) {
+            if (!fs.existsSync(file) || (emu && emu !== key)) continue
 
             for (const newaction of getlastactions(key,file)) {
                 if (newaction.action === "idle") continue
@@ -465,11 +466,20 @@ const startra = () => {
 
                 lastlog[keyname] = msg
             }
-        })
-    }, 1000)
+        }
+    },1000)
 }
 
 sanhelper.devmode && (window.testraunlock = testraunlock)
-startra()
+sanconfig.get().store.raemus.length && startra()
+
+ipcRenderer.on("rastart",() => startra())
+ipcRenderer.on("rastop",() => {
+    if (!ratimer) return log.write("WARN",`"ratimer" is not active`)
+
+    clearInterval(ratimer)
+    ratimer = null
+    log.write("INFO",`"ratimer" stopped`)
+})
 
 ipcRenderer.on("emu",() => ipcRenderer.send("emu",emu))

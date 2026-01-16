@@ -795,7 +795,10 @@ dialog[menu] #settingscontent .opt#raemuswrapper .opt:has(> input[type="checkbox
 }
 
 body[raemu="retroarch"][ragameid] .multiselect#raemuswrapper .wrapper:has(> input#retroarch) > span::after,
-body[raemu="dolphin"][ragameid] .multiselect#raemuswrapper .wrapper:has(> input#dolphin) > span::after {
+body[raemu="dolphin"][ragameid] .multiselect#raemuswrapper .wrapper:has(> input#dolphin) > span::after,
+body[raemu="pcsx2"][ragameid] .multiselect#raemuswrapper .wrapper:has(> input#pcsx2) > span::after,
+body[raemu="duckstation"][ragameid] .multiselect#raemuswrapper .wrapper:has(> input#duckstation) > span::after,
+body[raemu="ppsspp"][ragameid] .multiselect#raemuswrapper .wrapper:has(> input#ppsspp) > span::after {
     content: "";
     background: url("../../icon/dot_green.png") center / contain no-repeat;
     display: inline-block;
@@ -803,6 +806,18 @@ body[raemu="dolphin"][ragameid] .multiselect#raemuswrapper .wrapper:has(> input#
     height: 0.5rem;
     margin-left: 0.25rem;
     vertical-align: middle;
+}
+
+/* Prevents options from being toggled while an emulated game is active */
+body[ragameid] .multiselect#raemuswrapper .wrapper:has(> input) > span,
+body[ragameid] .multiselect#raemuswrapper .wrapper:has(> input) > .opt,
+body[ragameid] .multiselect#raemuswrapper .wrapper:has(> input) > input[type="checkbox"] {
+    pointer-events: none;
+}
+
+body[ragameid] .multiselect#raemuswrapper .wrapper:has(> input) > .opt,
+body[ragameid] .multiselect#raemuswrapper .wrapper:has(> input) > input[type="checkbox"] {
+    opacity: 0.75;
 }
 
 .wrapper#rastatuswrapper {
