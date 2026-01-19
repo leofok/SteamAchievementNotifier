@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "مقياس مخطط الخط",
                 fontshadow: "ظل الخط",
                 fontshadowcolor: "لون ظل الخط",
-                fontshadowscale: "مقياس ظل الخط"
+                fontshadowscale: "مقياس ظل الخط",
+                fontshadowx: "الإزاحة الأفقية",
+                fontshadowy: "الإزاحة الرأسية"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "إضافة ظل لجميع النصوص المعروضة ضمن الإشعار",
         fontshadowcolor: "تعيين لون ظل النص",
         fontshadowscale: "تعيين سمك ظل النص",
+        fontshadowx: "إزاحة موقع ظل النص أفقيًا",
+        fontshadowy: "إزاحة موقع ظل النص عموديًا",
         iconroundness: "تعيين الدوران لرمز الإنجاز / اللعبة المعروض ضمن الإشعار",
         plat: "تحميل ملف صورة لاستخدامه كرمز 100%",
         usegameicon: "استبدال أيقونة الإنجاز غير المقفل بأيقونة اللعبة الحالية",

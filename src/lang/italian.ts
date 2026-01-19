@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Scala Contorno Carattere",
                 fontshadow: "Ombra Carattere",
                 fontshadowcolor: "Colore Ombra Carattere",
-                fontshadowscale: "Scala Ombra Carattere"
+                fontshadowscale: "Scala Ombra Carattere",
+                fontshadowx: "Offset Orizzontale",
+                fontshadowy: "Offset Verticale"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Aggiungi un'ombra a tutto il testo visualizzato nella notifica",
         fontshadowcolor: "Imposta il colore dell'ombra del testo",
         fontshadowscale: "Imposta lo spessore dell'ombra del testo",
+        fontshadowx: "Sposta la posizione dell'ombra del testo orizzontalmente",
+        fontshadowy: "Sposta la posizione dell'ombra del testo verticalmente",
         iconroundness: "Imposta l'arrotondamento dell'icona dell'obiettivo/gioco visualizzata nella notifica",
         plat: "Carica un file immagine da utilizzare come icona al 100%",
         usegameicon: "Sostituisci l'icona del traguardo sbloccato con l'icona del gioco attuale",

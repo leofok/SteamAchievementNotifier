@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "폰트 윤곽선 크기",
                 fontshadow: "글꼴 그림자",
                 fontshadowcolor: "글꼴 그림자 색상",
-                fontshadowscale: "폰트 그림자 크기"
+                fontshadowscale: "폰트 그림자 크기",
+                fontshadowx: "수평 오프셋",
+                fontshadowy: "수직 오프셋"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "알림 내에 표시되는 모든 텍스트에 그림자 추가",
         fontshadowcolor: "텍스트 그림자의 색상 설정",
         fontshadowscale: "텍스트 그림자 두께 설정",
+        fontshadowx: "텍스트 그림자의 위치를 수평으로 이동",
+        fontshadowy: "텍스트 그림자의 위치를 수직으로 이동",
         iconroundness: "알림 내에 표시되는 업적/게임 아이콘의 둥글기 설정",
         plat: "100% 아이콘으로 사용할 이미지 파일 로드",
         usegameicon: "잠금 해제된 업적의 아이콘을 현재 게임의 아이콘으로 교체",

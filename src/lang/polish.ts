@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Skala Obrysu Czcionki",
                 fontshadow: "Cień Czcionki",
                 fontshadowcolor: "Kolor Cienia Czcionki",
-                fontshadowscale: "Skala Cienia Czcionki"
+                fontshadowscale: "Skala Cienia Czcionki",
+                fontshadowx: "Przesunięcie Poziome",
+                fontshadowy: "Przesunięcie Pionowe",
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Dodaj cień do wszystkich tekstów wyświetlanych w powiadomieniu",
         fontshadowcolor: "Ustaw kolor cienia tekstu",
         fontshadowscale: "Ustaw grubość cienia tekstu",
+        fontshadowx: "Przesuwa pozycję cienia tekstu poziomo",
+        fontshadowy: "Przesuwa pozycję cienia tekstu pionowo",
         iconroundness: "Ustaw zaokrąglenie ikony osiągnięcia/gry wyświetlanej w powiadomieniu",
         plat: "Wczytaj plik obrazu do użycia jako ikona 100%",
         usegameicon: "Zamień ikonę odblokowanego osiągnięcia na ikonę aktualnej gry",

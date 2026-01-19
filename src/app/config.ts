@@ -390,6 +390,8 @@ export const sanconfig = {
                 fontshadow: false,
                 fontshadowcolor: "#000000",
                 fontshadowscale: 1.5,
+                fontshadowx: 0,
+                fontshadowy: 0,
                 iconroundness: 0,
                 usegameicon: false,
                 gameicontype: "icon",

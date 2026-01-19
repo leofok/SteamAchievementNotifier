@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Skriftkonturens skala",
                 fontshadow: "Skriftskygge",
                 fontshadowcolor: "Skriftskyggefarve",
-                fontshadowscale: "Skriftskyggens skala"
+                fontshadowscale: "Skriftskyggens skala",
+                fontshadowx: "Horisontal Offset",
+                fontshadowy: "Vertikal Offset"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Tilføj en skygge til al tekst, der vises i meddelelsen",
         fontshadowcolor: "Indstil farven på tekstens skygge",
         fontshadowscale: "Angiv tykkelsen på tekstens skygge",
+        fontshadowx: "Forskyder tekstskyggen horisontalt",
+        fontshadowy: "Forskyder tekstskyggen vertikalt",
         iconroundness: "Indstil afrundetheden af præstations-/spilikonet, der vises i meddelelsen",
         plat: "Indlæs en billedfil, der skal bruges som 100% ikon",
         usegameicon: "Erstat ikonet for den oplåste præstation med ikonet for det aktuelle spil",

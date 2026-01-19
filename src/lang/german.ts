@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Skalierung des Schriftumrisses",
                 fontshadow: "Schriftschatten",
                 fontshadowcolor: "Farbe des Schriftschattens",
-                fontshadowscale: "Skalierung des Schriftschattens"
+                fontshadowscale: "Skalierung des Schriftschattens",
+                fontshadowx: "Horizontale Verschiebung",
+                fontshadowy: "Vertikale Verschiebung"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Fügen Sie allen in der Benachrichtigung angezeigten Texten einen Schatten hinzu",
         fontshadowcolor: "Legen Sie die Farbe des Textschattens fest",
         fontshadowscale: "Die Dicke des Schattens des Textes festlegen",
+        fontshadowx: "Verschiebt die Position des Textschattens horizontal",
+        fontshadowy: "Verschiebt die Position des Textschattens vertikal",
         iconroundness: "Legen Sie die Rundung des Erfolgs-/Spielsymbols in der Benachrichtigung fest",
         plat: "Verwenden Sie eine Bilddatei, die als 100%-Symbol verwendet werden soll",
         usegameicon: "Ersetze das Symbol der freigeschalteten Errungenschaft durch das Symbol des aktuellen Spiels",

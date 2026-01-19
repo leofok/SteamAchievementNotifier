@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Teckensnittets konturskalning",
                 fontshadow: "Typsnittsskugga",
                 fontshadowcolor: "Typsnittsskuggans färg",
-                fontshadowscale: "Teckensnittets skuggsalning"
+                fontshadowscale: "Teckensnittets skuggsalning",
+                fontshadowx: "Horisontell förskjutning",
+                fontshadowy: "Vertikal förskjutning"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Lägg till en skugga till all text som visas i aviseringen",
         fontshadowcolor: "Ställ in färgen på textens skugga",
         fontshadowscale: "Ställ in tjockleken på textens skugga",
+        fontshadowx: "Flyttar textskuggans position horisontellt",
+        fontshadowy: "Flyttar textskuggans position vertikalt",
         iconroundness: "Ställ in rundheten för prestation/spelikonen som visas i aviseringen",
         plat: "Ladda en bildfil som ska användas som 100% ikon",
         usegameicon: "Ersätt ikonen för det upplåsta achievementet med spelets nuvarande ikon",

@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Escala de Contorno de Fuente",
                 fontshadow: "Sombra de Fuente",
                 fontshadowcolor: "Color de Sombra de Fuente",
-                fontshadowscale: "Escala de Sombra de Fuente"
+                fontshadowscale: "Escala de Sombra de Fuente",
+                fontshadowx: "Desplazamiento Horizontal",
+                fontshadowy: "Desplazamiento Vertical"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Agregar una sombra a todo el texto que se muestra dentro de la notificación",
         fontshadowcolor: "Establecer el color de la sombra del texto",
         fontshadowscale: "Establecer el grosor de la sombra del texto",
+        fontshadowx: "Desplaza la posición de la sombra del texto horizontalmente",
+        fontshadowy: "Desplaza la posición de la sombra del texto verticalmente",
         iconroundness: "Establecer la redondez del icono de logro/juego que se muestra dentro de la notificación",
         plat: "Cargar un archivo de imagen para usar como el icono del 100%",
         usegameicon: "Reemplazar el ícono del logro desbloqueado por el ícono del juego actual",

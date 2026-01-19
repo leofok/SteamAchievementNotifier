@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "フォントのアウトラインスケール",
                 fontshadow: "フォントシャドウ",
                 fontshadowcolor: "フォントシャドウカラー",
-                fontshadowscale: "フォントのシャドウスケール"
+                fontshadowscale: "フォントのシャドウスケール",
+                fontshadowx: "水平オフセット",
+                fontshadowy: "垂直オフセット"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "通知内に表示されるすべてのテキストにシャドウを追加する",
         fontshadowcolor: "テキストのシャドウの色を設定する",
         fontshadowscale: "テキストのシャドウの太さを設定",
+        fontshadowx: "テキストの影の位置を水平にずらす",
+        fontshadowy: "テキストの影の位置を垂直にずらす",
         iconroundness: "通知内に表示される実績/ゲームアイコンの角の丸みを設定する",
         plat: "100%アイコンとして使用する画像ファイルを読み込む",
         usegameicon: "解除された実績のアイコンを現在のゲームのアイコンに置き換える",

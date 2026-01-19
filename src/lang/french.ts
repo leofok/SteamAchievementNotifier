@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Échelle du Contour de la Police",
                 fontshadow: "Ombre de la Police",
                 fontshadowcolor: "Couleur de l'Ombre de la Police",
-                fontshadowscale: "Échelle de l'Ombre de la Police"
+                fontshadowscale: "Échelle de l'Ombre de la Police",
+                fontshadowx: "Décalage Horizontal",
+                fontshadowy: "Décalage Vertical"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Ajouter une ombre à tout le texte affiché dans la notification",
         fontshadowcolor: "Définir la couleur de l'ombre du texte",
         fontshadowscale: "Définir l'épaisseur de l'ombre du texte",
+        fontshadowx: "Décale la position de l'ombre du texte horizontalement",
+        fontshadowy: "Décale la position de l'ombre du texte verticalement",
         iconroundness: "Définir l'arrondi de l'icône de succès/jeu affichée dans la notification",
         plat: "Charger un fichier image pour utiliser comme icône 100%",
         usegameicon: "Remplacer l'icône du succès débloqué par l'icône du jeu actuel",

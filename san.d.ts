@@ -204,6 +204,8 @@ declare interface Customisation {
     fontshadow: boolean,
     fontshadowcolor: string,
     fontshadowscale: number,
+    fontshadowx: number,
+    fontshadowy: number,
     iconroundness: number,
     usegameicon: boolean,
     gameicontype: "icon" | "logo",

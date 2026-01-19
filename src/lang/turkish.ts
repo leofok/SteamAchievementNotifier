@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Yazı Tipi Çerçeve Ölçeği",
                 fontshadow: "Yazı Gölgesi",
                 fontshadowcolor: "Yazı Gölgesi Rengi",
-                fontshadowscale: "Yazı Tipi Gölgesi Ölçeği"
+                fontshadowscale: "Yazı Tipi Gölgesi Ölçeği",
+                fontshadowx: "Yatay Ofset",
+                fontshadowy: "Dikey Ofset"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Bildirimde görüntülenen tüm metne bir gölge ekleyin",
         fontshadowcolor: "Metin gölgesinin rengini ayarlayın",
         fontshadowscale: "Metnin gölgesinin kalınlığını ayarla",
+        fontshadowx: "Metin gölgesinin konumunu yatay olarak kaydırır",
+        fontshadowy: "Metin gölgesinin konumunu dikey olarak kaydırır",
         iconroundness: "Bildirimde görüntülenen başarı/oyun ikonunun yuvarlaklığını ayarlayın",
         plat: "100% ikonu olarak kullanılacak bir resim dosyası yükleyin",
         usegameicon: "Kilidi açılan başarının ikonunu, mevcut oyun ikonu ile değiştir",

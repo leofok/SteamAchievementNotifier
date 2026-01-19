@@ -181,7 +181,7 @@ const notifyhelper = {
                 ["--opacity", `${customisation.opacity / 100}`],
                 ["--iconroundness",customisation.iconroundness === 100 ? "50%" : `${(customisation.iconroundness / 6) * (customisation.scale / 100)}px`],
                 ["--fontoutline",customisation.fontoutline ? `${(customisation.scale / 100) * customisation.fontoutlinescale}px ${customisation.fontoutlinecolor}` : "none"],
-                ["--fontshadow",customisation.fontshadow ? `drop-shadow(0 0 ${(customisation.scale / 100) * customisation.fontshadowscale}px ${customisation.fontshadowcolor}) `.repeat(3) : "none"],
+                ["--fontshadow",customisation.fontshadow ? `drop-shadow(${customisation.fontshadowx}px ${customisation.fontshadowy}px ${(customisation.scale / 100) * customisation.fontshadowscale}px ${customisation.fontshadowcolor}) `.repeat(3) : "none"],
                 ["--logo",getcustomicon("logo")],
                 ["--decoration",getcustomicon("decoration")],
                 ["--decorationdisplaytype","block"],

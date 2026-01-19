@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Betűkontúrok mérete",
                 fontshadow: "Betűárnyék",
                 fontshadowcolor: "Betűárnyék színe",
-                fontshadowscale: "Betűárnyék mérete"
+                fontshadowscale: "Betűárnyék mérete",
+                fontshadowx: "Vízszintes eltolás",
+                fontshadowy: "Függőleges eltolás"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Árnyék hozzáadása az értesítésben megjelenített összes szöveghez",
         fontshadowcolor: "Állítsa be a szöveg árnyékának színét",
         fontshadowscale: "A szöveg árnyékának vastagságának beállítása",
+        fontshadowx: "Elmozdítja a szöveg árnyékának pozícióját vízszintesen",
+        fontshadowy: "Elmozdítja a szöveg árnyékának pozícióját függőlegesen",
         iconroundness: "Állítsa be az értesítésben megjelenített eredmény/játék ikon kerekességét",
         plat: "Képfájl betöltése a 100% ikonként való használathoz",
         usegameicon: "Az elérhető jutalom ikonját cseréld le a jelenlegi játék ikonjára",

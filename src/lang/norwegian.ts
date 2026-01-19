@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Fontkontur Skala",
                 fontshadow: "Fontskygge",
                 fontshadowcolor: "Fontskygge Farge",
-                fontshadowscale: "Fontskygge Skala"
+                fontshadowscale: "Fontskygge Skala",
+                fontshadowx: "Horisontal Forskyvning",
+                fontshadowy: "Vertikal Forskyvning"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Legg til en skygge på all tekst som vises i varslingen",
         fontshadowcolor: "Angi fargen på tekstskyggen",
         fontshadowscale: "Angi tykkelsen på tekstens skygge",
+        fontshadowx: "Forskyver tekstskyggens posisjon horisontalt",
+        fontshadowy: "Forskyver tekstskyggens posisjon vertikalt",
         iconroundness: "Angi avrundingen av prestasjons-/spillikonet som vises i varslingen",
         plat: "Last inn en bildefil som skal brukes som 100 % -ikon",
         usegameicon: "Erstatt ikonet for den opplåste prestasjonen med ikonet for det nåværende spillet",

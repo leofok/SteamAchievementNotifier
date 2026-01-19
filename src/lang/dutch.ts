@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Schaal van letteromtrek",
                 fontshadow: "Letter Schaduw",
                 fontshadowcolor: "Kleur Letter Schaduw",
-                fontshadowscale: "Schaal van letterschaduw"
+                fontshadowscale: "Schaal van letterschaduw",
+                fontshadowx: "Horizontale Offset",
+                fontshadowy: "Verticale Offset"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Voeg een schaduw toe aan alle tekst die binnen de melding wordt weergegeven",
         fontshadowcolor: "Stel de kleur in van de tekstschaduw",
         fontshadowscale: "Stel de dikte van de tekstschaduw in",
+        fontshadowx: "Verplaatst de positie van de tekstschaduw horizontaal",
+        fontshadowy: "Verplaatst de positie van de tekstschaduw verticaal",
         iconroundness: "Stel de rondheid in van het prestatie-/spelpictogram dat binnen de melding wordt weergegeven",
         plat: "Laad een afbeeldingsbestand om als 100% pictogram te gebruiken",
         usegameicon: "Vervang het pictogram van de ontgrendelde prestatie door het pictogram van het huidige spel",

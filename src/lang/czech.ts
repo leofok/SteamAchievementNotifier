@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Měřítko obrysu písma",
                 fontshadow: "Stín písma",
                 fontshadowcolor: "Barva stínu písma",
-                fontshadowscale: "Měřítko stínu písma"
+                fontshadowscale: "Měřítko stínu písma",
+                fontshadowx: "Horizontální posunutí",
+                fontshadowy: "Vertikální posunutí"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Přidat stín ke všem textům zobrazeným v oznámení",
         fontshadowcolor: "Nastavit barvu stínu textu",
         fontshadowscale: "Nastavit tloušťku stínu textu",
+        fontshadowx: "Posune pozici textového stínu horizontálně",
+        fontshadowy: "Posune pozici textového stínu vertikálně",
         iconroundness: "Nastavit zaoblení achievement/game ikony zobrazené v oznámení",
         plat: "Načíst obrázkový soubor, který se použije jako ikona 100%",
         usegameicon: "Nahradit ikonu odemčeného úspěchu ikonou aktuální hry",

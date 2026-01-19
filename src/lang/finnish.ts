@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Fontin ääriviivan skaala",
                 fontshadow: "Fontin Varjo",
                 fontshadowcolor: "Varjon Väri",
-                fontshadowscale: "Fontin varjon skaala"
+                fontshadowscale: "Fontin varjon skaala",
+                fontshadowx: "Vaakasuora Siirtymä",
+                fontshadowy: "Pystysuora Siirtymä"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Lisää varjostus kaikelle ilmoituksessa näkyvälle tekstille",
         fontshadowcolor: "Aseta tekstin varjostuksen väri",
         fontshadowscale: "Aseta tekstin varjon paksuus",
+        fontshadowx: "Siirtää tekstin varjon sijaintia vaakasuunnassa",
+        fontshadowy: "Siirtää tekstin varjon sijaintia pystysuunnassa",
         iconroundness: "Aseta saavutuksen/pelin kuvakkeen pyöristys ilmoituksessa",
         plat: "Lataa kuvatiedosto 100% -kuvakkeeksi",
         usegameicon: "Korvaa avatun saavutuksen ikoni nykyisen pelin ikonilla",

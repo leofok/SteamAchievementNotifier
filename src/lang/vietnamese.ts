@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Tỷ lệ viền phông chữ",
                 fontshadow: "Bóng chữ",
                 fontshadowcolor: "Màu bóng chữ",
-                fontshadowscale: "Tỷ lệ bóng chữ"
+                fontshadowscale: "Tỷ lệ bóng chữ",
+                fontshadowx: "Độ dịch chuyển ngang",
+                fontshadowy: "Độ dịch chuyển dọc"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "Thêm bóng cho tất cả văn bản hiển thị trong thông báo",
         fontshadowcolor: "Đặt màu của bóng văn bản",
         fontshadowscale: "Đặt độ dày bóng của văn bản",
+        fontshadowx: "Dịch chuyển vị trí bóng chữ theo chiều ngang",
+        fontshadowy: "Dịch chuyển vị trí bóng chữ theo chiều dọc",
         iconroundness: "Đặt độ cong của biểu tượng thành tựu/trò chơi hiển thị trong thông báo",
         plat: "Tải một tệp hình ảnh để sử dụng làm biểu tượng 100%",
         usegameicon: "Thay thế biểu tượng của thành tích đã mở khóa bằng biểu tượng của trò chơi hiện tại",

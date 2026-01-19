@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "ขนาดขอบเขตของฟอนต์",
                 fontshadow: "เงาตัวอักษร",
                 fontshadowcolor: "สีเงาตัวอักษร",
-                fontshadowscale: "ขนาดเงาของฟอนต์"
+                fontshadowscale: "ขนาดเงาของฟอนต์",
+                fontshadowx: "การเลื่อนแนวนอน",
+                fontshadowy: "การเลื่อนแนวตั้ง"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "เพิ่มเงาให้กับข้อความทั้งหมดที่แสดงในการแจ้งเตือน",
         fontshadowcolor: "ตั้งค่าสีของเงาของข้อความ",
         fontshadowscale: "ตั้งค่าความหนาของเงาข้อความ",
+        fontshadowx: "เลื่อนตำแหน่งเงาของข้อความในแนวนอน",
+        fontshadowy: "เลื่อนตำแหน่งเงาของข้อความในแนวตั้ง",
         iconroundness: "ตั้งค่าความโค้งของไอคอนความสำเร็จ/เกมที่แสดงในการแจ้งเตือน",
         plat: "โหลดไฟล์รูปภาพที่จะใช้เป็นไอคอน 100%",
         usegameicon: "แทนที่ไอคอนของความสำเร็จที่ปลดล็อกด้วยไอคอนของเกมปัจจุบัน",

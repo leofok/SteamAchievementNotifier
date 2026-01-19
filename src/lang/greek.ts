@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Κλίμακα περιγράμματος γραμματοσειράς",
                 fontshadow: "Σκιά Γραμματοσειράς",
                 fontshadowcolor: "Χρώμα Σκιάς Γραμματοσειράς",
-                fontshadowscale: "Κλίμακα σκιάς γραμματοσειράς"
+                fontshadowscale: "Κλίμακα σκιάς γραμματοσειράς",
+                fontshadowx: "Οριζόντια μετατόπιση",
+                fontshadowy: "Κατακόρυφη μετατόπιση"
             }
         },
         icons: {

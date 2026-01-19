@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "Scara Contur Font",
                 fontshadow: "Umbra Font",
                 fontshadowcolor: "Culoare Umbră Font",
-                fontshadowscale: "Scara Umbră Font"
+                fontshadowscale: "Scara Umbră Font",
+                fontshadowx: "Deplasare orizontală",
+                fontshadowy: "Deplasare verticală"
             }
         },
         icons: {
@@ -687,6 +689,8 @@ export const translations = {
         fontshadow: "Adăugați o umbră la textul afișat în notificare",
         fontshadowcolor: "Setați culoarea umbrei textului",
         fontshadowscale: "Setează grosimea umbrei textului",
+        fontshadowx: "Mută poziția umbrei textului orizontal",
+        fontshadowy: "Mută poziția umbrei textului vertical",
         iconroundness: "Setați rotunjimea iconului realizării/jocului afișat în notificare",
         plat: "Încărcați un fișier de imagine care să înlocuiască iconul 100%",
         usegameicon: "Înlocuiți iconița realizării deblocate cu iconița jocului curent",

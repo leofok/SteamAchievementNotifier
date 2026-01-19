@@ -465,7 +465,9 @@ export const translations = {
                 fontoutlinescale: "字型輪廓縮放",
                 fontshadow: "文字陰影",
                 fontshadowcolor: "文字陰影顏色",
-                fontshadowscale: "字型陰影縮放"
+                fontshadowscale: "字型陰影縮放",
+                fontshadowx: "水平偏移",
+                fontshadowy: "垂直偏移"
             }
         },
         icons: {
@@ -688,6 +690,8 @@ export const translations = {
         fontshadow: "為通知中顯示的所有文本添加陰影",
         fontshadowcolor: "設置文本陰影的顏色",
         fontshadowscale: "設定文本陰影的厚度",
+        fontshadowx: "水平移動文字陰影的位置",
+        fontshadowy: "垂直移動文字陰影的位置",
         iconroundness: "設置通知中顯示的成就/遊戲圖標的圓角程度",
         plat: "加載要用作 100% 圖標的圖像文件",
         usegameicon: "將解鎖的成就圖示替換為當前遊戲的圖示",
