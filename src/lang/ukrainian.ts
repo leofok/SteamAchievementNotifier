@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Скинути вікно",
         show: "Показати",
         exit: "Вийти",
+        donotshowagain: "Більше не показувати це діалогове вікно",
         releasegame: "Звільнити гру",
         releasegamesub: [
             `Перезапустіть фоновий процес Worker і звільніть поточну гру від відстеження`,

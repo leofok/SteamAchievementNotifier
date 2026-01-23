@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Venster herstellen",
         show: "Weergeven",
         exit: "Afsluiten",
+        donotshowagain: "Toon dit dialoogvenster niet opnieuw",
         releasegame: "Spel vrijgeven",
         releasegamesub: [
             `Herstart het achtergrondproces van de Worker en geef het huidige spel vrij om te worden gevolgd`,

@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Сбросить окно",
         show: "Показать",
         exit: "Выход",
+        donotshowagain: "Больше не показывать этот диалог",
         releasegame: "Освободить игру",
         releasegamesub: [
             `Перезапустите фоновый процесс Worker и освободите текущую игру от отслеживания`,

@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Nulstil vindue",
         show: "Vis",
         exit: "Afslut",
+        donotshowagain: "Vis ikke denne dialog igen",
         releasegame: "Frigiv Spil",
         releasegamesub: [
             `Genstart baggrundsarbejderprocessen og frigiv det nuværende spil fra at blive sporet`,

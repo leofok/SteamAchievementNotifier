@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Tilbakestill Vindu",
         show: "Vis",
         exit: "Avslutt",
+        donotshowagain: "Ikke vis denne dialogen igjen",
         releasegame: "Frigi Spill",
         releasegamesub: [
             `Restart bakgrunnsprosessen til Worker og frigi det nåværende spillet fra å bli sporet`,

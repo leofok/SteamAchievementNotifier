@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "重置窗口",
         show: "显示",
         exit: "退出",
+        donotshowagain: "不再显示此对话框",
         releasegame: "释放游戏",
         releasegamesub: [
             `重启后台Worker进程并停止追踪当前游戏`,

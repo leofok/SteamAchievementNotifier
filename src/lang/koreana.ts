@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "창 초기화",
         show: "보이기",
         exit: "종료",
+        donotshowagain: "이 대화 상자를 다시 표시하지 않음",
         releasegame: "게임 릴리즈",
         releasegamesub: [
             `백그라운드 Worker 프로세스를 재시작하고 현재 게임의 추적을 해제합니다`,

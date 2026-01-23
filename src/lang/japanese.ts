@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "ウィンドウをリセット",
         show: "表示",
         exit: "終了",
+        donotshowagain: "このダイアログを再度表示しない",
         releasegame: "ゲームのリリース",
         releasegamesub: [
             `バックグラウンドのWorkerプロセスを再起動し、現在のゲームの追跡を解除します`,

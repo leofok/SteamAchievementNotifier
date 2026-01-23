@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "รีเซ็ตหน้าต่าง",
         show: "แสดง",
         exit: "ออก",
+        donotshowagain: "ไม่ต้องแสดงกล่องโต้ตอบนี้อีก",
         releasegame: "ปล่อยเกม",
         releasegamesub: [
             `รีสตาร์ทกระบวนการ Worker ที่ทำงานในพื้นหลังและปล่อยเกมปัจจุบันจากการถูกติดตาม`,

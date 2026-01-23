@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Ablak visszaállítása",
         show: "Mutat",
         exit: "Kilépés",
+        donotshowagain: "Ne jelenjen meg újra ez a párbeszédablak",
         releasegame: "Játék Felszabadítása",
         releasegamesub: [
             `Indítsa újra a háttérben futó Worker folyamatot és szabadítsa fel a jelenleg nyomon követett játékot`,

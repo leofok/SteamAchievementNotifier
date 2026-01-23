@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Reset Window",
         show: "Show",
         exit: "Exit",
+        donotshowagain: "Don't show this dialog again",
         releasegame: "Release Game",
         releasegamesub: [
             `Restart the background Worker process and release the current game from being tracked`,

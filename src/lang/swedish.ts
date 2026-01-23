@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Återställ Fönster",
         show: "Visa",
         exit: "Avsluta",
+        donotshowagain: "Visa inte den här dialogrutan igen",
         releasegame: "Frigör Spel",
         releasegamesub: [
             `Starta om bakgrundsprocessen för Worker och frigör det nuvarande spelet från att spåras`,

@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Fenster Zurücksetzen",
         show: "Anzeigen",
         exit: "Verlassen",
+        donotshowagain: "Diesen Dialog nicht erneut anzeigen",
         releasegame: "Spiel Freigeben",
         releasegamesub: [
             `Starten Sie den Hintergrund-Workerprozess neu und hören Sie auf das aktuelle Spiel zu verfolgen`,

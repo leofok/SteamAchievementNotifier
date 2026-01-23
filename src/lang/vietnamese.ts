@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Đặt lại Cửa sổ",
         show: "Hiển thị",
         exit: "Thoát",
+        donotshowagain: "Không hiển thị hộp thoại này nữa",
         releasegame: "Giải phóng Trò chơi",
         releasegamesub: [
             `Khởi động lại quá trình Worker nền và giải phóng trò chơi hiện tại khỏi việc được theo dõi`,

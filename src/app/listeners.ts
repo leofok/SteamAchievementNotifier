@@ -604,14 +604,14 @@ export const listeners = {
 
         ipcMain.on("releasegame",(event,skipdialog?: boolean) => {
             const { noreleasedialog } = sanconfig.get().store
-            const showdialog = skipdialog && !noreleasedialog
+            const showdialog = !skipdialog && !noreleasedialog
 
-            if (!showdialog) {
+            if (showdialog) {
                 win.show()
                 win.focus()
             }
 
-            win.webContents.send("releasegame",showdialog)
+            win.webContents.send("releasegame",!showdialog)
         })
 
         ipcMain.on("suspendresume", () => {

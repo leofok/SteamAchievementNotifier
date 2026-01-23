@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Redefinir Janela",
         show: "Mostrar",
         exit: "Sair",
+        donotshowagain: "Não mostrar esta caixa de diálogo novamente",
         releasegame: "Liberar Jogo",
         releasegamesub: [
             `Reinicie o processo Worker em segundo plano e libere o jogo atual de ser rastreado`,

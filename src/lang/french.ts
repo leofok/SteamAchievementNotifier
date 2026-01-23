@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Réinitialiser la fenêtre",
         show: "Afficher",
         exit: "Quitter",
+        donotshowagain: "Ne plus afficher cette boîte de dialogue",
         releasegame: "Libérer le Jeu",
         releasegamesub: [
             `Redémarrez le processus Worker en arrière-plan et libérez le jeu actuel du suivi`,

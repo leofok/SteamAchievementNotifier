@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "إعادة تعيين النافذة",
         show: "عرض",
         exit: "خروج",
+        donotshowagain: "لا تُظهر هذا الحوار مرة أخرى",
         releasegame: "إطلاق اللعبة",
         releasegamesub: [
             `أعد تشغيل عملية العامل الخلفية وأطلق اللعبة الحالية من التتبع`,

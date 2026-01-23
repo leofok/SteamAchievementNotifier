@@ -933,7 +933,7 @@ ipcRenderer.on("releasegame", async (event,noreleasedialog: boolean) => {
         type: "default",
         sub: await language.get("releasegamesub"),
         icon: sanhelper.setfilepath("icon","donotdisturb.svg"),
-        addHTML: `<div class="wrapper donotshowagain"><input type="checkbox" id="noreleasedialog"><span>Don't show this dialog again</span></div>`,
+        addHTML: `<div class="wrapper donotshowagain"><input type="checkbox" id="noreleasedialog"><span>${await language.get("donotshowagain")}</span></div>`,
         buttons: [{
             id: "ok",
             label: await language.get("ok"),
@@ -963,7 +963,7 @@ ipcRenderer.on("restartapp", async () => {
         type: "default",
         sub: await language.get("restartappsub"),
         icon: sanhelper.setfilepath("icon","replay.svg"),
-        addHTML: `<div class="wrapper donotshowagain"><input type="checkbox" id="norestartdialog"><span>Don't show this dialog again</span></div>`,
+        addHTML: `<div class="wrapper donotshowagain"><input type="checkbox" id="norestartdialog"><span>${await language.get("donotshowagain")}</span></div>`,
         buttons: [{
             id: "ok",
             label: await language.get("ok"),

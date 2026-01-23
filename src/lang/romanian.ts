@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Resetare Fereastră",
         show: "Afișare",
         exit: "Ieșire",
+        donotshowagain: "Nu mai afișa acest dialog",
         releasegame: "Eliberează Jocul",
         releasegamesub: [
             `Reporniți procesul Worker din fundal și eliberați jocul curent de la urmărire`,

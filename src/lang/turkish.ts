@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Pencereyi Sıfırla",
         show: "Göster",
         exit: "Çıkış",
+        donotshowagain: "Bu iletişim kutusunu tekrar gösterme",
         releasegame: "Oyunu Serbest Bırak",
         releasegamesub: [
             `Arka plan Worker sürecini yeniden başlatın ve mevcut oyunun izlenmesini bırakın`,

@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Obnovit okno",
         show: "Zobrazit",
         exit: "Ukončit",
+        donotshowagain: "Znovu nezobrazovat toto dialogové okno",
         releasegame: "Uvolnit hru",
         noupdateavailable: "Žádná aktualizace není k dispozici",
         latestversion: "Nejnovější verze je nainstalována",

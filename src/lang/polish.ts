@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Resetuj okno",
         show: "Pokaż",
         exit: "Wyjście",
+        donotshowagain: "Nie pokazuj ponownie tego okna dialogowego",
         releasegame: "Zakończ śledzenie gry",
         releasegamesub: [
             `Zrestartuj proces Workera działającego w tle i zakończ śledzenie aktualnej gry`,

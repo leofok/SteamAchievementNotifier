@@ -145,7 +145,7 @@ export const screenshot = {
 
             sswins.has(notify.id) && sswins.delete(notify.id)
 
-            ipcMain.once(`${notify.id}`,() => screenshot.checkwindowtitle(config.get("ssmode"),notify))
+            ipcMain.once(`${notify.id}`,() => screenshot.checkwindowtitle(notify.ra ? "screen" : config.get("ssmode"),notify))
 
             const delay = config.get("ssdelay")
             const srcpath = screenshot.srcpath(notify.id)
@@ -157,7 +157,7 @@ export const screenshot = {
 
             const sswin = sswins.get(notify.id)!
 
-            if (worker && config.get("ssmode") === "window") {
+            if (worker && config.get("ssmode") === "window" && !notify.ra) {
                 sswin.windowtitle = !appid ? win.title : await new Promise(resolve => {
                     ipcMain.once("windowtitles",(event,windowtitles: string[]) => resolve(windowtitles[0]))
                     worker!.webContents.send("windowtitles")
@@ -178,6 +178,8 @@ export const screenshot = {
                 })
             }
 
+            notify.ra && config.get("ssmode") === "window" && log.write("WARN",`Unable to use "window" mode for screenshot for RetroAchievements emulators - defaulting to "screen" mode...`)
+
             // Fall back to provided "screen" src if no monitor is assigned when config.ssmode === "window"
             if (sswin.src === -1) {
                 log.write("WARN",`"sswin.src" not found - using original "src" value (${monitorid})...`)
@@ -191,11 +193,11 @@ export const screenshot = {
             const { monitor } = screenshot.monitor(sswin.src)
             if (!monitor) return log.write("ERROR",`Error configuring screenshot src: Could not locate Monitor with id ${config.get("monitor")}, and no primary fallback found.\n\n${JSON.stringify(config.get("monitors"))}`)
 
-            const ssmode: "screen" | "window" = config.get("ssmode") === "window" && sswin.windowtitle ? "window" : "screen"
+            const ssmode: "screen" | "window" = !notify.ra && config.get("ssmode") === "window" && sswin.windowtitle ? "window" : "screen"
             log.write("INFO",`Using "${ssmode}" mode for Screenshot (ssmode: "${config.get("ssmode")}" | windowtitle: "${sswin.windowtitle}")`)
 
             const { id, label } = monitor
-            let { bounds: { width, height } } = ssmode === "window" && (["width","height"] as const).every(dim => screenshot.sswinbounds.bounds[dim] !== 0) ? screenshot.sswinbounds : monitor
+            let { bounds: { width, height } } = !notify.ra && ssmode === "window" && (["width","height"] as const).every(dim => screenshot.sswinbounds.bounds[dim] !== 0) ? screenshot.sswinbounds : monitor
 
             ipcMain.once(`src_${notify.id}`,(event,err) => {
                 if (err) {
@@ -221,7 +223,7 @@ export const screenshot = {
         if (config.get("hdrmode")) {
             let area: number[] | undefined
 
-            if (config.get("ssmode") === "window") {
+            if (ssmode === "window") {
                 const { x, y, width, height } = screenshot.sswinbounds.bounds
                 area = [y,x,width,height] // Order of elements for `screenshots::Screen.capture_area()` is y/x/w/h
             }

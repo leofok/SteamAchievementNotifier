@@ -43,6 +43,7 @@ export const translations = {
         resetwindow: "Nollaa ikkuna",
         show: "Näytä",
         exit: "Poistu",
+        donotshowagain: "Älä näytä tätä valintaikkunaa uudelleen",
         releasegame: "Vapauta peli",
         releasegamesub: [
             `Käynnistä taustalla oleva Worker-prosessi uudelleen ja vapauta nykyinen peli seurannasta`,
